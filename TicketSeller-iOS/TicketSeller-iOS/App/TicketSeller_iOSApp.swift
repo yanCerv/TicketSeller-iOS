@@ -25,7 +25,7 @@ struct TicketSeller_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LanguageSelectionView()
+            MoviesView()
         }
         .modelContainer(sharedModelContainer)
     }
