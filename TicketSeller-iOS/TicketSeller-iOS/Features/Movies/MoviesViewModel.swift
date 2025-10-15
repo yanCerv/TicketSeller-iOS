@@ -22,7 +22,6 @@ final class MoviesViewModel {
     do {
       let movies = try await client.fetchMovies()
       self.movies = movies
-      debugPrint(movies)
     } catch {
       if let error = error as? ErrorHandler {
         errorMessage = error.message

@@ -14,48 +14,35 @@
 			remoteGlobalIDString = 7C6EFDE22E9EC3FB00793E11;
 			remoteInfo = "TicketSeller-iOS";
 		};
-		7C6EFDFD2E9EC3FC00793E11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C6EFDDB2E9EC3FB00793E11 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7C6EFDE22E9EC3FB00793E11;
-			remoteInfo = "TicketSeller-iOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7C6EFDE32E9EC3FB00793E11 /* TicketSeller-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TicketSeller-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C6EFDF22E9EC3FC00793E11 /* TicketSeller-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TicketSeller-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C6EFDFC2E9EC3FC00793E11 /* TicketSeller-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TicketSeller-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7CB832F82E9F2374003BEAFC /* Exceptions for "TicketSeller-iOSUITests" folder in "TicketSeller-iOSUITests" target */ = {
+		7C7A26232EA056DA002CCBDE /* Exceptions for "TicketSeller-iOS" folder in "TicketSeller-iOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 7C6EFDFB2E9EC3FC00793E11 /* TicketSeller-iOSUITests */;
+			target = 7C6EFDE22E9EC3FB00793E11 /* TicketSeller-iOS */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		7C6EFDE52E9EC3FB00793E11 /* TicketSeller-iOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7C7A26232EA056DA002CCBDE /* Exceptions for "TicketSeller-iOS" folder in "TicketSeller-iOS" target */,
+			);
 			path = "TicketSeller-iOS";
 			sourceTree = "<group>";
 		};
 		7C6EFDF52E9EC3FC00793E11 /* TicketSeller-iOSTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "TicketSeller-iOSTests";
-			sourceTree = "<group>";
-		};
-		7C6EFDFF2E9EC3FC00793E11 /* TicketSeller-iOSUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				7CB832F82E9F2374003BEAFC /* Exceptions for "TicketSeller-iOSUITests" folder in "TicketSeller-iOSUITests" target */,
-			);
-			path = "TicketSeller-iOSUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,13 +62,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C6EFDF92E9EC3FC00793E11 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,7 +70,6 @@
 			children = (
 				7C6EFDE52E9EC3FB00793E11 /* TicketSeller-iOS */,
 				7C6EFDF52E9EC3FC00793E11 /* TicketSeller-iOSTests */,
-				7C6EFDFF2E9EC3FC00793E11 /* TicketSeller-iOSUITests */,
 				7C6EFDE42E9EC3FB00793E11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,7 +79,6 @@
 			children = (
 				7C6EFDE32E9EC3FB00793E11 /* TicketSeller-iOS.app */,
 				7C6EFDF22E9EC3FC00793E11 /* TicketSeller-iOSTests.xctest */,
-				7C6EFDFC2E9EC3FC00793E11 /* TicketSeller-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,29 +131,6 @@
 			productReference = 7C6EFDF22E9EC3FC00793E11 /* TicketSeller-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7C6EFDFB2E9EC3FC00793E11 /* TicketSeller-iOSUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7C6EFE0C2E9EC3FC00793E11 /* Build configuration list for PBXNativeTarget "TicketSeller-iOSUITests" */;
-			buildPhases = (
-				7C6EFDF82E9EC3FC00793E11 /* Sources */,
-				7C6EFDF92E9EC3FC00793E11 /* Frameworks */,
-				7C6EFDFA2E9EC3FC00793E11 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7C6EFDFE2E9EC3FC00793E11 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				7C6EFDFF2E9EC3FC00793E11 /* TicketSeller-iOSUITests */,
-			);
-			name = "TicketSeller-iOSUITests";
-			packageProductDependencies = (
-			);
-			productName = "TicketSeller-iOSUITests";
-			productReference = 7C6EFDFC2E9EC3FC00793E11 /* TicketSeller-iOSUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,10 +145,6 @@
 						CreatedOnToolsVersion = 26.0.1;
 					};
 					7C6EFDF12E9EC3FC00793E11 = {
-						CreatedOnToolsVersion = 26.0.1;
-						TestTargetID = 7C6EFDE22E9EC3FB00793E11;
-					};
-					7C6EFDFB2E9EC3FC00793E11 = {
 						CreatedOnToolsVersion = 26.0.1;
 						TestTargetID = 7C6EFDE22E9EC3FB00793E11;
 					};
@@ -215,7 +166,6 @@
 			targets = (
 				7C6EFDE22E9EC3FB00793E11 /* TicketSeller-iOS */,
 				7C6EFDF12E9EC3FC00793E11 /* TicketSeller-iOSTests */,
-				7C6EFDFB2E9EC3FC00793E11 /* TicketSeller-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,13 +179,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7C6EFDF02E9EC3FC00793E11 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7C6EFDFA2E9EC3FC00793E11 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -259,13 +202,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C6EFDF82E9EC3FC00793E11 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -273,11 +209,6 @@
 			isa = PBXTargetDependency;
 			target = 7C6EFDE22E9EC3FB00793E11 /* TicketSeller-iOS */;
 			targetProxy = 7C6EFDF32E9EC3FC00793E11 /* PBXContainerItemProxy */;
-		};
-		7C6EFDFE2E9EC3FC00793E11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7C6EFDE22E9EC3FB00793E11 /* TicketSeller-iOS */;
-			targetProxy = 7C6EFDFD2E9EC3FC00793E11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -413,6 +344,7 @@
 				DEVELOPMENT_TEAM = AAP9K94BH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TicketSeller-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -446,6 +378,7 @@
 				DEVELOPMENT_TEAM = AAP9K94BH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TicketSeller-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -513,48 +446,6 @@
 			};
 			name = Release;
 		};
-		7C6EFE0D2E9EC3FC00793E11 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AAP9K94BH2;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TicketSeller-iOSUITests/Info.plist";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.legionofhorses.mx.TicketSeller-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "TicketSeller-iOS";
-			};
-			name = Debug;
-		};
-		7C6EFE0E2E9EC3FC00793E11 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AAP9K94BH2;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TicketSeller-iOSUITests/Info.plist";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.legionofhorses.mx.TicketSeller-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "TicketSeller-iOS";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,15 +472,6 @@
 			buildConfigurations = (
 				7C6EFE0A2E9EC3FC00793E11 /* Debug */,
 				7C6EFE0B2E9EC3FC00793E11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7C6EFE0C2E9EC3FC00793E11 /* Build configuration list for PBXNativeTarget "TicketSeller-iOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7C6EFE0D2E9EC3FC00793E11 /* Debug */,
-				7C6EFE0E2E9EC3FC00793E11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
