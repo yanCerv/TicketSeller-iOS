@@ -8,17 +8,21 @@
 import Combine
 
 protocol MoviesProvider {
-  func fetchMovies() async throws -> [Movie]
+  func fetchNowPlaying() async throws -> [Movie]
+  func fetchPopular() async throws -> [Movie]
+  func fetchTopRated() async throws -> [Movie]
+  func fetchUpcoming() async throws -> [Movie]
+  func fetchMovieDetail(id: Int) async throws -> MovieDetail
 }
 
 actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   private var anyCancellables: Set<AnyCancellable> = Set<AnyCancellable>()
   
-  func fetchMovies() async throws -> [Movie] {
+  func fetchNowPlaying() async throws -> [Movie] {
     
     return try await withCheckedThrowingContinuation { continuation in
-      self.fetchMoviesPublisher()
+      self.fetchNowPlayingMoviesPublisher()
         .sink { completion in
           if let error = self.error(completion) { // Error
             continuation.resume(throwing: error)
@@ -30,10 +34,95 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
     }
   }
   
+  func fetchPopular() async throws -> [Movie] {
+    
+    return try await withCheckedThrowingContinuation { continuation in
+      self.fetchPopularMoviesPublisher()
+        .sink { completion in
+          if let error = self.error(completion) { // Error
+            continuation.resume(throwing: error)
+          }
+        } receiveValue: { responseData in // Response Data
+          let result = responseData.results
+          continuation.resume(returning: result)
+        }
+        .store(in: &anyCancellables)
+    }
+  }
+  
+  func fetchTopRated() async throws -> [Movie] {
+    return try await withCheckedThrowingContinuation { continuation in
+      self.fetchTopRatedMoviesPublisher()
+        .sink { completion in
+          if let error = self.error(completion) { // Error
+            continuation.resume(throwing: error)
+          }
+        } receiveValue: { responseData in // Response Data
+          let result = responseData.results
+          continuation.resume(returning: result)
+        }
+        .store(in: &anyCancellables)
+    }
+  }
+  
+  func fetchUpcoming() async throws -> [Movie] {
+    return try await withCheckedThrowingContinuation { continuation in
+      self.fetchUpcomingMoviesPublisher()
+        .sink { completion in
+          if let error = self.error(completion) { // Error
+            continuation.resume(throwing: error)
+          }
+        } receiveValue: { responseData in // Response Data
+          let result = responseData.results
+          continuation.resume(returning: result)
+        }
+        .store(in: &anyCancellables)
+    }
+  }
+  
+  func fetchMovieDetail(id: Int) async throws -> MovieDetail {
+    return try await withCheckedThrowingContinuation { continuation in
+      self.fetchMovieDetailsPublisher(movieId: id)
+        .sink { completion in
+          if let error = self.error(completion) { // Error
+            continuation.resume(throwing: error)
+          }
+        } receiveValue: { responseData in // Response Data
+          let result = responseData
+          continuation.resume(returning: result)
+        }
+        .store(in: &anyCancellables)
+    }
+  }
+  
   //MARK: - Methods PublisherData Result
   
-  private func fetchMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
-    let requestModel = MoviesClientResources.fetchMovies.requestModel
+  private func fetchNowPlayingMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
+    let requestModel = MoviesClientResources.fetchNowPlaying.requestModel
+    
+    return request(with: requestModel)
+  }
+  
+  private func fetchPopularMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
+    let requestModel = MoviesClientResources.fetchPopular.requestModel
+    
+    return request(with: requestModel)
+  }
+  
+  private func fetchTopRatedMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
+    let requestModel = MoviesClientResources.fetchTopRated.requestModel
+    
+    return request(with: requestModel)
+  }
+  
+  private func fetchUpcomingMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
+    let requestModel = MoviesClientResources.fetchUpcoming.requestModel
+    
+    return request(with: requestModel)
+  }
+  
+  private func fetchMovieDetailsPublisher(movieId: Int) -> PublisherResult<MovieDetail> {
+    let requestModel = MoviesClientResources.fetchDetail(movieId: movieId).requestModel
     
     return request(with: requestModel)
   }

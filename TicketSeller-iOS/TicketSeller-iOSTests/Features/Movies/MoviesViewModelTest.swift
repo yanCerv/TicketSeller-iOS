@@ -20,20 +20,20 @@ final class MoviesViewModelTest: XCTestCase {
     viewModel = nil
   }
   
-  func testFetchMovieOnSuccess() {
+  func testFetchMovieOnSuccess() async {
     XCTAssertNotNil(viewModel)
-  }
-  
-  func testPerformanceExample() throws {
-    // This is an example of a performance test case.
-    self.measure {
-      // Put the code you want to measure the time of here.
-    }
+    
+    await viewModel.didFetchMovies()
+    
+    XCTAssertFalse(viewModel.movies.isEmpty)
+    XCTAssertTrue(viewModel.errorMessage.isEmpty)
   }
   
   final class MockMoviesClient: MoviesProvider {
+    
+    
     func fetchMovies() async throws -> [Movie] {
-      return []
+      return [Movie(id: 1, title: "", originalTitle: "", overview: "", posterPath: "", backdropPath: "", releaseDate: "", originalLanguage: "", voteAverage:  0.0)]
     }
   }
 }

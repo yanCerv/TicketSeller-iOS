@@ -12,9 +12,19 @@ struct MoviesView: View {
   @State var viewModel: MoviesViewModel = MoviesViewModel()
   
   var body: some View {
-    Text("MoviesView")
-      .task {
-        await viewModel.didFetchMovies()
+    ScrollView {
+      VStack {
+        MovieCardList(title: "En Cartelera", movies: viewModel.nowPlaying)
+        MovieCardList(title: "Populares", movies: viewModel.popularMovies)
+        MovieCardList(title: "Mas Votados", movies: viewModel.topRatedMovies)
+        MovieCardList(title: "Proximamente", movies: viewModel.upcomingMovies)
       }
+      .task {
+        await viewModel.didFetchData()
+      }
+    }
+    .refreshable {
+      await viewModel.didFetchData()
+    }
   }
 }

@@ -6,5 +6,10 @@
 //
 
 enum Paths: String {
-  case movies = "/3/movie/now_playing"
+  // Movies
+  case nowPlaying = "/3/movie/now_playing"
+  case popular = "/3/movie/popular"
+  case topRated = "/3/movie/top_rated"
+  case upcoming = "/3/movie/upcoming"
+  case movieDetail = "/3/movie"
 }
