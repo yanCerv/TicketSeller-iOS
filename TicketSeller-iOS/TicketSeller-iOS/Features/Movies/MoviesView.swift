@@ -38,3 +38,8 @@ struct MoviesView: View {
     }
   }
 }
+
+#Preview {
+  MoviesView()
+    .environmentObject(MainNavigation())
+}
