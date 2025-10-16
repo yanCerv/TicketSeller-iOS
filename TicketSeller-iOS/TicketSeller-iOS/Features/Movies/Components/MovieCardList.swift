@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MovieCardList: View {
+  @EnvironmentObject var navigation: MainNavigation
   let title: String
   let movies: [Movie]
   

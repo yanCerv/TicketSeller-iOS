@@ -32,7 +32,7 @@ extension MoviesClientResources {
       let path = Paths.upcoming
       return RequestModel(path: path.rawValue, method: .get, queryItems: queryItems())
     case .fetchDetail(let id):
-      let path = "\(Paths.movieDetail)/\(id)"
+      let path = "\(Paths.movieDetail.rawValue)/\(id)"
       return RequestModel(path: path, method: .get, queryItems: queryItems(havePage: false))
     }
   }

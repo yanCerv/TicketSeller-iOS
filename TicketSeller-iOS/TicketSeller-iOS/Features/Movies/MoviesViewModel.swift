@@ -11,6 +11,8 @@ import SwiftUI
 final class MoviesViewModel {
   
   private let client: MoviesProvider
+  private var isLoaded: Bool = false
+  
   var nowPlaying: [Movie] = []
   var popularMovies: [Movie] = []
   var topRatedMovies: [Movie] = []
@@ -21,7 +23,14 @@ final class MoviesViewModel {
     self.client = client
   }
   
+  func didReloadData() async {
+    isLoaded = false
+    await didFetchData()
+  }
+  
   func didFetchData() async {
+    guard !isLoaded else { return }
+    
     await withThrowingTaskGroup(of: Void.self) { group in
       group.addTask {
         let movies = try await self.client.fetchNowPlaying()
@@ -45,7 +54,9 @@ final class MoviesViewModel {
 
       do {
         try await group.waitForAll()
+        isLoaded = true
       } catch {
+        isLoaded = true
         if let error = error as? ErrorHandler {
           self.errorMessage = error.message
         }
