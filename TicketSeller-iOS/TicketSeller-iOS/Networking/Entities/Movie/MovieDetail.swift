@@ -30,6 +30,16 @@ struct MovieDetail: Decodable, Hashable {
   let productionCountries: [ProductionCountry]
   let spokenLanguages: [SpokenLanguage]
   
+  var runtimeWrapp: Int {
+    guard let runtime else { return 0 }
+    return runtime
+  }
+  
+  var releaseDateWrapp: String{
+    guard let releaseDate else { return "" }
+    return releaseDate
+  }
+  
   enum CodingKeys: String, CodingKey {
     case id, title, overview, tagline, homepage, runtime, budget, revenue, status, popularity, adult
     case originalTitle = "original_title"
@@ -42,6 +52,11 @@ struct MovieDetail: Decodable, Hashable {
     case productionCompanies = "production_companies"
     case productionCountries = "production_countries"
     case spokenLanguages = "spoken_languages"
+  }
+  
+  static func posterURL(from movieDetail: MovieDetail) -> URL? {
+    guard let posterPath = movieDetail.posterPath else { return nil }
+    return URL(string: "\(Constants.movieUrl)\(Constants.movieSize)\(posterPath)")
   }
 }
 

@@ -1,661 +1,1608 @@
 {
-  "showtimes": [
+  "result": [
     {
       "movieId": 13,
-      "times": [
-        "20:30",
-        "17:30",
-        "23:30"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 30
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 2",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 5",
+          "screenType": "3D",
+          "price": 50
+        }
       ]
     },
     {
       "movieId": 122,
-      "times": [
-        "14:30",
-        "16:00",
-        "20:30",
-        "17:30",
-        "22:00",
-        "13:00",
-        "10:00"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 4",
+          "screenType": "2D",
+          "price": 38
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "3D Dolby Atmos",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 129,
-      "times": [
-        "17:30",
-        "10:00",
-        "22:00",
-        "19:00",
-        "23:30"
+      "showtimes": [
+        {
+          "time": "22:15",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 40
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 2",
+          "screenType": "4K",
+          "price": 25
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 2",
+          "screenType": "2D",
+          "price": 40
+        }
       ]
     },
     {
       "movieId": 155,
-      "times": [
-        "23:30",
-        "19:00",
-        "17:30",
-        "22:00",
-        "10:00",
-        "11:30",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 2",
+          "screenType": "3D Dolby Atmos",
+          "price": 50
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "3D",
+          "price": 42
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 238,
-      "times": [
-        "11:30",
-        "22:00",
-        "14:30",
-        "20:30",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 6",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 42
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 5",
+          "screenType": "3D",
+          "price": 30
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 3",
+          "screenType": "2D",
+          "price": 35
+        }
       ]
     },
     {
       "movieId": 240,
-      "times": [
-        "23:30",
-        "13:00",
-        "17:30",
-        "14:30",
-        "11:30",
-        "10:00",
-        "22:00"
+      "showtimes": [
+        {
+          "time": "13:30",
+          "cinema": "Cine 6",
+          "screenType": "2D",
+          "price": 50
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 1",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        }
       ]
     },
     {
       "movieId": 278,
-      "times": [
-        "10:00",
-        "19:00",
-        "13:00",
-        "23:30",
-        "14:30",
-        "11:30"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 6",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        }
       ]
     },
     {
       "movieId": 346,
-      "times": [
-        "23:30",
-        "10:00",
-        "11:30",
-        "20:30"
+      "showtimes": [
+        {
+          "time": "13:30",
+          "cinema": "Cine 6",
+          "screenType": "3D",
+          "price": 40
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 1",
+          "screenType": "IMAX",
+          "price": 50
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 35
+        }
       ]
     },
     {
       "movieId": 389,
-      "times": [
-        "23:30",
-        "10:00",
-        "19:00",
-        "11:30",
-        "16:00",
-        "22:00",
-        "20:30",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "15:15",
+          "cinema": "Cine 6",
+          "screenType": "3D Dolby Atmos",
+          "price": 50
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 1",
+          "screenType": "IMAX",
+          "price": 42
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 25
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 3",
+          "screenType": "3D Dolby Atmos",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 424,
-      "times": [
-        "16:00",
-        "23:30",
-        "20:30"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 6",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 25
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 5",
+          "screenType": "IMAX",
+          "price": 40
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 4",
+          "screenType": "4K",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 429,
-      "times": [
-        "17:30",
-        "14:30",
-        "19:00",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "22:15",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 25
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 6",
+          "screenType": "IMAX",
+          "price": 35
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 25
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 5",
+          "screenType": "4K",
+          "price": 30
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 5",
+          "screenType": "2D",
+          "price": 40
+        }
       ]
     },
     {
       "movieId": 497,
-      "times": [
-        "20:30",
-        "17:30",
-        "11:30",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 6",
+          "screenType": "4K Dolby Atmos",
+          "price": 25
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 42
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 3",
+          "screenType": "3D",
+          "price": 25
+        }
       ]
     },
     {
       "movieId": 637,
-      "times": [
-        "16:00",
-        "23:30",
-        "10:00",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 40
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 5",
+          "screenType": "3D Dolby Atmos",
+          "price": 35
+        }
       ]
     },
     {
       "movieId": 680,
-      "times": [
-        "22:00",
-        "11:30",
-        "23:30",
-        "13:00",
-        "10:00",
-        "14:30",
-        "19:00"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 5",
+          "screenType": "3D Dolby Atmos",
+          "price": 38
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 35
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 1",
+          "screenType": "2D",
+          "price": 50
+        }
       ]
     },
     {
       "movieId": 769,
-      "times": [
-        "11:30",
-        "20:30",
-        "19:00",
-        "16:00",
-        "10:00"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 1",
+          "screenType": "3D",
+          "price": 50
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 4",
+          "screenType": "4K",
+          "price": 50
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 5",
+          "screenType": "4K",
+          "price": 38
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 6",
+          "screenType": "3D Dolby Atmos",
+          "price": 30
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "3D Dolby Atmos",
+          "price": 35
+        }
       ]
     },
     {
       "movieId": 3933,
-      "times": [
-        "11:30",
-        "13:00",
-        "22:00",
-        "19:00",
-        "10:00",
-        "14:30",
-        "23:30",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "4K",
+          "price": 45
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 5",
+          "screenType": "2D",
+          "price": 40
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 42
+        }
       ]
     },
     {
       "movieId": 12477,
-      "times": [
-        "20:30",
-        "16:00",
-        "10:00",
-        "23:30",
-        "19:00",
-        "13:00"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 5",
+          "screenType": "4K Dolby Atmos",
+          "price": 38
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 2",
+          "screenType": "2D",
+          "price": 40
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 40
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 5",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        }
       ]
     },
     {
       "movieId": 14836,
-      "times": [
-        "19:00",
-        "23:30",
-        "13:00"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "3D Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 19404,
-      "times": [
-        "19:00",
-        "11:30",
-        "20:30",
-        "17:30",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 6",
+          "screenType": "4K",
+          "price": 45
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 157336,
-      "times": [
-        "19:00",
-        "16:00",
-        "13:00",
-        "22:00",
-        "10:00",
-        "17:30",
-        "11:30",
-        "23:30"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 6",
+          "screenType": "3D",
+          "price": 25
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 1",
+          "screenType": "3D",
+          "price": 38
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 1",
+          "screenType": "4K",
+          "price": 42
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 40
+        }
       ]
     },
     {
       "movieId": 338969,
-      "times": [
-        "13:00",
-        "16:00",
-        "23:30",
-        "19:00",
-        "11:30"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 6",
+          "screenType": "2D",
+          "price": 42
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 50
+        }
       ]
     },
     {
       "movieId": 372058,
-      "times": [
-        "14:30",
-        "19:00",
-        "13:00",
-        "17:30",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "13:30",
+          "cinema": "Cine 6",
+          "screenType": "4K Dolby Atmos",
+          "price": 38
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 6",
+          "screenType": "2D",
+          "price": 40
+        }
       ]
     },
     {
       "movieId": 496243,
-      "times": [
-        "13:00",
-        "22:00",
-        "11:30",
-        "20:30",
-        "16:00",
-        "17:30"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 35
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 30
+        }
       ]
     },
     {
       "movieId": 533533,
-      "times": [
-        "13:00",
-        "23:30",
-        "17:30",
-        "10:00",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 5",
+          "screenType": "2D",
+          "price": 25
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 42
+        }
       ]
     },
     {
       "movieId": 575265,
-      "times": [
-        "14:30",
-        "13:00",
-        "10:00",
-        "11:30",
-        "19:00",
-        "17:30",
-        "23:30",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 2",
+          "screenType": "4K",
+          "price": 30
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 6",
+          "screenType": "4K Dolby Atmos",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 617126,
-      "times": [
-        "14:30",
-        "13:00",
-        "23:30",
-        "17:30",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "13:30",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 45
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 1",
+          "screenType": "4K",
+          "price": 40
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 6",
+          "screenType": "4K",
+          "price": 42
+        }
       ]
     },
     {
       "movieId": 755898,
-      "times": [
-        "20:30",
-        "16:00",
-        "19:00",
-        "22:00",
-        "13:00",
-        "23:30",
-        "10:00",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "22:15",
+          "cinema": "Cine 6",
+          "screenType": "2D",
+          "price": 45
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 5",
+          "screenType": "IMAX",
+          "price": 42
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 5",
+          "screenType": "4K Dolby Atmos",
+          "price": 38
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 6",
+          "screenType": "IMAX",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 793387,
-      "times": [
-        "10:00",
-        "23:30",
-        "16:00",
-        "22:00"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 50
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 803796,
-      "times": [
-        "19:00",
-        "22:00",
-        "13:00",
-        "23:30",
-        "17:30"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 30
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 3",
+          "screenType": "2D",
+          "price": 40
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 6",
+          "screenType": "3D",
+          "price": 35
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 6",
+          "screenType": "3D",
+          "price": 25
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 1",
+          "screenType": "3D",
+          "price": 35
+        }
       ]
     },
     {
       "movieId": 941109,
-      "times": [
-        "10:00",
-        "16:00",
-        "17:30",
-        "22:00"
+      "showtimes": [
+        {
+          "time": "22:15",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "3D Dolby Atmos",
+          "price": 40
+        }
       ]
     },
     {
       "movieId": 974397,
-      "times": [
-        "19:00",
-        "17:30",
-        "23:30",
-        "16:00",
-        "22:00",
-        "10:00"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 5",
+          "screenType": "4K Dolby Atmos",
+          "price": 38
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 30
+        }
       ]
     },
     {
       "movieId": 980477,
-      "times": [
-        "20:30",
-        "10:00",
-        "19:00",
-        "23:30",
-        "11:30",
-        "14:30",
-        "16:00",
-        "13:00"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 4",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 5",
+          "screenType": "2D",
+          "price": 42
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 5",
+          "screenType": "2D",
+          "price": 35
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 4",
+          "screenType": "4K",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 986097,
-      "times": [
-        "14:30",
-        "13:00",
-        "11:30"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 25
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 50
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 5",
+          "screenType": "4K",
+          "price": 30
+        }
       ]
     },
     {
       "movieId": 1007734,
-      "times": [
-        "17:30",
-        "22:00",
-        "14:30",
-        "10:00",
-        "19:00"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 1010756,
-      "times": [
-        "22:00",
-        "13:00",
-        "16:00",
-        "23:30",
-        "11:30",
-        "10:00"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 6",
+          "screenType": "4K",
+          "price": 42
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 40
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 2",
+          "screenType": "3D",
+          "price": 45
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 2",
+          "screenType": "3D",
+          "price": 40
+        }
       ]
     },
     {
       "movieId": 1038392,
-      "times": [
-        "19:00",
-        "11:30",
-        "22:00",
-        "14:30",
-        "20:30",
-        "17:30",
-        "23:30"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 1",
+          "screenType": "3D",
+          "price": 40
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 1",
+          "screenType": "3D",
+          "price": 50
+        }
       ]
     },
     {
       "movieId": 1054867,
-      "times": [
-        "19:00",
-        "10:00",
-        "14:30",
-        "16:00",
-        "23:30"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 3",
+          "screenType": "3D Dolby Atmos",
+          "price": 25
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 2",
+          "screenType": "4K",
+          "price": 35
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 3",
+          "screenType": "2D",
+          "price": 30
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 40
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 2",
+          "screenType": "3D Dolby Atmos",
+          "price": 25
+        }
       ]
     },
     {
       "movieId": 1061474,
-      "times": [
-        "16:00",
-        "23:30",
-        "22:00",
-        "13:00",
-        "19:00",
-        "10:00",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "22:15",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 40
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 3",
+          "screenType": "3D",
+          "price": 50
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 4",
+          "screenType": "2D",
+          "price": 30
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 5",
+          "screenType": "4K",
+          "price": 38
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 5",
+          "screenType": "3D Dolby Atmos",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 1078605,
-      "times": [
-        "23:30",
-        "20:30",
-        "17:30",
-        "11:30",
-        "16:00",
-        "14:30",
-        "10:00"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 35
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 6",
+          "screenType": "IMAX",
+          "price": 30
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 2",
+          "screenType": "4K",
+          "price": 30
+        }
       ]
     },
     {
       "movieId": 1086910,
-      "times": [
-        "22:00",
-        "13:00",
-        "16:00",
-        "14:30",
-        "10:00",
-        "20:30",
-        "19:00"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 2",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 45
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 3",
+          "screenType": "3D",
+          "price": 30
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 3",
+          "screenType": "3D Dolby Atmos",
+          "price": 50
+        }
       ]
     },
     {
       "movieId": 1109086,
-      "times": [
-        "14:30",
-        "19:00",
-        "10:00"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "3D Dolby Atmos",
+          "price": 30
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 6",
+          "screenType": "4K",
+          "price": 45
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 5",
+          "screenType": "3D",
+          "price": 40
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 5",
+          "screenType": "3D",
+          "price": 30
+        }
       ]
     },
     {
       "movieId": 1186350,
-      "times": [
-        "19:00",
-        "17:30",
-        "22:00",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "13:30",
+          "cinema": "Cine 2",
+          "screenType": "3D",
+          "price": 25
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 1",
+          "screenType": "2D",
+          "price": 50
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 35
+        }
       ]
     },
     {
       "movieId": 1197137,
-      "times": [
-        "19:00",
-        "17:30",
-        "10:00",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 50
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 25
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 2",
+          "screenType": "4K",
+          "price": 45
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 30
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        }
       ]
     },
     {
       "movieId": 1218925,
-      "times": [
-        "23:30",
-        "10:00",
-        "14:30",
-        "19:00",
-        "13:00",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 2",
+          "screenType": "2D",
+          "price": 45
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 5",
+          "screenType": "3D Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 5",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 30
+        }
       ]
     },
     {
       "movieId": 1236470,
-      "times": [
-        "13:00",
-        "20:30",
-        "17:30",
-        "14:30",
-        "23:30"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 2",
+          "screenType": "3D Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 1",
+          "screenType": "4K",
+          "price": 45
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 50
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 50
+        }
       ]
     },
     {
       "movieId": 1241921,
-      "times": [
-        "22:00",
-        "13:00",
-        "14:30",
-        "20:30"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 30
+        }
       ]
     },
     {
       "movieId": 1242011,
-      "times": [
-        "19:00",
-        "17:30",
-        "10:00",
-        "11:30",
-        "22:00",
-        "16:00",
-        "13:00"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 6",
+          "screenType": "4K Dolby Atmos",
+          "price": 30
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 45
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 25
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 6",
+          "screenType": "4K",
+          "price": 38
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 5",
+          "screenType": "4K Dolby Atmos",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 1242898,
-      "times": [
-        "19:00",
-        "17:30",
-        "20:30"
+      "showtimes": [
+        {
+          "time": "17:00",
+          "cinema": "Cine 4",
+          "screenType": "4K",
+          "price": 40
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 4",
+          "screenType": "3D Dolby Atmos",
+          "price": 50
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 1245993,
-      "times": [
-        "20:30",
-        "22:00",
-        "11:30",
-        "13:00",
-        "19:00",
-        "23:30",
-        "10:00",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 6",
+          "screenType": "IMAX",
+          "price": 50
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 5",
+          "screenType": "4K",
+          "price": 30
+        }
       ]
     },
     {
       "movieId": 1246049,
-      "times": [
-        "23:30",
-        "20:30",
-        "19:00",
-        "17:30"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 35
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 6",
+          "screenType": "3D Dolby Atmos",
+          "price": 40
+        }
       ]
     },
     {
       "movieId": 1251717,
-      "times": [
-        "10:00",
-        "20:30",
-        "23:30",
-        "13:00",
-        "19:00",
-        "14:30",
-        "22:00"
+      "showtimes": [
+        {
+          "time": "11:45",
+          "cinema": "Cine 5",
+          "screenType": "3D Dolby Atmos",
+          "price": 38
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 3",
+          "screenType": "3D",
+          "price": 30
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 4",
+          "screenType": "3D Dolby Atmos",
+          "price": 50
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 42
+        }
       ]
     },
     {
       "movieId": 1257009,
-      "times": [
-        "16:00",
-        "14:30",
-        "13:00",
-        "17:30",
-        "10:00",
-        "23:30"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 6",
+          "screenType": "IMAX",
+          "price": 30
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 5",
+          "screenType": "2D",
+          "price": 40
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 3",
+          "screenType": "4K",
+          "price": 38
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 50
+        }
       ]
     },
     {
       "movieId": 1267319,
-      "times": [
-        "22:00",
-        "16:00",
-        "23:30",
-        "20:30",
-        "14:30",
-        "11:30",
-        "13:00"
+      "showtimes": [
+        {
+          "time": "15:15",
+          "cinema": "Cine 1",
+          "screenType": "3D Dolby Atmos",
+          "price": 42
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 1277988,
-      "times": [
-        "11:30",
-        "16:00",
-        "14:30",
-        "10:00",
-        "20:30",
-        "22:00",
-        "19:00"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 4",
+          "screenType": "IMAX",
+          "price": 45
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 4",
+          "screenType": "2D",
+          "price": 25
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 2",
+          "screenType": "3D Dolby Atmos",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 1280282,
-      "times": [
-        "23:30",
-        "22:00",
-        "17:30",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "15:15",
+          "cinema": "Cine 2",
+          "screenType": "3D Dolby Atmos",
+          "price": 38
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 3",
+          "screenType": "3D",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 1284120,
-      "times": [
-        "20:30",
-        "17:30",
-        "19:00",
-        "14:30",
-        "16:00",
-        "13:00"
+      "showtimes": [
+        {
+          "time": "20:30",
+          "cinema": "Cine 1",
+          "screenType": "IMAX",
+          "price": 50
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 2",
+          "screenType": "IMAX",
+          "price": 42
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 4",
+          "screenType": "2D",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 1290879,
-      "times": [
-        "22:00",
-        "13:00",
-        "10:00",
-        "16:00",
-        "20:30",
-        "17:30",
-        "11:30",
-        "19:00"
+      "showtimes": [
+        {
+          "time": "13:30",
+          "cinema": "Cine 3",
+          "screenType": "4K Dolby Atmos",
+          "price": 30
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 5",
+          "screenType": "3D",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 1311031,
-      "times": [
-        "11:30",
-        "13:00",
-        "10:00",
-        "19:00"
+      "showtimes": [
+        {
+          "time": "22:15",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 6",
+          "screenType": "2D",
+          "price": 30
+        },
+        {
+          "time": "10:00",
+          "cinema": "Cine 4",
+          "screenType": "2D",
+          "price": 30
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 6",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        }
       ]
     },
     {
       "movieId": 1328803,
-      "times": [
-        "11:30",
-        "14:30",
-        "23:30",
-        "22:00",
-        "17:30",
-        "10:00",
-        "13:00",
-        "20:30"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 6",
+          "screenType": "4K",
+          "price": 25
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 6",
+          "screenType": "3D",
+          "price": 45
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 5",
+          "screenType": "2D",
+          "price": 40
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 50
+        }
       ]
     },
     {
       "movieId": 1352755,
-      "times": [
-        "17:30",
-        "10:00",
-        "14:30"
+      "showtimes": [
+        {
+          "time": "10:00",
+          "cinema": "Cine 3",
+          "screenType": "3D Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "22:15",
+          "cinema": "Cine 1",
+          "screenType": "4K Dolby Atmos",
+          "price": 45
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 5",
+          "screenType": "4K Dolby Atmos",
+          "price": 40
+        }
       ]
     },
     {
       "movieId": 1422096,
-      "times": [
-        "23:30",
-        "11:30",
-        "10:00"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 4",
+          "screenType": "3D",
+          "price": 38
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 5",
+          "screenType": "2D",
+          "price": 38
+        },
+        {
+          "time": "13:30",
+          "cinema": "Cine 1",
+          "screenType": "4K",
+          "price": 50
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 3",
+          "screenType": "IMAX",
+          "price": 45
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 6",
+          "screenType": "3D",
+          "price": 45
+        }
       ]
     },
     {
       "movieId": 1547527,
-      "times": [
-        "23:30",
-        "11:30",
-        "20:30",
-        "10:00"
+      "showtimes": [
+        {
+          "time": "22:15",
+          "cinema": "Cine 2",
+          "screenType": "IMAX",
+          "price": 45
+        },
+        {
+          "time": "15:15",
+          "cinema": "Cine 2",
+          "screenType": "4K Dolby Atmos",
+          "price": 40
+        },
+        {
+          "time": "20:30",
+          "cinema": "Cine 5",
+          "screenType": "IMAX",
+          "price": 38
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 6",
+          "screenType": "4K Dolby Atmos",
+          "price": 38
+        }
       ]
     },
     {
       "movieId": 1552819,
-      "times": [
-        "19:00",
-        "14:30",
-        "16:00"
+      "showtimes": [
+        {
+          "time": "18:45",
+          "cinema": "Cine 5",
+          "screenType": "IMAX",
+          "price": 45
+        },
+        {
+          "time": "18:45",
+          "cinema": "Cine 5",
+          "screenType": "IMAX",
+          "price": 38
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 4",
+          "screenType": "4K Dolby Atmos",
+          "price": 50
+        },
+        {
+          "time": "17:00",
+          "cinema": "Cine 6",
+          "screenType": "4K Dolby Atmos",
+          "price": 35
+        },
+        {
+          "time": "11:45",
+          "cinema": "Cine 5",
+          "screenType": "3D Dolby Atmos",
+          "price": 35
+        }
       ]
     }
   ]

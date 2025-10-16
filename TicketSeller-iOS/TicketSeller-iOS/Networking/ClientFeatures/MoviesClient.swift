@@ -13,6 +13,7 @@ protocol MoviesProvider {
   func fetchTopRated() async throws -> [Movie]
   func fetchUpcoming() async throws -> [Movie]
   func fetchMovieDetail(id: Int) async throws -> MovieDetail
+  func fetchMovieShowtime(id: Int) async throws -> MovieShowtime
 }
 
 actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
@@ -93,6 +94,12 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
         }
         .store(in: &anyCancellables)
     }
+  }
+  
+  func fetchMovieShowtime(id: Int) async throws -> MovieShowtime {
+    _ = await ShowtimeRepository(movieId: id)
+    let movieShowtime = await ShowtimeRepository.getMovieShowtimes(from: id)
+    return movieShowtime
   }
   
   //MARK: - Methods PublisherData Result
