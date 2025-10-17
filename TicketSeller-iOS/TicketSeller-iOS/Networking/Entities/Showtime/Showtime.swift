@@ -13,6 +13,10 @@ struct MovieShowtime: Codable, Hashable {
     self.movieId = movieId
     self.showtimes = showtimes
   }
+  
+  static func emptyObject() -> MovieShowtime {
+    return MovieShowtime()
+  }
 }
 
 struct Showtime: Codable, Hashable {

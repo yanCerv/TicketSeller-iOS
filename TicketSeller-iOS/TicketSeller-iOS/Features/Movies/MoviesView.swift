@@ -32,7 +32,9 @@ struct MoviesView: View {
       .navigationDestination(for: MainNavigationPath.self) { path in
         switch path {
         case .movieShowtimeDetail(let id):
-          MovieShowtimeView(viewModel: MovieSwhotimeViewModel(movieId: id))
+          MovieShowtimeView(viewModel: MovieShowtimeViewModel(movieId: id))
+        case .seatSelection(let showtime, let movieDetail, let seatQuantitySelected):
+          SeatSelectionView(viewModel: SeatSelectionViewModel(movieDetail: movieDetail, showtime: showtime, seatQuantitySelected: seatQuantitySelected))
         }
       }
     }

@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct MovieShowtimeView: View {
-  
-  @State var viewModel: MovieSwhotimeViewModel
+  @EnvironmentObject var navigation: MainNavigation
+  @State var viewModel: MovieShowtimeViewModel
   
   var body: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 16) {
-        if let detail = viewModel.movieDetail {
-          MovieHeaderView(movie: detail)
-     //     MovieDescriptionView(movie: detail)
-        }
-
-        if let showtimes = viewModel.movieShowtime?.showtimes {
-          Text("Horarios disponibles")
-            .font(.title2)
-            .bold()
-            .padding(.top)
-
-          ForEach(showtimes, id: \.self) { showtime in
-            ShowtimeCardView(showtime: showtime)
+        
+        MovieHeaderView(movie: viewModel.movieDetailWrapped)
+        
+        Text("Horarios disponibles")
+          .font(.title2)
+          .bold()
+          .padding(.top)
+        
+        ForEach(viewModel.movieShowtimeWrapped.showtimes, id: \.self) { showtime in
+          ShowtimeCardView(showtime: showtime) { selectedShowtime in
+            viewModel.didSelected(selectedShowtime)
           }
         }
       }
       .padding()
+    }
+    .sheet(isPresented: $viewModel.showSeatQuantitySelection) {
+      SeatQuantitySelectionView(viewModel: $viewModel)
+        .presentationDetents([.fraction(0.35)])
     }
     .task {
       await viewModel.didFetchData()
@@ -72,6 +74,7 @@ struct MovieDescriptionView: View {
 
 struct ShowtimeCardView: View {
   let showtime: Showtime
+  let onSelect: (Showtime) -> Void
   
   var body: some View {
     VStack(alignment: .leading, spacing: 4) {
@@ -93,7 +96,7 @@ struct ShowtimeCardView: View {
           Text(showtime.price, format: .currency(code: "USD"))
             .font(.subheadline)
           Button {
-            // Acción futura
+            onSelect(showtime)
           } label: {
             Text("Seleccionar")
               .font(.caption.weight(.semibold))

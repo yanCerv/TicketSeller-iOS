@@ -40,6 +40,30 @@ struct MovieDetail: Decodable, Hashable {
     return releaseDate
   }
   
+  init(id: Int, title: String, originalTitle: String, overview: String, tagline: String? = nil, homepage: String? = nil, posterPath: String? = nil, backdropPath: String? = nil, runtime: Int? = nil, budget: Int? = nil, revenue: Int? = nil, releaseDate: String? = nil, status: String? = nil, popularity: Double? = nil, voteAverage: Double? = nil, voteCount: Int? = nil, adult: Bool, genres: [Genre], productionCompanies: [ProductionCompany], productionCountries: [ProductionCountry], spokenLanguages: [SpokenLanguage]) {
+    self.id = id
+    self.title = title
+    self.originalTitle = originalTitle
+    self.overview = overview
+    self.tagline = tagline
+    self.homepage = homepage
+    self.posterPath = posterPath
+    self.backdropPath = backdropPath
+    self.runtime = runtime
+    self.budget = budget
+    self.revenue = revenue
+    self.releaseDate = releaseDate
+    self.status = status
+    self.popularity = popularity
+    self.voteAverage = voteAverage
+    self.voteCount = voteCount
+    self.adult = adult
+    self.genres = genres
+    self.productionCompanies = productionCompanies
+    self.productionCountries = productionCountries
+    self.spokenLanguages = spokenLanguages
+  }
+  
   enum CodingKeys: String, CodingKey {
     case id, title, overview, tagline, homepage, runtime, budget, revenue, status, popularity, adult
     case originalTitle = "original_title"
@@ -57,6 +81,10 @@ struct MovieDetail: Decodable, Hashable {
   static func posterURL(from movieDetail: MovieDetail) -> URL? {
     guard let posterPath = movieDetail.posterPath else { return nil }
     return URL(string: "\(Constants.movieUrl)\(Constants.movieSize)\(posterPath)")
+  }
+  
+  static func emptyObject() -> MovieDetail {
+    return MovieDetail(id: 0, title: "", originalTitle: "", overview: "", adult: false, genres: [], productionCompanies: [], productionCountries: [], spokenLanguages: [])
   }
 }
 
