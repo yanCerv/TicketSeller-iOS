@@ -23,17 +23,42 @@ final class MoviesViewModelTest: XCTestCase {
   func testFetchMovieOnSuccess() async {
     XCTAssertNotNil(viewModel)
     
-    await viewModel.didFetchMovies()
+    await viewModel.didFetchData()
     
-    XCTAssertFalse(viewModel.movies.isEmpty)
+    XCTAssertFalse(viewModel.nowPlaying.isEmpty)
+    XCTAssertFalse(viewModel.popularMovies.isEmpty)
+    XCTAssertFalse(viewModel.topRatedMovies.isEmpty)
+    XCTAssertFalse(viewModel.upcomingMovies.isEmpty)
     XCTAssertTrue(viewModel.errorMessage.isEmpty)
   }
   
   final class MockMoviesClient: MoviesProvider {
     
+    private let emptyObject = [Movie(id: 1, title: "", originalTitle: "", overview: "", posterPath: "", backdropPath: "", releaseDate: "", originalLanguage: "", voteAverage:  0.0)]
+
     
-    func fetchMovies() async throws -> [Movie] {
-      return [Movie(id: 1, title: "", originalTitle: "", overview: "", posterPath: "", backdropPath: "", releaseDate: "", originalLanguage: "", voteAverage:  0.0)]
+    func fetchNowPlaying() async throws -> [Movie] {
+      return emptyObject
+    }
+    
+    func fetchPopular() async throws -> [Movie] {
+      return emptyObject
+    }
+    
+    func fetchTopRated() async throws -> [Movie] {
+      return emptyObject
+    }
+    
+    func fetchUpcoming() async throws -> [Movie] {
+      return emptyObject
+    }
+    
+    func fetchMovieDetail(id: Int) async throws -> MovieDetail {
+      MovieDetail.emptyObject()
+    }
+    
+    func fetchMovieShowtime(id: Int) async throws -> MovieShowtime {
+      MovieShowtime.emptyObject()
     }
   }
 }
