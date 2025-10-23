@@ -33,8 +33,15 @@ struct MoviesView: View {
         switch path {
         case .movieShowtimeDetail(let id):
           MovieShowtimeView(viewModel: MovieShowtimeViewModel(movieId: id))
+          
         case .seatSelection(let showtime, let movieDetail, let seatQuantitySelected):
-          SeatSelectionView(viewModel: SeatSelectionViewModel(movieDetail: movieDetail, showtime: showtime, seatQuantitySelected: seatQuantitySelected))
+          SeatSelectionView(viewModel: SeatSelectionViewModel(movieDetail: movieDetail,
+                                                              showtime: showtime,
+                                                              seatQuantitySelected: seatQuantitySelected))
+          
+        case .checkout(let dataPurchase):
+          CheckoutView(viewModel: CheckoutViewModel(dataPurchase: dataPurchase))
+          
         }
       }
     }

@@ -14,6 +14,7 @@ protocol MoviesProvider {
   func fetchUpcoming() async throws -> [Movie]
   func fetchMovieDetail(id: Int) async throws -> MovieDetail
   func fetchMovieShowtime(id: Int) async throws -> MovieShowtime
+  func fetchSeats() async -> [SeatRow]
 }
 
 actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
@@ -100,6 +101,12 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
     _ = await ShowtimeRepository(movieId: id)
     let movieShowtime = await ShowtimeRepository.getMovieShowtimes(from: id)
     return movieShowtime
+  }
+  
+  func fetchSeats() async -> [SeatRow] {
+    let response = ResourceJSON.from(fileName: "SeatMap", type: SeatResponseDTO.self)
+    let rows = response.rows
+    return rows
   }
   
   //MARK: - Methods PublisherData Result
