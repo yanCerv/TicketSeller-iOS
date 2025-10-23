@@ -22,6 +22,7 @@ struct Seat: Decodable, Hashable {
   let position: Position
   
   var isSelected: Bool = false
+  var rowSeat: String = ""
   
   /// Computed properties
   

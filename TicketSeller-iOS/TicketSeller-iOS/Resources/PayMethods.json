@@ -1,0 +1,26 @@
+{
+  "result": [
+    {
+      "id": "apple-pay",
+      "title": "Apple Pay",
+      "iconURL": "https://your-cdn.com/icons/apple-pay.png",
+      "webURL": "https://payment-sandbox.com/applepay",
+      "isActive": false
+    },
+    {
+      "id": "card",
+      "title": "Tarjeta de crédito / débito",
+      "iconURL": "https://cdn-icons-png.flaticon.com/512/633/633611.png",
+      "webURL": "https://iframe.paycard.com/form?id=33242123",
+      "isActive": true
+    },
+    {
+      "id": "paypal",
+      "title": "PayPal",
+      "iconURL": "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg",
+      "webURL": "https://paypal.com/checkout",
+      "isActive": false
+    }
+  ]
+}
+

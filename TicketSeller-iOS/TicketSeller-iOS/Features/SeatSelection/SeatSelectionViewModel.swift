@@ -12,15 +12,18 @@ final class SeatSelectionViewModel {
   
   private let client: MoviesProvider
   
-  let dataPurchase: DataPurchase
+  var dataPurchase: DataPurchase
   let columns: [GridItem]
   
   let numberOfColumns: Int = 20
 
   var movieDetail: MovieDetail!
+  var showtime: Showtime!
+
   var rows: [SeatRow] = []
   var selectedSeats: [Seat] = []
-  var showtime: Showtime!
+  var isActiveButton: Bool = false
+  var isLoaded: Bool = false
   
   //MARK: Init
   
@@ -35,10 +38,12 @@ final class SeatSelectionViewModel {
   //MARK: Methods
   
   func fetchSeats() async {
+    guard !isLoaded else { return }
     let rows = await client.fetchSeats()
     let sorted = order(rows: rows)
     
     self.rows = sorted
+    isLoaded = true
   }
   
   func didSelect(rowName: String, seat: Seat, isSelected: Bool) {
@@ -51,13 +56,16 @@ final class SeatSelectionViewModel {
       let selectedIndex = selectedSeats.firstIndex(where: { $0 == seat }) {
         selectedSeats.remove(at: selectedIndex)
         rows[rowIndex].seats[seatIndex].isSelected = false
+        rows[rowIndex].seats[seatIndex].rowSeat = ""
     } else {
       if selectedSeats.count == dataPurchase.seatQuantitySelected { return }
       rows[rowIndex].seats[seatIndex].isSelected = isSelected
+      rows[rowIndex].seats[seatIndex].rowSeat = rowName
       selectedSeats.append(rows[rowIndex].seats[seatIndex])
     }
     
-    debugPrint(selectedSeats.count)
+    isActiveButton = selectedSeats.count == dataPurchase.seatQuantitySelected
+    dataPurchase.selectedSeats = selectedSeats
   }
   
   //MARK: Private Methods

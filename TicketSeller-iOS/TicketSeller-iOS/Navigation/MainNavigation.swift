@@ -11,6 +11,7 @@ import Combine
 enum MainNavigationPath: Hashable {
   case movieShowtimeDetail(id: Int)
   case seatSelection(showtime: Showtime, movieDetail: MovieDetail, seatQuantitySelected: Int)
+  case checkout(dataPurchase: DataPurchase)
 }
 
 final class MainNavigation: ObservableObject {

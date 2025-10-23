@@ -40,17 +40,10 @@ struct SeatSelectionView: View {
         SeatContent(viewModel: viewModel)
       }
       
-      
-      Button {
-        // TODO
-      } label: {
-        Text("Continuar")
-          .frame(maxWidth: .infinity, maxHeight: 45, alignment: .center)
-          .background(Color.accentColor)
-          .foregroundColor(.white)
-          .cornerRadius(10)
-          .padding([.horizontal], 32)
+      Button("Continuar") {
+        navigation.add(.checkout(dataPurchase: viewModel.dataPurchase))
       }
+      .modifier(ButtonModifier(isEnabled: $viewModel.isActiveButton, maxWidth: .infinity))
     }
     .padding()
     .task {

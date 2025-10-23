@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct DataPurchase {
+struct DataPurchase: Hashable {
   let movieDetail: MovieDetail
   let showtime: Showtime
   let seatQuantitySelected: Int
   let sessionData: SessionData?
+  var selectedSeats: [Seat] = []
   
   init(movieDetail: MovieDetail, showtime: Showtime, sessionData: SessionData? = nil, seatQuantitySelected: Int) {
     self.movieDetail = movieDetail
@@ -21,7 +22,7 @@ struct DataPurchase {
   }
 }
 
-struct SessionData {
+struct SessionData: Hashable {
   let sessionId: String
   let orderId: String
   let date: Date
