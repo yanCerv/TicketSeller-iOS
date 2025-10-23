@@ -36,7 +36,10 @@ struct SeatSelectionView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 10)
         .background(Color.secondary)
+        
+        SeatContent(viewModel: viewModel)
       }
+      
       
       Button {
         // TODO
@@ -50,5 +53,8 @@ struct SeatSelectionView: View {
       }
     }
     .padding()
+    .task {
+      await viewModel.fetchSeats()
+    }
   }
 }
