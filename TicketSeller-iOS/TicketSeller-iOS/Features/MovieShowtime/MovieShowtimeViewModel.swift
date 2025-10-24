@@ -18,7 +18,7 @@ final class MovieShowtimeViewModel {
   var seatQuantity: Int = 0
   var showSeatQuantitySelection: Bool = false
   var errorMessage: String = ""
-  
+
   var movieId: Int
   
   var movieDetailWrapped: MovieDetail {
@@ -30,6 +30,8 @@ final class MovieShowtimeViewModel {
     guard let movieShowtime else { return MovieShowtime.emptyObject() }
     return movieShowtime
   }
+  
+  //MARK: Init
   
   init(movieId: Int) {
     self.movieId = movieId

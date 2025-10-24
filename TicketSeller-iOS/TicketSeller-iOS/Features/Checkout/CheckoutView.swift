@@ -46,6 +46,16 @@ struct CheckoutView: View {
         }
         
         Divider()
+        HStack {
+          Text("Total a apagar:")
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .font(.callout)
+          Text(viewModel.price)
+            .font(.callout)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+        }
+        
+        Divider()
         
         Text("Método de pago")
           .font(.headline)
@@ -70,11 +80,30 @@ struct CheckoutView: View {
           }
         }
         .padding()
-        
       }
       .padding(.horizontal)
       .task {
         await viewModel.fetchPayMethodList()
+      }
+      .sheet(item: $viewModel.viewType) { _ in
+        if let viewType = viewModel.viewType {
+          switch viewType {
+          case .card:
+            CardFormView(viewModel: $viewModel)
+              .presentationDetents([.fraction(0.45)])
+          case .purchase:
+            PurchaseView(viewModel: PurchaseViewModel(dataPurchase: viewModel.dataPurchase, checkoutInput: viewModel))
+          }
+        }
+      }
+    }
+    .overlay {
+      if viewModel.isLoading {
+        Color.black.opacity(0.3).ignoresSafeArea()
+        ProgressView("Procesando compra...")
+          .padding()
+          .background(Color.white)
+          .cornerRadius(12)
       }
     }
   }

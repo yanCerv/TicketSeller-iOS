@@ -7,6 +7,7 @@
 
 protocol CheckoutProvider {
   func fetchPayMethods() async -> [PayMethod]
+  func fetchPurchase() async -> Purchase
 }
 
 actor CheckoutClient: CheckoutProvider {
@@ -16,5 +17,12 @@ actor CheckoutClient: CheckoutProvider {
     let payMethods = response.result
     
     return payMethods
+  }
+  
+  func fetchPurchase() async -> Purchase {
+    let response = ResourceJSON.from(fileName: "Purchase", type: PurchaseResponseDTO.self)
+    let purchase = response.result.bookingInfo
+    
+    return purchase
   }
 }

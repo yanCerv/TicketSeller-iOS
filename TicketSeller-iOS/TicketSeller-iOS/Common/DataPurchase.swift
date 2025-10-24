@@ -11,8 +11,15 @@ struct DataPurchase: Hashable {
   let movieDetail: MovieDetail
   let showtime: Showtime
   let seatQuantitySelected: Int
+  
   let sessionData: SessionData?
+  var purchase: Purchase?
+  
   var selectedSeats: [Seat] = []
+  
+  var totalPrice: Double {
+    selectedSeats.reduce(0) { $0 + $1.price }
+  }
   
   init(movieDetail: MovieDetail, showtime: Showtime, sessionData: SessionData? = nil, seatQuantitySelected: Int) {
     self.movieDetail = movieDetail
