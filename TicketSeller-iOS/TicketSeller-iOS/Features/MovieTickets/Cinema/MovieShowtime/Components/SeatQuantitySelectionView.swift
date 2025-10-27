@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeatQuantitySelectionView: View {
-  @EnvironmentObject var navigation: MainNavigation
+  @EnvironmentObject var navigation: MoviesNavigation
   @Binding var viewModel: MovieShowtimeViewModel
   
   var body: some View {

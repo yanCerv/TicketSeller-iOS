@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieShowtimeView: View {
-  @EnvironmentObject var navigation: MainNavigation
+  @EnvironmentObject var navigation: MoviesNavigation
   @State var viewModel: MovieShowtimeViewModel
   
   var body: some View {

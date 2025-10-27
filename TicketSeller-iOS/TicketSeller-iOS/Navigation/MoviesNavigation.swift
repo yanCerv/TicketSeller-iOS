@@ -8,23 +8,23 @@
 import SwiftUI
 import Combine
 
-enum MainNavigationPath: Hashable {
+enum MoviesNavigationPath: Hashable {
   case movieShowtimeDetail(id: Int)
   case seatSelection(showtime: Showtime, movieDetail: MovieDetail, seatQuantitySelected: Int)
   case checkout(dataPurchase: DataPurchase)
 }
 
-final class MainNavigation: ObservableObject {
+final class MoviesNavigation: ObservableObject {
   
-  @Published var paths: [MainNavigationPath]
+  @Published var paths: [MoviesNavigationPath]
   
-  init(paths: [MainNavigationPath] = []) {
+  init(paths: [MoviesNavigationPath] = []) {
     self.paths = paths
   }
   
   //MARK: Methods
   
-  func add(_ path: MainNavigationPath) {
+  func add(_ path: MoviesNavigationPath) {
     paths.append(path)
   }
   

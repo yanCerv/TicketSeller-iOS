@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CheckoutView: View {
-  @EnvironmentObject var navigation: MainNavigation
+  @EnvironmentObject var navigation: MoviesNavigation
   @State var viewModel: CheckoutViewModel
   
   var body: some View {

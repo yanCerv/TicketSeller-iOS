@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieCardView: View {
-  @EnvironmentObject var navigation: MainNavigation
+  @EnvironmentObject var navigation: MoviesNavigation
   let movie: Movie
   
   var body: some View {

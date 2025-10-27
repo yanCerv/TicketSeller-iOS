@@ -9,7 +9,7 @@ import SwiftUI
 import CoreImage.CIFilterBuiltins
 
 struct PurchaseView: View {
-  @EnvironmentObject var navigation: MainNavigation
+  @EnvironmentObject var navigation: MoviesNavigation
   @State var viewModel: PurchaseViewModel
   
   var body: some View {

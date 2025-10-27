@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MoviesView: View {
-  @EnvironmentObject private var navigation: MainNavigation
+  @EnvironmentObject private var navigation: MoviesNavigation
   @State var viewModel: MoviesViewModel = MoviesViewModel()
   
   var body: some View {
@@ -29,7 +29,7 @@ struct MoviesView: View {
       }
       .navigationTitle("Cartelera")
       .navigationBarTitleDisplayMode(.inline)
-      .navigationDestination(for: MainNavigationPath.self) { path in
+      .navigationDestination(for: MoviesNavigationPath.self) { path in
         switch path {
         case .movieShowtimeDetail(let id):
           MovieShowtimeView(viewModel: MovieShowtimeViewModel(movieId: id))
@@ -50,5 +50,5 @@ struct MoviesView: View {
 
 #Preview {
   MoviesView()
-    .environmentObject(MainNavigation())
+    .environmentObject(MoviesNavigation())
 }
