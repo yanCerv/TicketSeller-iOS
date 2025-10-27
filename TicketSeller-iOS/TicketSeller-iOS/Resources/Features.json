@@ -1,0 +1,34 @@
+{
+  "result": [
+    {
+      "id": "R4MOV-12",
+      "title": "Cinema Movies",
+      "type": "movies",
+      "isActive": true
+    },
+    {
+      "id": "R4FOOT-9",
+      "title": "FootBall",
+      "type": "football",
+      "isActive": false
+    },
+    {
+      "id": "R4CONCERT-182",
+      "title": "Concerts",
+      "type": "concert",
+      "isActive": false
+    },
+    {
+      "id": "R4THEATER-145",
+      "title": "Theater",
+      "type": "theater",
+      "isActive": false
+    },
+    {
+      "id": "W4FLY-891",
+      "title": "Sky Tickets",
+      "type": "flying",
+      "isActive": false
+    }
+  ]
+}

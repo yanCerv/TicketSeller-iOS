@@ -92,7 +92,8 @@ struct CheckoutView: View {
             CardFormView(viewModel: $viewModel)
               .presentationDetents([.fraction(0.45)])
           case .purchase:
-            PurchaseView(viewModel: PurchaseViewModel(dataPurchase: viewModel.dataPurchase, checkoutInput: viewModel))
+            PurchaseView(viewModel: PurchaseViewModel(dataPurchase: viewModel.dataPurchase,
+                                                      checkoutInput: viewModel))
           }
         }
       }

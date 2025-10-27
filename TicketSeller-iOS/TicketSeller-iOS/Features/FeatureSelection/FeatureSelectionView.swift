@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct FeatureSelectionView: View {
-    var body: some View {
-      List(0..<5) { item in
-        Text("Cinema Tickets")
-          .font(.system(size: 18, weight: .semibold))
-          .foregroundStyle(.primary)
+  
+  @State var viewModel: FeatureSelectionViewModel = FeatureSelectionViewModel()
+  
+  var body: some View {
+    ScrollView {
+      LazyVGrid(columns: viewModel.columns) {
+        ForEach(viewModel.features, id: \.self) { feature in
+          FeatureCard(viewModel: viewModel, feature: feature)
+        }
+      }
+      .task {
+        await viewModel.fetchFeatures()
       }
     }
+    .fullScreenCover(item: $viewModel.featureType, content: { type in
+      if type == .movies {
+        MoviesTabView()
+      }
+    })
+  }
 }
 
 #Preview {

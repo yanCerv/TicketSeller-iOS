@@ -5,8 +5,6 @@
 //  Created by Yan Cervantes on 15/10/25.
 //
 
-import Foundation
-
 struct MovieResponseDTO: Decodable {
   let page: Int
   let results: [Movie]

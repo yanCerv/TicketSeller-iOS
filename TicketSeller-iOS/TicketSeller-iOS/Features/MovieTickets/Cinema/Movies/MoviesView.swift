@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MoviesView: View {
   @EnvironmentObject private var navigation: MoviesNavigation
+  
   @State var viewModel: MoviesViewModel = MoviesViewModel()
+  @Environment(\.dismiss) var dismiss
   
   var body: some View {
     NavigationStack(path: $navigation.paths) {
@@ -29,6 +31,16 @@ struct MoviesView: View {
       }
       .navigationTitle("Cartelera")
       .navigationBarTitleDisplayMode(.inline)
+      .toolbar {
+        ToolbarItem(placement: .topBarLeading) {
+          Button {
+            dismiss()
+          } label: {
+            Image(systemName: "rectangle.portrait.and.arrow.forward")
+              .foregroundStyle(.primary)
+          }
+        }
+      }
       .navigationDestination(for: MoviesNavigationPath.self) { path in
         switch path {
         case .movieShowtimeDetail(let id):
