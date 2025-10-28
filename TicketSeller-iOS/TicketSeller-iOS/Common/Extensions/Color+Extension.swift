@@ -17,8 +17,12 @@ extension Color {
     startPoint: .top,
     endPoint: .bottom
   )
+  
+  static let mainColor: Color = Color.blue
+  static let grayOpacity: Color = Color.gray.opacity(0.5)
 
   static let ticketPrimaryButton = Color.white.opacity(0.15)
   static let ticketPrimaryText = Color.white.opacity(0.95)
   static let ticketDivider = Color.white.opacity(0.8)
 }
+

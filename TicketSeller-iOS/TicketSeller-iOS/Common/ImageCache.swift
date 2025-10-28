@@ -13,9 +13,17 @@ final class ImageCache {
 
 struct CachedAsyncImage: View {
   private let url: URL?
+  private let width: CGFloat
+  private let height: CGFloat
+  private let alignment: Alignment
+  private let cornerRadius: CGFloat
   
-  init(url: URL?) {
+  init(url: URL?, width: CGFloat = 140, height: CGFloat = 210, alignment: Alignment = .center, cornerRadius: CGFloat = 12) {
     self.url = url
+    self.width = width
+    self.height = height
+    self.alignment = alignment
+    self.cornerRadius = cornerRadius
   }
   
   var body: some View {
@@ -23,9 +31,9 @@ struct CachedAsyncImage: View {
       Image(uiImage: cachedImage)
         .resizable()
         .scaledToFill()
-        .frame(width: 140, height: 210)
+        .frame(width: width, height: height)
         .clipped()
-        .cornerRadius(12)
+        .cornerRadius(cornerRadius)
     } else if let url = url {
       AsyncImage(url: url) { phase in
         switch phase {
@@ -34,21 +42,21 @@ struct CachedAsyncImage: View {
             image
             .resizable()
             .scaledToFill()
-            .frame(width: 140, height: 210)
+            .frame(width: width, height: height)
             .clipped()
-            .cornerRadius(12)
-          } 
+            .cornerRadius(cornerRadius)
+          }
         case .failure, .empty:
           ProgressView()
-            .frame(width: 140, height: 210)
+            .frame(width: width, height: height)
         @unknown default:
           ProgressView()
-            .frame(width: 140, height: 210)
+            .frame(width: width, height: height)
         }
       }
     } else {
       ProgressView()
-        .frame(width: 140, height: 210)
+        .frame(width: width, height: height)
     }
   }
 }

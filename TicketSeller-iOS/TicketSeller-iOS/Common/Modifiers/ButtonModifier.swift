@@ -13,8 +13,8 @@ struct ButtonModifier: ViewModifier {
   var maxWidth: CGFloat
   var font: Font = Font.system(size: 16, weight: .semibold)
   
-  private var mainColor: Color {
-    return isEnabled ? Color.blue : Color.gray.opacity(0.5)
+  private var buttonColor: Color {
+    return isEnabled ? .mainColor : .grayOpacity
   }
   
   //MARK: Body
@@ -24,7 +24,7 @@ struct ButtonModifier: ViewModifier {
       .frame(maxWidth: maxWidth, maxHeight: 45)
       .font(font)
       .foregroundColor(Color.white)
-      .background(mainColor)
+      .background(buttonColor)
       .clipShape(RoundedRectangle(cornerRadius: 8))
       .overlay(
         RoundedRectangle(cornerRadius: 8)

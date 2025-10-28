@@ -5,6 +5,8 @@
 //  Created by Yan Cervantes on 27/10/25.
 //
 
+import SwiftUI
+
 enum FeatureType: String, Identifiable {
   case movies
   case football
@@ -31,5 +33,9 @@ struct MainFeature: Decodable, Hashable {
   
   var featureType: FeatureType {
     return FeatureType(value: type)
+  }
+  
+  var url: URL? {
+    return URL(string: imageUrl)
   }
 }
