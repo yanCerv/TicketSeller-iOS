@@ -14,6 +14,8 @@ final class FeatureSelectionViewModel {
   
   private(set) var features: [MainFeature] = []
   private(set) var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+  private(set) var isUserLoggedIn: Bool = false
+
   private var isLoaded: Bool = false
   private var isLoading: Bool = false
   

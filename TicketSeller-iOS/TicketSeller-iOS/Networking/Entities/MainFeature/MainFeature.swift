@@ -27,6 +27,7 @@ struct MainFeature: Decodable, Hashable {
   let title: String
   let type: String
   let isActive: Bool
+  let imageUrl: String
   
   var featureType: FeatureType {
     return FeatureType(value: type)

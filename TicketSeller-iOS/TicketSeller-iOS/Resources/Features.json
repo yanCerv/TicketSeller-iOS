@@ -4,31 +4,43 @@
       "id": "R4MOV-12",
       "title": "Cinema Movies",
       "type": "movies",
-      "isActive": true
+      "isActive": true,
+      "imageUrl": "https://images.unsplash.com/photo-1502033491742-0e11fb057e16?fit=crop&w=600&h=400"
     },
     {
       "id": "R4FOOT-9",
       "title": "FootBall",
       "type": "football",
-      "isActive": false
+      "isActive": false,
+      "imageUrl": "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?fit=crop&w=600&h=400"
     },
     {
       "id": "R4CONCERT-182",
       "title": "Concerts",
       "type": "concert",
-      "isActive": false
+      "isActive": false,
+      "imageUrl": "https://www.rollingstone.com/wp-content/uploads/2022/10/Post-Pandemic-and-Beyond-Looking-Ahead-to-the-Future-of-Live-Concerts.jpg?w=1581&h=1054&crop=1"
     },
     {
       "id": "R4THEATER-145",
       "title": "Theater",
       "type": "theater",
-      "isActive": false
+      "isActive": false,
+      "imageUrl": "https://img.freepik.com/vektoren-premium/froehliche-und-traurige-theatermasken-theaterszene-mit-roten-vorhaengen-illustration_302982-43.jpg?semt=ais_hybrid&w=600&h=400"
     },
     {
       "id": "W4FLY-891",
       "title": "Sky Tickets",
       "type": "flying",
-      "isActive": false
+      "isActive": false,
+      "imageUrl": "https://images.unsplash.com/photo-1529070538774-1843cb3265df"
+    },
+    {
+      "id": "YQTRAIN-887",
+      "title": "Train",
+      "type": "train",
+      "isActive": false,
+      "imageUrl": "https://images.unsplash.com/photo-1518281420975-50db6e5d0a97"
     }
   ]
 }
