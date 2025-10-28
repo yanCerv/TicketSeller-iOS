@@ -15,45 +15,51 @@ struct MoviesView: View {
   
   var body: some View {
     NavigationStack(path: $navigation.paths) {
-      ScrollView {
-        VStack {
-          MovieCardList(title: "En emisión", movies: viewModel.nowPlaying)
-          MovieCardList(title: "Populares", movies: viewModel.popularMovies)
-          MovieCardList(title: "Mas Votados", movies: viewModel.topRatedMovies)
-          MovieCardList(title: "Proximamente", movies: viewModel.upcomingMovies)
-        }
-        .task {
-          await viewModel.didFetchData()
-        }
-      }
-      .refreshable {
-        await viewModel.didReloadData()
-      }
-      .navigationTitle("Cartelera")
-      .navigationBarTitleDisplayMode(.inline)
-      .toolbar {
-        ToolbarItem(placement: .topBarLeading) {
-          Button {
-            dismiss()
-          } label: {
-            Image(systemName: "rectangle.portrait.and.arrow.forward")
-              .foregroundStyle(.primary)
+      ZStack {
+        Color.moviesBackgroundGradient
+        .ignoresSafeArea()
+        ScrollView {
+          VStack {
+            MovieCardList(title: "En emisión", movies: viewModel.nowPlaying)
+            MovieCardList(title: "Populares", movies: viewModel.popularMovies)
+            MovieCardList(title: "Mas Votados", movies: viewModel.topRatedMovies)
+            MovieCardList(title: "Proximamente", movies: viewModel.upcomingMovies)
+          }
+          .task {
+            await viewModel.didFetchData()
           }
         }
-      }
-      .navigationDestination(for: MoviesNavigationPath.self) { path in
-        switch path {
-        case .movieShowtimeDetail(let id):
-          MovieShowtimeView(viewModel: MovieShowtimeViewModel(movieId: id))
-          
-        case .seatSelection(let showtime, let movieDetail, let seatQuantitySelected):
-          SeatSelectionView(viewModel: SeatSelectionViewModel(movieDetail: movieDetail,
-                                                              showtime: showtime,
-                                                              seatQuantitySelected: seatQuantitySelected))
-          
-        case .checkout(let dataPurchase):
-          CheckoutView(viewModel: CheckoutViewModel(dataPurchase: dataPurchase))
-          
+        .refreshable {
+          await viewModel.didReloadData()
+        }
+        .navigationTitle("Cartelera")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbar {
+          ToolbarItem(placement: .topBarLeading) {
+            Button {
+              dismiss()
+            } label: {
+              Image(systemName: "rectangle.portrait.and.arrow.forward")
+                .foregroundStyle(.primary)
+            }
+          }
+        }
+        .navigationDestination(for: MoviesNavigationPath.self) { path in
+          switch path {
+          case .movieShowtimeDetail(let id):
+            MovieShowtimeView(viewModel: MovieShowtimeViewModel(movieId: id))
+            
+          case .seatSelection(let showtime, let movieDetail, let seatQuantitySelected):
+            SeatSelectionView(viewModel: SeatSelectionViewModel(movieDetail: movieDetail,
+                                                                showtime: showtime,
+                                                                seatQuantitySelected: seatQuantitySelected))
+            
+          case .checkout(let dataPurchase):
+            CheckoutView(viewModel: CheckoutViewModel(dataPurchase: dataPurchase))
+            
+          }
         }
       }
     }

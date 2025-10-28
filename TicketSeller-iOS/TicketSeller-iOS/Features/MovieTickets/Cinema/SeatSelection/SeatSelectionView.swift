@@ -43,7 +43,7 @@ struct SeatSelectionView: View {
       Button("Continuar") {
         navigation.add(.checkout(dataPurchase: viewModel.dataPurchase))
       }
-      .modifier(ButtonModifier(isEnabled: $viewModel.isActiveButton, maxWidth: .infinity))
+      .modifier(ButtonModifier(isEnabled: viewModel.isActiveButton))
     }
     .padding()
     .task {

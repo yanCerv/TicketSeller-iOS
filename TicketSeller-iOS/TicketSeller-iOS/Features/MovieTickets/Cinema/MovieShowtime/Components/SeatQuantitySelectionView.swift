@@ -31,22 +31,14 @@ struct SeatQuantitySelectionView: View {
       }
       .frame(maxWidth: 210)
       .padding(.bottom, 16)
-
-      Button {
+      
+      Button("Continuar") {
         viewModel.showSeatQuantitySelection = false
         navigation.add(.seatSelection(showtime: viewModel.showtimeSelected,
                                       movieDetail: viewModel.movieDetailWrapped,
                                       seatQuantitySelected: viewModel.seatQuantity))
-      } label: {
-        Text("Continuar")
-          .font(.headline)
-          .frame(maxWidth: .infinity)
-          .padding()
-          .background(Color.accentColor)
-          .foregroundColor(.white)
-          .cornerRadius(10)
       }
-      .disabled(viewModel.seatQuantity == 0)
+      .modifier(ButtonModifier(isEnabled: viewModel.seatQuantity != 0, maxWidth: .infinity, font: .headline))
     }
     .padding()
     .background(.thinMaterial)

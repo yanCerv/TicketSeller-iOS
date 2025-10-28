@@ -31,12 +31,12 @@ struct ColorSeatSchemeModifier: ViewModifier {
     guard status.lowercased() != "space" else { return .clear }
     guard status.lowercased() != "sold" else { return backSoldSeat }
     let defaultOpacity: Double = colorScheme == .dark ? 0.0 : 0.5
-    return isSelected ? Color.blue : Color.clear.opacity(defaultOpacity)
+    return isSelected ? .brown.opacity(0.7) : Color.clear.opacity(defaultOpacity)
   }
   
   var borderColor: Color {
     if status.lowercased() != "space" && status.lowercased() != "sold" {
-      return colorScheme == .dark ? .blue : isSelected ? .blue : .gray
+      return colorScheme == .dark ? .brown.opacity(0.7) : isSelected ? .white.opacity(0.7) : .brown.opacity(0.7)
     }
     return .clear
   }

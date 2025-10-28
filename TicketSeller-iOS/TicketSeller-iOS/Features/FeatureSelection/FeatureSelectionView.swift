@@ -14,7 +14,7 @@ struct FeatureSelectionView: View {
   var body: some View {
     NavigationStack(path: $navigation.paths) {
       ZStack {
-        Color.ticketBackgroundGradient
+        Color.mainBackgroundGradient
           .ignoresSafeArea()
 
         VStack {

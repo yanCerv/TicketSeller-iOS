@@ -18,7 +18,7 @@ final class PurchaseViewModel {
   
   //MARK: Init
   
-  init(dataPurchase: DataPurchase, checkoutInput: CheckoutInput) {
+  init(dataPurchase: DataPurchase, checkoutInput: CheckoutInput? = nil) {
     self.dataPurchase = dataPurchase
     self.checkoutInput = checkoutInput
     purchase = dataPurchase.purchase

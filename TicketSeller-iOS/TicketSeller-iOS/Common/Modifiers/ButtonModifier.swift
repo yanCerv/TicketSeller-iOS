@@ -9,12 +9,18 @@ import SwiftUI
 
 struct ButtonModifier: ViewModifier {
   
-  @Binding var isEnabled: Bool
+  var isEnabled: Bool
   var maxWidth: CGFloat
-  var font: Font = Font.system(size: 16, weight: .semibold)
+  var font: Font
   
   private var buttonColor: Color {
     return isEnabled ? .mainColor : .grayOpacity
+  }
+  
+  init(isEnabled: Bool = true, maxWidth: CGFloat = .infinity, font: Font = Font.system(size: 16, weight: .semibold)) {
+    self.isEnabled = isEnabled
+    self.maxWidth = maxWidth
+    self.font = font
   }
   
   //MARK: Body

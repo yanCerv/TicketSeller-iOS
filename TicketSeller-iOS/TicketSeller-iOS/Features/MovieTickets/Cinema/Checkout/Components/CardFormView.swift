@@ -64,7 +64,7 @@ struct CardFormView: View {
         Button("Pagar") {
           viewModel.didTapPurchase()
         }
-        .modifier(ButtonModifier(isEnabled: .constant(true), maxWidth: .infinity))
+        .modifier(ButtonModifier())
         .padding()
       }
     }

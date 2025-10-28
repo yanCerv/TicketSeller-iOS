@@ -44,8 +44,8 @@ struct PurchaseView: View {
           viewModel.checkoutInput.didTapSaveAndExit()
           navigation.backToMain()
         }
-        .modifier(ButtonModifier(isEnabled: .constant(true), maxWidth: .infinity))
-        .padding()
+        .modifier(ButtonModifier())
+        .frame(height: 50)
       }
       .padding()
     }
