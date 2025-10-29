@@ -7,11 +7,45 @@
 
 import Foundation
 
+enum APIProvider {
+  case movieDB
+  case ticketmaster
+  
+  private var env: Env {
+    return Env()
+  }
+
+  var baseURL: String {
+    switch self {
+    case .movieDB:
+      return env.get(.baseUrl)
+    case .ticketmaster:
+      return env.get(.ticketmasterUrl)
+    }
+  }
+
+  var headers: [String: String] {
+    switch self {
+    case .movieDB:
+      return [
+        "accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer \(Env().get(.bearerToken))"
+      ]
+    case .ticketmaster:
+      return [
+        "accept": "application/json"
+      ]
+    }
+  }
+}
+
 protocol EndPoint {
   var path: String { get }
   var method: Method { get }
   var parameters: Encodable? { get }
   var queryItems: [URLQueryItem]? { get }
+  var provider: APIProvider { get }
 }
 
 enum Method: String {
@@ -21,24 +55,14 @@ enum Method: String {
 
 extension EndPoint {
   
-  private var environment: Env {
-    return Env()
-  }
-  
   private var baseUrl: URL {
-    let baseUrl = environment.get(.baseUrl)
-    var components = URLComponents(string: "\(baseUrl)\(path)")
+    var components = URLComponents(string: "\(provider.baseURL)\(path)")
     components?.queryItems = queryItems
     return components!.url!
   }
   
   private var headers: [String: String] {
-    let headers: [String: String] = [
-      "accept": "application/json",
-      "Content-Type": "application/json",
-      "Authorization": "Bearer \(environment.get(.bearerToken))"
-    ]
-    return headers
+    return provider.headers
   }
   
   private var data: Data? {

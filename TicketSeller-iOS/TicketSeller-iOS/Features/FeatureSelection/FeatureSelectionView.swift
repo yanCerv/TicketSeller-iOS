@@ -31,6 +31,12 @@ struct FeatureSelectionView: View {
               MoviesView()
                 .environmentObject(MoviesNavigation())
             }
+            
+            if type == .event {
+              EventListView()
+                .environmentObject(EventNavigation())
+            }
+            
           })
           
           Divider()

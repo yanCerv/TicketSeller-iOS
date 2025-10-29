@@ -37,11 +37,9 @@ struct FeatureCard: View {
           .multilineTextAlignment(.center)
           .padding(.horizontal, 8)
       }
-      .frame(height: 130)
-      .frame(maxWidth: .infinity)
+      .frame(width: 160, height: 140)
     }
     .buttonStyle(FeatureCardButtonStyle(isActive: feature.isActive))
-    .padding()
     .disabled(!feature.isActive)
   }
 }

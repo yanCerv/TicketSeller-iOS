@@ -13,6 +13,7 @@ enum FeatureType: String, Identifiable {
   case concert
   case theater
   case flying
+  case event
   case none
   
   init(value: String) {

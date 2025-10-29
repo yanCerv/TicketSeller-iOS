@@ -25,6 +25,13 @@ extension Color {
     startPoint: .top,
     endPoint: .bottom)
   
+  static let eventsBackgroundGradint = LinearGradient(
+    gradient: Gradient(colors: [Color.blue.opacity(0.3),
+                                Color.brown.opacity(0.3)]),
+    startPoint: .topLeading,
+    endPoint: .bottomTrailing
+  )
+  
   static let mainColor: Color = Color.brown.opacity(0.8)
   static let grayOpacity: Color = Color.gray.opacity(0.5)
 

@@ -12,4 +12,7 @@ enum Paths: String {
   case topRated = "/3/movie/top_rated"
   case upcoming = "/3/movie/upcoming"
   case movieDetail = "/3/movie"
+  
+  // Events
+  case eventsByCountry = "/discovery/v2/events"
 }

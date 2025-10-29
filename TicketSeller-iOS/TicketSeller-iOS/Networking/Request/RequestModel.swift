@@ -12,11 +12,13 @@ struct RequestModel: EndPoint {
   var method: Method
   var parameters: Encodable?
   var queryItems: [URLQueryItem]?
-  
-  init(path: String, method: Method = .get, parameters: Encodable? = nil, queryItems: [URLQueryItem]? = nil) {
+  var provider: APIProvider
+
+  init(path: String, method: Method = .get, parameters: Encodable? = nil, queryItems: [URLQueryItem]? = nil, provider: APIProvider = .movieDB) {
     self.path = path
     self.method = method
     self.parameters = parameters
     self.queryItems = queryItems
+    self.provider = provider
   }
 }
