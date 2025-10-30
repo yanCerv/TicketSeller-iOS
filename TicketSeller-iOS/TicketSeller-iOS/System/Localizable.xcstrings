@@ -1,0 +1,187 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "%@ • %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ • %2$@"
+          }
+        }
+      }
+    },
+    "%@ País" : {
+
+    },
+    "%lld" : {
+
+    },
+    "%lld boleto%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld boleto%2$@"
+          }
+        }
+      }
+    },
+    "• %@ - %@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "• %1$@ - %2$@ - %3$@"
+          }
+        }
+      }
+    },
+    "Add Item" : {
+
+    },
+    "Apellido(s)" : {
+
+    },
+    "Asientos:" : {
+
+    },
+    "Boletos:" : {
+
+    },
+    "Boletos: %lld (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Boletos: %1$lld (%2$@)"
+          }
+        }
+      }
+    },
+    "Cartelera" : {
+
+    },
+    "Cerrar" : {
+
+    },
+    "Continuar" : {
+
+    },
+    "Correo electrónico" : {
+
+    },
+    "Cuenta" : {
+
+    },
+    "CVV" : {
+
+    },
+    "Duración: %lld min" : {
+
+    },
+    "Events" : {
+
+    },
+    "Géneros: %@" : {
+
+    },
+    "Guardar y salir" : {
+
+    },
+    "Horario:" : {
+
+    },
+    "Horario: %@" : {
+
+    },
+    "Horarios disponibles" : {
+
+    },
+    "Idioma" : {
+
+    },
+    "Información de la tarjeta" : {
+
+    },
+    "Información del comprador" : {
+
+    },
+    "Inicio" : {
+
+    },
+    "Item at %@" : {
+
+    },
+    "Login / Register" : {
+
+    },
+    "max 10 de boletos." : {
+
+    },
+    "Método de pago" : {
+
+    },
+    "MM/AA" : {
+
+    },
+    "Nombre en la tarjeta" : {
+
+    },
+    "Nombre(s)" : {
+
+    },
+    "Número de tarjeta" : {
+
+    },
+    "Pagar" : {
+
+    },
+    "Película: %@" : {
+
+    },
+    "Procesando compra..." : {
+
+    },
+    "Screen" : {
+
+    },
+    "Selecciona una cantidad" : {
+
+    },
+    "Seleccionar" : {
+
+    },
+    "Select an item" : {
+
+    },
+    "Ticket Seller" : {
+
+    },
+    "Ticket Seller - iOS" : {
+
+    },
+    "Toca para ver los horarios de esta película" : {
+
+    },
+    "Total a apagar:" : {
+
+    },
+    "Total: $%@" : {
+
+    },
+    "Tu boleto" : {
+
+    },
+    "View" : {
+
+    }
+  },
+  "version" : "1.0"
+}

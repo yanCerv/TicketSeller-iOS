@@ -12,5 +12,5 @@ struct EmbeddedVenues: Decodable, Hashable {
 struct Venue: Decodable, Hashable {
   let name: String?
   let city: City?
-  let country: Country?
+  let country: TicketMasterCountry?
 }

@@ -37,13 +37,8 @@ struct MoviesView: View {
         .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .toolbar {
-          ToolbarItem(placement: .topBarLeading) {
-            Button {
-              dismiss()
-            } label: {
-              Image(systemName: "rectangle.portrait.and.arrow.forward")
-                .foregroundStyle(.primary)
-            }
+          BackToolbarButton {
+            dismiss()
           }
         }
         .navigationDestination(for: MoviesNavigationPath.self) { path in

@@ -9,14 +9,22 @@ import Foundation
 
 protocol FeatureSelectionProvider {
   func fetchMainFeatures() async -> [MainFeature]
+  func fetchCountries() async -> [AppCountry]
 }
 
 actor FeatureSelectionClient: Request, FeatureSelectionProvider {
   
   func fetchMainFeatures() async -> [MainFeature] {
-    let result = ResourceJSON.from(fileName: "Features", type: MainFeatureResponseDTO.self)
-    let mainFeatures = result.result
+    let resultData = ResourceJSON.from(fileName: "Features", type: MainFeatureResponseDTO.self)
+    let mainFeatures = resultData.result
     
     return mainFeatures
+  }
+  
+  func fetchCountries() async -> [AppCountry] {
+    let resultData = ResourceJSON.from(fileName: "AppCountries", type: AppCountryResponseDTO.self)
+    let countries = resultData.result
+ 
+    return countries
   }
 }

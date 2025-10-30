@@ -1,0 +1,40 @@
+{
+  "result": [
+    {
+      "name": "México",
+      "countryCode": "MX",
+      "languageCode": "es",
+      "flag": "🇲🇽"
+    },
+    {
+      "name": "Estados Unidos",
+      "countryCode": "US",
+      "languageCode": "en",
+      "flag": "🇺🇸"
+    },
+    {
+      "name": "Francia",
+      "countryCode": "FR",
+      "languageCode": "fr",
+      "flag": "🇫🇷"
+    },
+    {
+      "name": "Alemania",
+      "countryCode": "DE",
+      "languageCode": "de",
+      "flag": "🇩🇪"
+    },
+    {
+      "name": "India",
+      "countryCode": "IN",
+      "languageCode": "en",
+      "flag": "🇮🇳"
+    },
+    {
+      "name": "Brasil",
+      "countryCode": "BR",
+      "languageCode": "pt",
+      "flag": "🇧🇷"
+    }
+  ]
+}

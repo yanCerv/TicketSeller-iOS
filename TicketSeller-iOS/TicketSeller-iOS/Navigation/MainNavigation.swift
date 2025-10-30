@@ -8,21 +8,23 @@
 import SwiftUI
 import Combine
 
-enum FeaturesNavigationPath: Hashable {
+enum AccountNavigationPath: Hashable {
+  case editProfile
+  case settings
   case purchases
 }
 
-final class FeatureNavigation: ObservableObject {
+final class AccountNavigation: ObservableObject {
   
-  @Published var paths: [FeaturesNavigationPath]
+  @Published var paths: [AccountNavigationPath]
   
-  init(paths: [FeaturesNavigationPath] = []) {
+  init(paths: [AccountNavigationPath] = []) {
     self.paths = paths
   }
   
   //MARK: Methods
   
-  func add(_ path: FeaturesNavigationPath) {
+  func add(_ path: AccountNavigationPath) {
     paths.append(path)
   }
   

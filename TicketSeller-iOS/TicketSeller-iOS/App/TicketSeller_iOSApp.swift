@@ -25,8 +25,7 @@ struct TicketSeller_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-          FeatureSelectionView()
-            .environmentObject(FeatureNavigation())
+          MainTabView()
             .preferredColorScheme(.dark)
         }
         .modelContainer(sharedModelContainer)

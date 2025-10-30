@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EventListView: View {
   @EnvironmentObject var navigation: EventNavigation
+  @Environment(\.dismiss) var dismiss
+
   @State var viewModel: EventListViewModel = EventListViewModel()
   
   var body: some View {
@@ -53,6 +55,11 @@ struct EventListView: View {
           }
           .navigationTitle("Events")
           .navigationBarTitleDisplayMode(.inline)
+          .toolbar {
+            BackToolbarButton {
+              dismiss()
+            }
+          }
         }
       }
     }

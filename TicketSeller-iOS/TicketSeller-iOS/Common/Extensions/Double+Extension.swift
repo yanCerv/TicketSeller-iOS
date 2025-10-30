@@ -20,5 +20,4 @@ extension Double {
     formatter.currencySymbol = "$"
     return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
   }
-  
 }
