@@ -15,8 +15,14 @@ struct AccountView: View {
     NavigationStack(path: $navigation.paths) {
       ScrollView {
         VStack {
+          
           if viewModel.isUserLoggedIn {
-            
+            Divider()
+              .background(Color.ticketDivider)
+              .padding()
+            SectionHeader(title: "Datos de Usuario")
+            Text(viewModel.accountUser.email)
+            Text("\(viewModel.accountUser.firstName) \(viewModel.accountUser.lastName)")
           } else {
             Button("Login / Register") {
               viewModel.didTapLoginRegister()
@@ -53,7 +59,7 @@ struct AccountView: View {
               PickerContent(title: "Selecciona un idioma", data: viewModel.countryLanguages, selected: $viewModel.selectedLanguage)
             }
             .sheet(isPresented: $viewModel.showLoginRegister) {
-              LoginRegister(viewModel: LoginRegisterViewModel())
+              LoginRegister(viewModel: LoginRegisterViewModel(input: viewModel))
                 .presentationDetents([.fraction(0.45)])
             }
             

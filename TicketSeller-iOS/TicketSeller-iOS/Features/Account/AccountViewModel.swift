@@ -13,6 +13,7 @@ final class AccountViewModel {
   
   var appCountries: [AppCountry] = []
   var isUserLoggedIn: Bool = false
+  var accountUser: AccountUser!
   
   var countryFlag: String = ""
   var language: String = ""
@@ -71,3 +72,12 @@ final class AccountViewModel {
   }
 }
 
+extension AccountViewModel: LoginActionInput {
+  
+  func didGet(user: AccountUser) {
+    showLoginRegister = false
+    isUserLoggedIn = true
+    accountUser = user
+    // SAVE USER and change view content
+  }
+}

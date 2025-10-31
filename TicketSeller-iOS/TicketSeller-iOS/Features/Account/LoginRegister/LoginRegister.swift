@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LoginRegister: View {
-  
   @State var viewModel: LoginRegisterViewModel
 
   var body: some View {
@@ -22,7 +21,8 @@ struct LoginRegister: View {
       .pickerStyle(.segmented)
       .background(viewModel.isLoading ? Color.gray.opacity(0.4) : Color.brown.opacity(0.6))
       .foregroundStyle(.primary)
-      .padding()
+      .padding(.horizontal, 56)
+      .padding(.vertical, 26)
       .disabled(viewModel.isLoading)
       
       if viewModel.selectedMode == .login {

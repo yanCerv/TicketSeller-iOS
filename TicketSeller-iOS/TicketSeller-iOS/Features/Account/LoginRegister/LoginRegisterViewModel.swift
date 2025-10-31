@@ -10,12 +10,17 @@ import SwiftUI
 @Observable
 final class LoginRegisterViewModel {
   
+  private let client: AccountProvider
+  weak var input: LoginActionInput!
+  
   var selectedMode: AuthMode = .login
   
   var accountName: String = ""
   var otpCode: String = ""
   var sendedAccount: Bool = false
   var isLoading: Bool = false
+  
+  var accountUser: AccountUser?
   
   var accountNameValid: Bool {
     return accountName.count >= 4
@@ -25,20 +30,38 @@ final class LoginRegisterViewModel {
     return otpCode.count == 6
   }
   
+  //MARK: - Init
   
-  init() {
-    
+  init(client: AccountProvider = AccountClient(), input: LoginActionInput? = nil) {
+    self.client = client
+    self.input = input
   }
+  
+  //MARK: - Methods
   
   func didtapLogin() {
     sendedAccount = true
     
-    if otpCodeFilled {
-      didVerifiedOTP()
+    Task {
+      if otpCodeFilled {
+        await didVerifiedOTP()
+      }
     }
   }
   
-  private func didVerifiedOTP() {
+  //MARK: - Private Methods
+  
+  private func didVerifiedOTP() async {
     isLoading = true
+    
+    try? await Task.sleep(nanoseconds: 3_000_000_000)
+    
+    let dataUser = await client.fetchAccountUser()
+    accountUser = dataUser
+    
+    if let accountUser {
+      isLoading = false
+      input?.didGet(user: accountUser)
+    }
   }
 }

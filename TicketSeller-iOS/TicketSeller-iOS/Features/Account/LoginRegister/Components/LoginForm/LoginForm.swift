@@ -30,7 +30,7 @@ struct LoginForm: View {
       }
       
       Button(viewModel.sendedAccount ? "Continue" : "Login") {
-        viewModel.didtapLogin()
+         viewModel.didtapLogin()
       }
       .modifier(ButtonModifier(isEnabled: viewModel.accountNameValid))
       .disabled(viewModel.isLoading)
