@@ -100,11 +100,7 @@ struct CheckoutView: View {
     }
     .overlay {
       if viewModel.isLoading {
-        Color.black.opacity(0.3).ignoresSafeArea()
-        ProgressView("Procesando compra...")
-          .padding()
-          .background(Color.white)
-          .cornerRadius(12)
+        ProgressLoadingView(typeLoading: .movies, text: "Procesando compra...")
       }
     }
   }

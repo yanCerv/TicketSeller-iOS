@@ -22,6 +22,7 @@ final class AccountViewModel {
   var countryFlags: [String] = []
   var countryLanguages: [String] = []
   
+  var showLoginRegister: Bool = false
   var showCountryPicker: Bool = false
   var showLanguagePicker: Bool = false
   
@@ -46,6 +47,10 @@ final class AccountViewModel {
   
   func didTapPickerLanguage() {
     showLanguagePicker = true
+  }
+  
+  func didTapLoginRegister() {
+    showLoginRegister = true
   }
   
   private func verifyCountry(from appCountries: [AppCountry]) {

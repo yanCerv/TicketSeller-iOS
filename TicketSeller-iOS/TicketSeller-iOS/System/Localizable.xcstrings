@@ -52,6 +52,9 @@
     "Asientos:" : {
 
     },
+    "Boletos" : {
+
+    },
     "Boletos:" : {
 
     },
@@ -74,6 +77,9 @@
     "Continuar" : {
 
     },
+    "Continue" : {
+
+    },
     "Correo electrónico" : {
 
     },
@@ -86,6 +92,9 @@
     "Duración: %lld min" : {
 
     },
+    "Email account" : {
+
+    },
     "Events" : {
 
     },
@@ -93,6 +102,9 @@
 
     },
     "Guardar y salir" : {
+
+    },
+    "Hello, World!" : {
 
     },
     "Horario:" : {
@@ -119,6 +131,9 @@
     "Item at %@" : {
 
     },
+    "Login" : {
+
+    },
     "Login / Register" : {
 
     },
@@ -140,16 +155,19 @@
     "Número de tarjeta" : {
 
     },
+    "OTP" : {
+
+    },
     "Pagar" : {
 
     },
     "Película: %@" : {
 
     },
-    "Procesando compra..." : {
+    "Screen" : {
 
     },
-    "Screen" : {
+    "Selecciona" : {
 
     },
     "Selecciona una cantidad" : {

@@ -19,7 +19,7 @@ struct AccountView: View {
             
           } else {
             Button("Login / Register") {
-              
+              viewModel.didTapLoginRegister()
             }
             .modifier(ButtonModifier())
             .frame(height: 45)
@@ -51,6 +51,10 @@ struct AccountView: View {
             }
             .sheet(isPresented: $viewModel.showLanguagePicker) {
               PickerContent(title: "Selecciona un idioma", data: viewModel.countryLanguages, selected: $viewModel.selectedLanguage)
+            }
+            .sheet(isPresented: $viewModel.showLoginRegister) {
+              LoginRegister(viewModel: LoginRegisterViewModel())
+                .presentationDetents([.fraction(0.45)])
             }
             
             Button {
