@@ -8,6 +8,7 @@
 import Foundation
 
 struct FileDataManager {
+  
   static var directory: URL = {
     let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     return urls[0]
@@ -54,6 +55,12 @@ struct FileDataManager {
   }
 }
 
+//MARK: Keys
+
 extension FileDataManager {
-  //TODO
+  static let accountKey: String = "AccountUser"
+
+  static func showtimes(id: String) -> String {
+    return "showtime_\(id).json"
+  }
 }

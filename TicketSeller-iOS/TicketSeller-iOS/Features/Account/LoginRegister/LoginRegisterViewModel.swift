@@ -61,7 +61,7 @@ final class LoginRegisterViewModel {
     
     if let accountUser {
       isLoading = false
-      input?.didGet(user: accountUser)
+      await input?.didGet(user: accountUser)
     }
   }
 }

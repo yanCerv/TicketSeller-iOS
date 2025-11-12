@@ -21,8 +21,16 @@ struct AccountView: View {
               .background(Color.ticketDivider)
               .padding()
             SectionHeader(title: "Datos de Usuario")
-            Text(viewModel.accountUser.email)
-            Text("\(viewModel.accountUser.firstName) \(viewModel.accountUser.lastName)")
+            Group {
+              Text(viewModel.accountUser.email)
+              Text("\(viewModel.accountUser.firstName) \(viewModel.accountUser.lastName)")
+            }
+            .font(.system(size: 16, weight: .semibold))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .foregroundStyle(Color.secondary)
+            .padding(.horizontal, 24)
+            .padding(.vertical, 5)
+            
           } else {
             Button("Login / Register") {
               viewModel.didTapLoginRegister()
@@ -83,6 +91,28 @@ struct AccountView: View {
             
           }
           .padding(.horizontal, 20)
+          
+          if viewModel.isUserLoggedIn {
+            Divider()
+              .background(Color.ticketDivider)
+              .padding()
+            
+            Button {
+              viewModel.didTapLogout()
+            } label: {
+              HStack {
+                Image(systemName: "power")
+                  .frame(alignment: .leading)
+                  .foregroundStyle(Color.primary)
+                  .padding(.horizontal, 5)
+                Text("Logout")
+                  .font(.system(size: 16, weight: .semibold))
+                  .foregroundStyle(Color.primary)
+              }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+          }
           
           Divider()
             .background(Color.ticketDivider)

@@ -1,0 +1,68 @@
+{
+  "_embedded": {
+    "classifications": [
+      {
+        "segment": {
+          "id": "KZFzniwnSyZfZ7v7na",
+          "name": "Arts & Theatre",
+          "_embedded": {
+            "genres": [
+              {
+                "id": "KnvZfZ7v7lv",
+                "name": "Magic & Illusion",
+                "_embedded": {
+                  "subgenres": [
+                    { "id": "KZazBEonSMnZfZ7v7l7", "name": "Magic" }
+                  ]
+                }
+              },
+              {
+                "id": "KnvZfZ7v7la",
+                "name": "Opera",
+                "_embedded": {
+                  "subgenres": [
+                    { "id": "KZazBEonSMnZfZ7v7l8", "name": "Classical Opera" }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "segment": {
+          "id": "KZFzniwnSyZfZ7v7nn",
+          "name": "Film",
+          "_embedded": {
+            "genres": [
+              {
+                "id": "KnvZfZ7vAkd",
+                "name": "Animation",
+                "_embedded": {
+                  "subgenres": [
+                    { "id": "KZazBEonSMnZfZ7vFla", "name": "Animation" }
+                  ]
+                }
+              },
+              {
+                "id": "KnvZfZ7vAkA",
+                "name": "Comedy",
+                "_embedded": {
+                  "subgenres": [
+                    { "id": "KZazBEonSMnZfZ7vFlJ", "name": "Comedy" }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "page": {
+    "size": 2,
+    "totalElements": 6,
+    "totalPages": 3,
+    "number": 0
+  }
+}

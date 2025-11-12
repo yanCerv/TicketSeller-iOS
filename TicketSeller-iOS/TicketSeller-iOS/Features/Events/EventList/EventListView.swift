@@ -50,15 +50,25 @@ struct EventListView: View {
             }
           }
           .padding(.top)
-          .task {
-            await viewModel.fetchEvents()
+        }
+        .task {
+          await viewModel.fetchEvents()
+        }
+        .navigationTitle("Events")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+          BackToolbarButton {
+            dismiss()
           }
-          .navigationTitle("Events")
-          .navigationBarTitleDisplayMode(.inline)
-          .toolbar {
-            BackToolbarButton {
-              dismiss()
-            }
+          
+          NavigationButton(systemImage: "list.dash", placement: .topBarTrailing) {
+            navigation.add(.classifications)
+          }
+        }
+        .navigationDestination(for: EventNavigationPath.self) { path in
+          switch path {
+          case .classifications:
+            ClassificationList()
           }
         }
       }

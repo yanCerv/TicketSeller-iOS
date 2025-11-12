@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 enum EventNavigationPath: Hashable {
-  case purchases
+  case classifications
 }
 
 final class EventNavigation: ObservableObject {

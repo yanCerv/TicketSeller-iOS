@@ -15,4 +15,6 @@ enum Paths: String {
   
   // Events
   case eventsByCountry = "/discovery/v2/events"
+  case eventClassification = "/discovery/v2/classifications.json"
+  case eventClassificationDetail = "/discovery/v2/classifications/"
 }

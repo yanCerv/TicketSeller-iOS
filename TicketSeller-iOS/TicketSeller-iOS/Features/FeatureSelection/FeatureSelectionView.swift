@@ -39,6 +39,7 @@ struct FeatureSelectionView: View {
           })
         }
         .navigationTitle("Ticket Seller")
+        .navigationBarTitleDisplayMode(.inline)
         .task {
           await viewModel.fetchFeatures()
         }

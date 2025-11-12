@@ -19,8 +19,8 @@ struct LoginRegister: View {
         }
       }
       .pickerStyle(.segmented)
-      .background(viewModel.isLoading ? Color.gray.opacity(0.4) : Color.brown.opacity(0.6))
-      .foregroundStyle(.primary)
+      .background(Color.clear)
+      .foregroundStyle(Color.mainColor)
       .padding(.horizontal, 56)
       .padding(.vertical, 26)
       .disabled(viewModel.isLoading)

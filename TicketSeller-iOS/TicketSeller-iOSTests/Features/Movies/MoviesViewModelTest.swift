@@ -33,9 +33,8 @@ final class MoviesViewModelTest: XCTestCase {
   }
   
   final class MockMoviesClient: MoviesProvider {
-    
     private let emptyObject = [Movie(id: 1, title: "", originalTitle: "", overview: "", posterPath: "", backdropPath: "", releaseDate: "", originalLanguage: "", voteAverage:  0.0)]
-
+    
     
     func fetchNowPlaying() async throws -> [Movie] {
       return emptyObject
@@ -60,5 +59,12 @@ final class MoviesViewModelTest: XCTestCase {
     func fetchMovieShowtime(id: Int) async throws -> MovieShowtime {
       MovieShowtime.emptyObject()
     }
+    
+    func fetchSeats() async -> [SeatRow] {
+      
+      return []
+    }
+    
+    
   }
 }
