@@ -27,6 +27,16 @@
         }
       }
     },
+    "%@ • %lld min" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ • %2$lld min"
+          }
+        }
+      }
+    },
     "%@ País" : {
 
     },
@@ -54,6 +64,9 @@
       }
     },
     "Add Item" : {
+
+    },
+    "Año: %@" : {
 
     },
     "Apellido(s)" : {

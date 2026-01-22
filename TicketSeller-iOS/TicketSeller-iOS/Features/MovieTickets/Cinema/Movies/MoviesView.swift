@@ -53,7 +53,6 @@ struct MoviesView: View {
             
           case .checkout(let dataPurchase):
             CheckoutView(viewModel: CheckoutViewModel(dataPurchase: dataPurchase))
-            
           }
         }
       }
