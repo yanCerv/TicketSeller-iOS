@@ -13,9 +13,7 @@ struct SeatQuantitySelectionView: View {
   var time: String
   weak var output: SeatQuantitySelectionOutput?
   let action: () -> Void
-  
-  @State private var enabled: Bool = true
-  
+    
   var body: some View {
     VStack(spacing: 3) {
       Text("Selecciona una cantidad")
@@ -41,7 +39,7 @@ struct SeatQuantitySelectionView: View {
         output?.didSelect(quantity: quantity)
         action()
       }
-      .modifier(ButtonModifier(isEnabled: $enabled, maxWidth: .infinity, font: .headline))
+      .modifier(ButtonModifier(isEnabled: quantity != 0, maxWidth: .infinity, font: .headline))
     }
     .padding()
     .background(.thinMaterial)
