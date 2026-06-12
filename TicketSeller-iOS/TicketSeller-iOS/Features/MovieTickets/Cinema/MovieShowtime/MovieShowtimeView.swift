@@ -31,8 +31,17 @@ struct MovieShowtimeView: View {
       .padding()
     }
     .sheet(isPresented: $viewModel.showSeatQuantitySelection) {
-      SeatQuantitySelectionView(viewModel: $viewModel)
-        .presentationDetents([.fraction(0.35)])
+      if viewModel.showSeatQuantitySelection {
+        SeatQuantitySelectionView(movieTitle: viewModel.movieDetailWrapped.title,
+                                  time: viewModel.showtimeSelected.time,
+                                  output: viewModel,
+                                  action: {
+          navigation.add(.seatSelection(showtime: viewModel.showtimeSelected,
+                                        movieDetail: viewModel.movieDetailWrapped,
+                                        seatQuantitySelected: viewModel.seatQuantity))
+        })
+          .presentationDetents([.fraction(0.35)])
+      }
     }
     .task {
       await viewModel.didFetchData()
