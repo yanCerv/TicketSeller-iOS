@@ -61,5 +61,12 @@ final class MovieShowtimeViewModel {
   
   func didSelecteSeat(quantity: Int) {
     seatQuantity = quantity
+    showSeatQuantitySelection = false
+  }
+}
+
+extension MovieShowtimeViewModel: SeatQuantitySelectionOutput {
+  func didSelect(quantity: Int) {
+    didSelecteSeat(quantity: quantity)
   }
 }

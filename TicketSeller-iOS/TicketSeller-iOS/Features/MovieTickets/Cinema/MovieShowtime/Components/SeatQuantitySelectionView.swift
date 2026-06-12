@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SeatQuantitySelectionView: View {
-  @EnvironmentObject var navigation: MoviesNavigation
-  @Binding var viewModel: MovieShowtimeViewModel
+  @State var quantity: Int = 0
+  var movieTitle: String
+  var time: String
+  weak var output: SeatQuantitySelectionOutput?
+  let action: () -> Void
+  
+  @State private var enabled: Bool = true
   
   var body: some View {
     VStack(spacing: 3) {
@@ -18,27 +23,25 @@ struct SeatQuantitySelectionView: View {
       Text("max 10 de boletos.")
         .font(.caption2)
         .padding(.bottom)
-      Text(viewModel.movieDetailWrapped.title)
+      Text(movieTitle)
         .frame(maxWidth: .infinity, alignment: .leading)
         .font(.caption)
-      Text(viewModel.showtimeSelected.time)
+      Text(time)
         .frame(maxWidth: .infinity, alignment: .leading)
         .font(.caption)
         .padding(.bottom)
-      Stepper(value: $viewModel.seatQuantity, in: 0...10) {
-        Text("\(viewModel.seatQuantity) boleto\(viewModel.seatQuantity == 1 ? "" : "s")")
+      Stepper(value: $quantity, in: 0...10) {
+        Text("\(quantity) boleto\(quantity == 1 ? "" : "s")")
           .font(.title2.weight(.medium))
       }
       .frame(maxWidth: 210)
       .padding(.bottom, 16)
       
       Button("Continuar") {
-        viewModel.showSeatQuantitySelection = false
-        navigation.add(.seatSelection(showtime: viewModel.showtimeSelected,
-                                      movieDetail: viewModel.movieDetailWrapped,
-                                      seatQuantitySelected: viewModel.seatQuantity))
+        output?.didSelect(quantity: quantity)
+        action()
       }
-      .modifier(ButtonModifier(isEnabled: viewModel.seatQuantity != 0, maxWidth: .infinity, font: .headline))
+      .modifier(ButtonModifier(isEnabled: $enabled, maxWidth: .infinity, font: .headline))
     }
     .padding()
     .background(.thinMaterial)
