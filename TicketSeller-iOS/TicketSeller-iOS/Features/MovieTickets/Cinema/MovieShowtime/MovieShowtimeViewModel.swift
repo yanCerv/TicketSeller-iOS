@@ -18,6 +18,8 @@ final class MovieShowtimeViewModel {
   var seatQuantity: Int = 0
   var showSeatQuantitySelection: Bool = false
   var errorMessage: String = ""
+  
+  var navigateToSeatSelection: (MoviesNavigationPath) -> Void = { _ in }
 
   var movieId: Int
   
@@ -62,6 +64,11 @@ final class MovieShowtimeViewModel {
   func didSelecteSeat(quantity: Int) {
     seatQuantity = quantity
     showSeatQuantitySelection = false
+    
+    if let movieDetail {
+      let path = MoviesNavigationPath.seatSelection(showtime: showtimeSelected, movieDetail: movieDetail, seatQuantitySelected: seatQuantity)
+      navigateToSeatSelection(path)
+    }
   }
 }
 

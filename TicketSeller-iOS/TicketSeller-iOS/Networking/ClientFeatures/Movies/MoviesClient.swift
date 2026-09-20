@@ -21,123 +21,80 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   private var anyCancellables: Set<AnyCancellable> = Set<AnyCancellable>()
   
+  //MARK: - Now Playing
+  @MainActor
   func fetchNowPlaying() async throws -> [Movie] {
-    
-    return try await withCheckedThrowingContinuation { continuation in
-      self.fetchNowPlayingMoviesPublisher()
-        .sink { completion in
-          if let error = self.error(completion) { // Error
-            continuation.resume(throwing: error)
-          }
-        } receiveValue: { responseData in // Response Data
-          let result = responseData.results
-          continuation.resume(returning: result)
-        }.store(in: &anyCancellables)
-    }
+    let data = try await fetchNowPlayingDTO()
+    // handle error throw here
+    return data.results
   }
   
+  @MainActor
+  func fetchNowPlayingDTO() async throws -> MovieResponseDTO {
+    let requestModel = MoviesClientResources.fetchNowPlaying.requestModel
+    return try await request(with: requestModel)
+  }
+  
+  //MARK: - Popular
+  @MainActor
   func fetchPopular() async throws -> [Movie] {
-    
-    return try await withCheckedThrowingContinuation { continuation in
-      self.fetchPopularMoviesPublisher()
-        .sink { completion in
-          if let error = self.error(completion) { // Error
-            continuation.resume(throwing: error)
-          }
-        } receiveValue: { responseData in // Response Data
-          let result = responseData.results
-          continuation.resume(returning: result)
-        }
-        .store(in: &anyCancellables)
-    }
+    let data = try await fetchNowPopularDTO()
+    // handle error throw here
+    return data.results
   }
   
+  @MainActor
+  func fetchNowPopularDTO() async throws -> MovieResponseDTO {
+    let requestModel = MoviesClientResources.fetchPopular.requestModel
+    return try await request(with: requestModel)
+  }
+  
+  //MARK: - Top Rated
+  @MainActor
   func fetchTopRated() async throws -> [Movie] {
-    return try await withCheckedThrowingContinuation { continuation in
-      self.fetchTopRatedMoviesPublisher()
-        .sink { completion in
-          if let error = self.error(completion) { // Error
-            continuation.resume(throwing: error)
-          }
-        } receiveValue: { responseData in // Response Data
-          let result = responseData.results
-          continuation.resume(returning: result)
-        }
-        .store(in: &anyCancellables)
-    }
+    let data = try await fetchTopRatedDTO()
+
+    return data.results
   }
   
+  @MainActor
+  func fetchTopRatedDTO() async throws -> MovieResponseDTO {
+    let requestModel = MoviesClientResources.fetchTopRated.requestModel
+    return try await request(with: requestModel)
+  }
+  
+  //MARK: - Upcoming
+  @MainActor
   func fetchUpcoming() async throws -> [Movie] {
-    return try await withCheckedThrowingContinuation { continuation in
-      self.fetchUpcomingMoviesPublisher()
-        .sink { completion in
-          if let error = self.error(completion) { // Error
-            continuation.resume(throwing: error)
-          }
-        } receiveValue: { responseData in // Response Data
-          let result = responseData.results
-          continuation.resume(returning: result)
-        }
-        .store(in: &anyCancellables)
-    }
+    let data = try await fetchUpcomingDTO()
+  
+    return data.results
   }
   
+  @MainActor
+  func fetchUpcomingDTO() async throws -> MovieResponseDTO {
+    let requestModel = MoviesClientResources.fetchUpcoming.requestModel
+    return try await request(with: requestModel)
+  }
+  
+  //MARK: - Movie Detail
+  @MainActor
   func fetchMovieDetail(id: Int) async throws -> MovieDetail {
-    return try await withCheckedThrowingContinuation { continuation in
-      self.fetchMovieDetailsPublisher(movieId: id)
-        .sink { completion in
-          if let error = self.error(completion) { // Error
-            continuation.resume(throwing: error)
-          }
-        } receiveValue: { responseData in // Response Data
-          let result = responseData
-          continuation.resume(returning: result)
-        }
-        .store(in: &anyCancellables)
-    }
+    let requestModel = MoviesClientResources.fetchDetail(movieId: id).requestModel
+    return try await request(with: requestModel)
   }
   
+  //MARK: - Mocks
   func fetchMovieShowtime(id: Int) async throws -> MovieShowtime {
     _ = await ShowtimeRepository(movieId: id)
     let movieShowtime = await ShowtimeRepository.getMovieShowtimes(from: id)
     return movieShowtime
   }
   
+  @MainActor
   func fetchSeats() async -> [SeatRow] {
     let response = ResourceJSON.from(fileName: "SeatMap", type: SeatResponseDTO.self)
     let rows = response.rows
     return rows
-  }
-  
-  //MARK: - Methods PublisherData Result
-  
-  private func fetchNowPlayingMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
-    let requestModel = MoviesClientResources.fetchNowPlaying.requestModel
-    
-    return request(with: requestModel)
-  }
-  
-  private func fetchPopularMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
-    let requestModel = MoviesClientResources.fetchPopular.requestModel
-    
-    return request(with: requestModel)
-  }
-  
-  private func fetchTopRatedMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
-    let requestModel = MoviesClientResources.fetchTopRated.requestModel
-    
-    return request(with: requestModel)
-  }
-  
-  private func fetchUpcomingMoviesPublisher() -> PublisherResult<MovieResponseDTO> {
-    let requestModel = MoviesClientResources.fetchUpcoming.requestModel
-    
-    return request(with: requestModel)
-  }
-  
-  private func fetchMovieDetailsPublisher(movieId: Int) -> PublisherResult<MovieDetail> {
-    let requestModel = MoviesClientResources.fetchDetail(movieId: movieId).requestModel
-    
-    return request(with: requestModel)
   }
 }

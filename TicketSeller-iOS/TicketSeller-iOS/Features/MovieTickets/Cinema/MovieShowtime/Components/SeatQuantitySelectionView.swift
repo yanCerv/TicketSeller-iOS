@@ -12,7 +12,6 @@ struct SeatQuantitySelectionView: View {
   var movieTitle: String
   var time: String
   weak var output: SeatQuantitySelectionOutput?
-  let action: () -> Void
     
   var body: some View {
     VStack(spacing: 3) {
@@ -37,7 +36,6 @@ struct SeatQuantitySelectionView: View {
       
       Button("Continuar") {
         output?.didSelect(quantity: quantity)
-        action()
       }
       .modifier(ButtonModifier(isEnabled: quantity != 0, maxWidth: .infinity, font: .headline))
     }

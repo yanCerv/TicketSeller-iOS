@@ -28,26 +28,28 @@ final class MoviesViewModel {
     await didFetchData()
   }
   
+  @MainActor
   func didFetchData() async {
     guard !isLoaded else { return }
+  
     
     await withThrowingTaskGroup(of: Void.self) { group in
-      group.addTask {
+      group.addTask { @MainActor in
         let movies = try await self.client.fetchNowPlaying()
         self.nowPlaying = movies
       }
 
-      group.addTask {
+      group.addTask { @MainActor in
         let movies = try await self.client.fetchPopular()
         self.popularMovies = movies
       }
 
-      group.addTask {
+      group.addTask { @MainActor in
         let movies = try await self.client.fetchTopRated()
         self.topRatedMovies = movies
       }
 
-      group.addTask {
+      group.addTask { @MainActor in
         let movies = try await self.client.fetchUpcoming()
         self.upcomingMovies = movies
       }

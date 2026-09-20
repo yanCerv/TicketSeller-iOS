@@ -12,6 +12,7 @@ protocol AccountProvider {
 
 actor AccountClient: AccountProvider {
   
+  @MainActor
   func fetchAccountUser() async -> AccountUser {
     let response = ResourceJSON.from(fileName: "AccountUser", type: AccountUserResponseDTO.self)
     let dataUser = response.result

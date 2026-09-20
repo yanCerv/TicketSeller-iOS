@@ -34,17 +34,16 @@ struct MovieShowtimeView: View {
       if viewModel.showSeatQuantitySelection {
         SeatQuantitySelectionView(movieTitle: viewModel.movieDetailWrapped.title,
                                   time: viewModel.showtimeSelected.time,
-                                  output: viewModel,
-                                  action: {
-          navigation.add(.seatSelection(showtime: viewModel.showtimeSelected,
-                                        movieDetail: viewModel.movieDetailWrapped,
-                                        seatQuantitySelected: viewModel.seatQuantity))
-        })
+                                  output: viewModel)
           .presentationDetents([.fraction(0.35)])
       }
     }
     .task {
       await viewModel.didFetchData()
+      
+      viewModel.navigateToSeatSelection = { path in
+        navigation.add(path)
+      }
     }
   }
 }

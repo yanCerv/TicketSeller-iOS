@@ -10,8 +10,10 @@ import Combine
 
 typealias PublisherResult<T: Decodable> = AnyPublisher<T, ErrorHandler>
 
+
 protocol Request {
   func request<T: Decodable>(with model: RequestModel) -> PublisherResult<T>
+  func request<T: Decodable>(with model: RequestModel) async throws -> T
 }
 
 extension Request {
@@ -45,5 +47,26 @@ extension Request {
       }
       .receive(on: DispatchQueue.main)
       .eraseToAnyPublisher()
+  }
+  
+  //New
+  func request<T: Decodable>(with model: RequestModel) async throws -> T {
+    let modelRequest = model.request
+    let (data, response) = try await self.requestHolder.data(for: modelRequest)
+    
+    guard let result = response as? HTTPURLResponse else {
+      throw ErrorHandler.requestFail
+    }
+    
+    switch result.statusCode {
+    case 200...299:
+      let decode = try JSONDecoder().decode(T.self, from: data)
+      return decode
+    default:
+      if let error = response as? Error {
+        throw ErrorHandler.error(message: error.localizedDescription, statusCode:  result.statusCode)
+      }
+      throw ErrorHandler.requestFail
+    }
   }
 }
