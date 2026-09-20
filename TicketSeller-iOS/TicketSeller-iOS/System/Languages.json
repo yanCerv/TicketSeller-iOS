@@ -1,0 +1,32 @@
+[
+  {
+    "languageCode": "es",
+    "regionCode": "MX",
+    "displayName": "Español (México)"
+  },
+  {
+    "languageCode": "en",
+    "regionCode": "US",
+    "displayName": "English (United States)"
+  },
+  {
+    "languageCode": "fr",
+    "regionCode": "FR",
+    "displayName": "Français (France)"
+  },
+  {
+    "languageCode": "de",
+    "regionCode": "DE",
+    "displayName": "Deutsch (Deutschland)"
+  },
+  {
+    "languageCode": "pt",
+    "regionCode": "BR",
+    "displayName": "Português (Brasil)"
+  },
+  {
+    "languageCode": "it",
+    "regionCode": "IT",
+    "displayName": "Italiano (Italia)"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "id": "usr_001",
+    "first_name": "Yangas",
+    "last_name": "Cervantes",
+    "email": "yangas@mail.com",
+    "phone": "+521234567890",
+    "language": "es",
+    "country_code": "MX",
+    "is_verified": true,
+    "favorites": {
+      "features": ["movies", "events", "flights"],
+      "cinemas": ["cinepolis-aguascalientes"]
+    },
+    "created_at": "2024-01-15T10:45:00Z",
+    "updated_at": "2025-10-31T11:30:00Z"
+  }
+}

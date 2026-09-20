@@ -73,4 +73,3 @@ Do not commit API keys, bearer tokens or production credentials. Before publishi
 ## Disclaimer
 
 TicketSeller is an independently created learning and portfolio project. Ticketmaster and TMDB are third-party services; their names and data remain the property of their respective owners. The application does not process real payments or issue tickets.
-

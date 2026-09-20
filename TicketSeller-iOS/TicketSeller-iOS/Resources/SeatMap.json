@@ -1,0 +1,3679 @@
+{
+  "rows": [
+    {
+      "rowName": "A",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 0,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "B",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "RELAX",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 1,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "C",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 2,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "D",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 3,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "E",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "CONFORT",
+          "price": 15.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 4,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "F",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 5,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "G",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "PREMIUM",
+          "price": 20.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 6,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "H",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 7,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "I",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "SOFA",
+          "price": 18.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 60,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 8,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "J",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "17",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "18",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 9,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "K",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "1",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "2",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "3",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "4",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "5",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "6",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "7",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "8",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "9",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "10",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "11",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "12",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "13",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "14",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "15",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "16",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "17",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "18",
+          "type": "MOTION",
+          "price": 21.99,
+          "isAvailable": true,
+          "status": "Available",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 10,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "L",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 11,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "M",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 12,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "N",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 13,
+            "columnIndex": 19
+          }
+        }
+      ]
+    },
+    {
+      "rowName": "O",
+      "seats": [
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 0
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 1
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 2
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 3
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 4
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 5
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 6
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 7
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 8
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 9
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 10
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 11
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 12
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 13
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 14
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 15
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 16
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 17
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 18
+          }
+        },
+        {
+          "seatNumber": "",
+          "type": "SPACE",
+          "price": 0.0,
+          "isAvailable": false,
+          "status": "Space",
+          "seatWidth": 40,
+          "position": {
+            "rowIndex": 14,
+            "columnIndex": 19
+          }
+        }
+      ]
+    }
+  ]
+}
