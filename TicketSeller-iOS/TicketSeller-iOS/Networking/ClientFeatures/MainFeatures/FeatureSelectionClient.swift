@@ -14,6 +14,7 @@ protocol FeatureSelectionProvider {
 
 actor FeatureSelectionClient: Request, FeatureSelectionProvider {
   
+  @MainActor
   func fetchMainFeatures() async -> [MainFeature] {
     let resultData = ResourceJSON.from(fileName: "Features", type: MainFeatureResponseDTO.self)
     let mainFeatures = resultData.result
@@ -21,6 +22,7 @@ actor FeatureSelectionClient: Request, FeatureSelectionProvider {
     return mainFeatures
   }
   
+  @MainActor
   func fetchCountries() async -> [AppCountry] {
     let resultData = ResourceJSON.from(fileName: "AppCountries", type: AppCountryResponseDTO.self)
     let countries = resultData.result

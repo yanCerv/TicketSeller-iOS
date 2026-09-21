@@ -22,12 +22,17 @@ final class ClassificationListViewModel {
   
   func fetchClassifications() async {
     do {
-      let classifications = try await client.fetchClassification()
-      self.classifications = classifications
+      if let classifications = try await client.fetchClassification() {
+        self.classifications = classifications
+      } else {
+        //Empty State
+        errorMessage = "No Founded (1001)"
+        showError = true
+      }
     } catch {
       if let error = error as? ErrorHandler {
-        self.errorMessage = error.message
-        self.showError = true
+        errorMessage = error.message
+        showError = true
       }
     }
   }
