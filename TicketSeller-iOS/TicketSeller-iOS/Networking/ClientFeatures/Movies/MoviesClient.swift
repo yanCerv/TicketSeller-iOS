@@ -5,7 +5,7 @@
 //  Created by Yan Cervantes on 15/10/25.
 //
 
-import Combine
+import Foundation
 
 protocol MoviesProvider {
   func fetchNowPlaying() async throws -> [Movie]
@@ -29,7 +29,9 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   @MainActor
   func fetchNowPlayingDTO() async throws -> MovieResponseDTO {
-    let requestModel = MoviesClientResources.fetchNowPlaying.requestModel
+    let path = Paths.nowPlaying
+    let queryItems = queryItems()
+    let requestModel = RequestModel(path: path.rawValue, queryItems: queryItems)
     return try await request(with: requestModel)
   }
   
@@ -43,7 +45,9 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   @MainActor
   func fetchNowPopularDTO() async throws -> MovieResponseDTO {
-    let requestModel = MoviesClientResources.fetchPopular.requestModel
+    let path = Paths.popular
+    let queryItems = queryItems()
+    let requestModel = RequestModel(path: path.rawValue, queryItems: queryItems)
     return try await request(with: requestModel)
   }
   
@@ -57,7 +61,9 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   @MainActor
   func fetchTopRatedDTO() async throws -> MovieResponseDTO {
-    let requestModel = MoviesClientResources.fetchTopRated.requestModel
+    let path = Paths.topRated
+    let queryItems = queryItems()
+    let requestModel = RequestModel(path: path.rawValue, queryItems: queryItems)
     return try await request(with: requestModel)
   }
   
@@ -71,14 +77,18 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   @MainActor
   func fetchUpcomingDTO() async throws -> MovieResponseDTO {
-    let requestModel = MoviesClientResources.fetchUpcoming.requestModel
+    let path = Paths.upcoming
+    let queryItems = queryItems()
+    let requestModel = RequestModel(path: path.rawValue, queryItems: queryItems)
     return try await request(with: requestModel)
   }
   
   //MARK: - Movie Detail
   @MainActor
   func fetchMovieDetail(id: Int) async throws -> MovieDetail {
-    let requestModel = MoviesClientResources.fetchDetail(movieId: id).requestModel
+    let path = "\(Paths.movieDetail.rawValue)/\(id)"
+    let queryItems = queryItems()
+    let requestModel = RequestModel(path: path, queryItems: queryItems)
     return try await request(with: requestModel)
   }
   
@@ -94,5 +104,15 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
     let response = ResourceJSON.from(fileName: "SeatMap", type: SeatResponseDTO.self)
     let rows = response.rows
     return rows
+  }
+  
+  @MainActor
+  private func queryItems(havePage: Bool = true) -> [URLQueryItem] {
+    var items: [URLQueryItem] = []
+    items.append(URLQueryItem(name: "language", value: "es-MX"))
+    if havePage {
+      items.append(URLQueryItem(name: "page", value: "1"))
+    }
+    return items
   }
 }
