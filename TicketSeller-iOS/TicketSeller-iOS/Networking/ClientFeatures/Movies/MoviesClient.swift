@@ -18,9 +18,7 @@ protocol MoviesProvider {
 }
 
 actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
-  
-  private var anyCancellables: Set<AnyCancellable> = Set<AnyCancellable>()
-  
+    
   //MARK: - Now Playing
   @MainActor
   func fetchNowPlaying() async throws -> [Movie] {
