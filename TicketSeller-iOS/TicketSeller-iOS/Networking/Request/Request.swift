@@ -11,17 +11,18 @@ protocol Request {
   func request<T: Decodable>(with model: RequestModel) async throws -> T
 }
 
+fileprivate enum NetworkSession {
+  static let shared: URLSession = {
+    URLSession(configuration: .default, delegate: ClientURLSession(), delegateQueue: .main)
+  }()
+}
+
 extension Request {
-  
-  private var requestHolder: URLSession {
-    let sessionDelegate = ClientURLSession()
-    return URLSession(configuration: .default, delegate: sessionDelegate, delegateQueue: .main)
-  }
   
   //New
   func request<T: Decodable>(with model: RequestModel) async throws -> T {
     let modelRequest = model.request
-    let (data, response) = try await self.requestHolder.data(for: modelRequest)
+    let (data, response) = try await NetworkSession.shared.data(for: modelRequest)
     
     guard let result = response as? HTTPURLResponse else {
       throw ErrorHandler.requestFail
