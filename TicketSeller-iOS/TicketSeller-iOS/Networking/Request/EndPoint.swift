@@ -10,17 +10,13 @@ import Foundation
 enum APIProvider {
   case movieDB
   case ticketmaster
-  
-  private var env: Env {
-    return Env()
-  }
 
   var baseURL: String {
     switch self {
     case .movieDB:
-      return env.get(.baseUrl)
+      return NetworkEnvironment.shared.environment.get(.baseUrl)
     case .ticketmaster:
-      return env.get(.ticketmasterUrl)
+      return NetworkEnvironment.shared.environment.get(.ticketmasterUrl)
     }
   }
 
@@ -30,12 +26,23 @@ enum APIProvider {
       return [
         "accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": "Bearer \(Env().get(.bearerToken))"
+        "Authorization": "Bearer \(NetworkEnvironment.shared.environment.get(.bearerToken))"
       ]
     case .ticketmaster:
       return [
         "accept": "application/json"
       ]
+    }
+  }
+  
+  func queriItems(countryCode: String = "") -> [URLQueryItem] {
+    switch self {
+    case .movieDB:
+      return [URLQueryItem(name: "language", value: "es-MX"), URLQueryItem(name: "page", value: "1")]
+    case .ticketmaster:
+      return [URLQueryItem(name: "countryCode", value: "MX"),
+              URLQueryItem(name: "size", value: "10"),
+              URLQueryItem(name: "apikey", value: NetworkEnvironment.shared.environment.get(.ticketmasterKey))]
     }
   }
 }
@@ -56,7 +63,7 @@ extension EndPoint {
   
   private var baseUrl: URL {
     var components = URLComponents(string: "\(provider.baseURL)\(path)")
-    components?.queryItems = queryItems
+    components?.queryItems = provider.queriItems()
     return components!.url!
   }
   
@@ -76,5 +83,15 @@ extension EndPoint {
     request.timeoutInterval = 300
     debugPrint("Request: \(baseUrl)")
     return request
+  }
+}
+
+final class NetworkEnvironment {
+  static let shared = NetworkEnvironment()
+  
+  let environment: Env
+  
+  private init() {
+    self.environment = Env()
   }
 }

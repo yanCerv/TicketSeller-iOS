@@ -19,8 +19,6 @@ protocol MoviesProvider: Sendable {
 
 actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
-  private let queryItems = [URLQueryItem(name: "language", value: "es-MX"), URLQueryItem(name: "page", value: "1")]
-  
   //MARK: - Now Playing
 
   func fetchNowPlaying() async throws -> [Movie] {
@@ -31,7 +29,7 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   func fetchNowPlayingDTO() async throws -> MovieResponseDTO {
     let path = Paths.nowPlaying
-    let requestModel = RequestModel(path: path.rawValue, queryItems: queryItems, provider: .movieDB)
+    let requestModel = RequestModel(path: path.rawValue, provider: .movieDB)
     return try await request(with: requestModel)
   }
   
@@ -44,7 +42,7 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   func fetchNowPopularDTO() async throws -> MovieResponseDTO {
     let path = Paths.popular
-    let requestModel = RequestModel(path: path.rawValue, queryItems: queryItems, provider: .movieDB)
+    let requestModel = RequestModel(path: path.rawValue, provider: .movieDB)
     return try await request(with: requestModel)
   }
   
@@ -57,7 +55,7 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   func fetchTopRatedDTO() async throws -> MovieResponseDTO {
     let path = Paths.topRated
-    let requestModel = RequestModel(path: path.rawValue, queryItems: queryItems, provider: .movieDB)
+    let requestModel = RequestModel(path: path.rawValue, provider: .movieDB)
     return try await request(with: requestModel)
   }
   
@@ -70,14 +68,14 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   func fetchUpcomingDTO() async throws -> MovieResponseDTO {
     let path = Paths.upcoming
-    let requestModel = RequestModel(path: path.rawValue, queryItems: queryItems, provider: .movieDB)
+    let requestModel = RequestModel(path: path.rawValue, provider: .movieDB)
     return try await request(with: requestModel)
   }
   
   //MARK: - Movie Detail
   func fetchMovieDetail(id: Int) async throws -> MovieDetail {
     let path = "\(Paths.movieDetail.rawValue)/\(id)"
-    let requestModel = RequestModel(path: path, queryItems: queryItems, provider: .movieDB)
+    let requestModel = RequestModel(path: path, provider: .movieDB)
     return try await request(with: requestModel)
   }
   

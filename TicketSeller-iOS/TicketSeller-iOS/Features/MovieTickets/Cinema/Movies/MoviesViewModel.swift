@@ -31,37 +31,26 @@ final class MoviesViewModel {
   @MainActor
   func didFetchData() async {
     guard !isLoaded else { return }
-  
     
-    await withThrowingTaskGroup(of: Void.self) { group in
-      group.addTask { @MainActor in
-        let movies = try await self.client.fetchNowPlaying()
-        self.nowPlaying = movies
-      }
-
-      group.addTask { @MainActor in
-        let movies = try await self.client.fetchPopular()
-        self.popularMovies = movies
-      }
-
-      group.addTask { @MainActor in
-        let movies = try await self.client.fetchTopRated()
-        self.topRatedMovies = movies
-      }
-
-      group.addTask { @MainActor in
-        let movies = try await self.client.fetchUpcoming()
-        self.upcomingMovies = movies
-      }
-
-      do {
-        try await group.waitForAll()
-        isLoaded = true
-      } catch {
-        isLoaded = true
-        if let error = error as? ErrorHandler {
-          self.errorMessage = error.message
-        }
+    let client = client
+    
+    do {
+      async let nowPlaying = client.fetchNowPlaying()
+      async let popular = client.fetchPopular()
+      async let topRated = client.fetchTopRated()
+      async let upcoming = client.fetchUpcoming()
+      
+      let (nowPlayingResult, popularResult, topRatedResult, upcomingResult) = try await (nowPlaying, popular, topRated, upcoming)
+      
+      self.nowPlaying = nowPlayingResult
+      self.popularMovies = popularResult
+      self.topRatedMovies = topRatedResult
+      self.upcomingMovies = upcomingResult
+      isLoaded = true
+    } catch {
+      isLoaded = true
+      if let error = error as? ErrorHandler {
+        errorMessage = error.message
       }
     }
   }
