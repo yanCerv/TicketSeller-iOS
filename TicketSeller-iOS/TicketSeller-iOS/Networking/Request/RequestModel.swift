@@ -7,17 +7,15 @@
 
 import Foundation
 
-struct RequestModel: EndPoint {
+nonisolated struct RequestModel: EndPoint, Sendable {
   var path: String
   var method: Method
-  var parameters: Encodable?
   var queryItems: [URLQueryItem]?
   var provider: APIProvider
 
-  init(path: String, method: Method = .get, parameters: Encodable? = nil, queryItems: [URLQueryItem]? = nil, provider: APIProvider = .movieDB) {
+  init(path: String, method: Method = .get, queryItems: [URLQueryItem]? = nil, provider: APIProvider = .movieDB) {
     self.path = path
     self.method = method
-    self.parameters = parameters
     self.queryItems = queryItems
     self.provider = provider
   }

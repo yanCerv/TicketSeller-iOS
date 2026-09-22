@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ResourceJSON {
+nonisolated final class ResourceJSON {
   static func from<T: Decodable>(fileName: String, type: T.Type) -> T {
     guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
       fatalError("❌ Not found \(fileName).json in bundle.")

@@ -43,7 +43,6 @@ enum APIProvider {
 protocol EndPoint {
   var path: String { get }
   var method: Method { get }
-  var parameters: Encodable? { get }
   var queryItems: [URLQueryItem]? { get }
   var provider: APIProvider { get }
 }
