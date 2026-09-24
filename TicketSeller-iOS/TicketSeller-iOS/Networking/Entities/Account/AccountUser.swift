@@ -25,4 +25,8 @@ struct AccountUser: Codable, Hashable {
     case countryCode = "country_code"
     case isVerified = "is_verified"
   }
+  
+  static func emptyValues() -> AccountUser {
+    AccountUser(id: "", firstName: "", lastName: "", email: "", phone: "", language: "", countryCode: " ", isVerified: false)
+  }
 }

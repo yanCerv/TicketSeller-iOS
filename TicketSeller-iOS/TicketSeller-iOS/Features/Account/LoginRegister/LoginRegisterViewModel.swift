@@ -13,13 +13,19 @@ final class LoginRegisterViewModel {
   private let client: AccountProvider
   weak var input: LoginActionInput!
   
-  var selectedMode: AuthMode = .login
+  var selectedMode: AuthMode = .login {
+    didSet {
+      password = ""
+      accountName = ""
+    }
+  }
   
   var accountName: String = ""
+  var password: String = ""
   var otpCode: String = ""
   var sendedAccount: Bool = false
   var isLoading: Bool = false
-  
+  var isUserCreated: Bool = false
   var accountUser: AccountUser?
   
   var accountNameValid: Bool {
@@ -28,6 +34,10 @@ final class LoginRegisterViewModel {
   
   var otpCodeFilled: Bool {
     return otpCode.count == 6
+  }
+  
+  var showRegisterButton: Bool {
+    return accountNameValid && password.count >= 8
   }
   
   //MARK: - Init
@@ -39,6 +49,36 @@ final class LoginRegisterViewModel {
   
   //MARK: - Methods
   
+  func didTapRegister() async {
+    isLoading = true
+    
+    do {
+      let register = try await client.register(email: accountName, password: password)
+      isUserCreated = register.isActive
+      accountName = ""
+      password = ""
+      debugPrint("Register Success and isActive = \(register.isActive).  Please login ")
+      //SHOW ALERT!
+    } catch {
+      debugPrint(error)
+    }
+  }
+  
+  func didTapLoginButton() async {
+    isLoading = true
+    
+    do {
+      let loginAccount = try await client.login(email: accountName, password: password)
+      let keyChain = KeychainStore()
+      try keyChain.save(access: loginAccount)
+      isLoading = false
+    } catch {
+      isLoading = false
+      debugPrint(error)
+    }
+  }
+  
+  //For The next Feature Pending
   func didtapLogin() {
     sendedAccount = true
     

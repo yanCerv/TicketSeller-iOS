@@ -5,7 +5,7 @@
 //  Created by Yan Cervantes on 15/10/25.
 //
 
-enum Paths: String {
+enum Paths: String, CaseIterable {
   // Movies
   case nowPlaying = "/3/movie/now_playing"
   case popular = "/3/movie/popular"
@@ -17,4 +17,11 @@ enum Paths: String {
   case eventsByCountry = "/discovery/v2/events"
   case eventClassification = "/discovery/v2/classifications.json"
   case eventClassificationDetail = "/discovery/v2/classifications/"
+  
+  //Account
+  case register = "/api/v1/auth/register"
+  case login = "/api/v1/auth/login"
+  case logout = "/api/v1/auth/logout"
+  case account = "/api/v1/users/me"
+  case refresh = "/api/v1/auth/refresh"
 }

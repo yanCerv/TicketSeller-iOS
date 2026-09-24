@@ -29,7 +29,7 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   func fetchNowPlayingDTO() async throws -> MovieResponseDTO {
     let path = Paths.nowPlaying
-    let requestModel = RequestModel(path: path.rawValue, provider: .movieDB)
+    let requestModel = await RequestModel(path: path.rawValue, provider: .movieDB)
     return try await request(with: requestModel)
   }
   
@@ -42,7 +42,7 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   func fetchNowPopularDTO() async throws -> MovieResponseDTO {
     let path = Paths.popular
-    let requestModel = RequestModel(path: path.rawValue, provider: .movieDB)
+    let requestModel = await RequestModel(path: path.rawValue, provider: .movieDB)
     return try await request(with: requestModel)
   }
   
@@ -55,7 +55,7 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   func fetchTopRatedDTO() async throws -> MovieResponseDTO {
     let path = Paths.topRated
-    let requestModel = RequestModel(path: path.rawValue, provider: .movieDB)
+    let requestModel = await RequestModel(path: path.rawValue, provider: .movieDB)
     return try await request(with: requestModel)
   }
   
@@ -68,14 +68,14 @@ actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
   
   func fetchUpcomingDTO() async throws -> MovieResponseDTO {
     let path = Paths.upcoming
-    let requestModel = RequestModel(path: path.rawValue, provider: .movieDB)
+    let requestModel = await RequestModel(path: path.rawValue, provider: .movieDB)
     return try await request(with: requestModel)
   }
   
   //MARK: - Movie Detail
   func fetchMovieDetail(id: Int) async throws -> MovieDetail {
     let path = "\(Paths.movieDetail.rawValue)/\(id)"
-    let requestModel = RequestModel(path: path, provider: .movieDB)
+    let requestModel = await RequestModel(path: path, provider: .movieDB)
     return try await request(with: requestModel)
   }
   

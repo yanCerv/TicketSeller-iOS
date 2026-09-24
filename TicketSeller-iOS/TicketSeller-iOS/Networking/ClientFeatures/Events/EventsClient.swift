@@ -33,14 +33,14 @@ actor EventsClient: Request, EventsProvider, ErrorCompletion {
   
   private func fetchEvetnsDTO(countryCode: String, size: Int) async throws -> EventsResponseDTO {
     let path = Paths.eventsByCountry
-    let requestModel = RequestModel(path: path.rawValue, method: .get, provider: provider)
+    let requestModel = await RequestModel(path: path.rawValue, method: .get, provider: provider)
     
     return try await request(with: requestModel)
   }
   
   private func fetchClassificationDTO() async throws -> EventClassificationResponseDTO {
     let path = Paths.eventClassification
-    let requestModel = RequestModel(path: path.rawValue, method: .get, provider: provider)
+    let requestModel = await RequestModel(path: path.rawValue, method: .get, provider: provider)
     
     return try await request(with: requestModel)
   }

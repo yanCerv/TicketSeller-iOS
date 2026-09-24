@@ -13,8 +13,36 @@ struct RegisterForm: View {
   
   var body: some View {
     VStack {
-      Text("Hello, World!")
+      TextField("Email account", text: $viewModel.accountName)
+        .loginTextFieldStyle(enabled: viewModel.accountNameValid)
+        .keyboardType(.emailAddress)
+        .textContentType(.emailAddress)
+        .autocorrectionDisabled()
+        .textInputAutocapitalization(.never)
+        .disabled(viewModel.isLoading)
+      
+      SecureField("Password", text: $viewModel.password)
+        .loginTextFieldStyle(enabled: viewModel.accountNameValid)
+        .autocorrectionDisabled()
+        .textInputAutocapitalization(.never)
+        .disabled(viewModel.isLoading)
+      
+      if viewModel.showRegisterButton {
+        Button(viewModel.sendedAccount ? "Continue" : "Login") {
+          Task {
+            await viewModel.didTapRegister()
+          }
+        }
+        .modifier(ButtonModifier(isEnabled: viewModel.accountNameValid))
+        .disabled(viewModel.isLoading)
+      }
+      
+      if viewModel.isUserCreated {
+        Text("User Created Successfully please login!")
+        Text("Use Your Credentials!")
+      }
     }
+    .padding(.horizontal, 26)
   }
 }
 

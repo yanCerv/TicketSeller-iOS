@@ -6,21 +6,25 @@
 //
 
 import Foundation
+import Security
 
 enum APIProvider {
   case movieDB
   case ticketmaster
-
+  case host
+  
   var baseURL: String {
     switch self {
     case .movieDB:
       return NetworkEnvironment.shared.environment.get(.baseUrl)
     case .ticketmaster:
       return NetworkEnvironment.shared.environment.get(.ticketmasterUrl)
+    case .host:
+      return NetworkEnvironment.shared.environment.get(.hostUrl)
     }
   }
 
-  var headers: [String: String] {
+  func headers(isAuthorized: Bool) -> [String: String] {
     switch self {
     case .movieDB:
       return [
@@ -32,6 +36,18 @@ enum APIProvider {
       return [
         "accept": "application/json"
       ]
+    case .host:
+      let keyChainStore = KeychainStore()
+      var headers = ["accept": "application/json",
+                     "Content-Type": "application/json"]
+      let isExpired = Date.isAccessOrSessionExpired(using: FileDataManager.accessExpired)
+      
+      if let token = try? keyChainStore.value(for: .access),
+       !isExpired && isAuthorized {
+        headers["Authorization"] = "Bearer \(token)"
+        return headers
+      }
+      return headers
     }
   }
   
@@ -43,6 +59,8 @@ enum APIProvider {
       return [URLQueryItem(name: "countryCode", value: "MX"),
               URLQueryItem(name: "size", value: "10"),
               URLQueryItem(name: "apikey", value: NetworkEnvironment.shared.environment.get(.ticketmasterKey))]
+    case .host:
+      return []
     }
   }
 }
@@ -50,8 +68,10 @@ enum APIProvider {
 protocol EndPoint {
   var path: String { get }
   var method: Method { get }
+  var requestBody: Encodable? { get }
   var queryItems: [URLQueryItem]? { get }
   var provider: APIProvider { get }
+  var isAuthorized: Bool { get }
 }
 
 enum Method: String {
@@ -63,16 +83,22 @@ extension EndPoint {
   
   private var baseUrl: URL {
     var components = URLComponents(string: "\(provider.baseURL)\(path)")
-    components?.queryItems = provider.queriItems()
+    if !provider.queriItems().isEmpty {
+      components?.queryItems = provider.queriItems()
+    }
     return components!.url!
   }
   
   private var headers: [String: String] {
-    return provider.headers
+    return provider.headers(isAuthorized: isAuthorized)
   }
   
   private var data: Data? {
-    return nil // TODO
+    if let requestBody {
+      let data = try? JSONEncoder().encode(requestBody)
+      return data
+    }
+    return nil
   }
   
   var request: URLRequest {

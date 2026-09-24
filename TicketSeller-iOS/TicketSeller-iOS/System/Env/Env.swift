@@ -56,6 +56,7 @@ final class Env {
     case bearerToken
     case ticketmasterUrl
     case ticketmasterKey
+    case hostUrl
   }
   
   enum EnvironmentType: String {
