@@ -39,3 +39,9 @@ enum ErrorHandler: Error {
     }
   }
 }
+
+struct ErrorResponse: Decodable {
+  let statusCode: Int
+  let code: String
+  let message: String
+}

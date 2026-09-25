@@ -11,6 +11,7 @@ import SwiftUI
 final class AccountViewModel {
   private let client: FeatureSelectionProvider
   private let accountKey: String = FileDataManager.accountKey
+  private let keyStore: KeychainStore = KeychainStore()
   
   var appCountries: [AppCountry] = []
   var isUserLoggedIn: Bool = false
@@ -28,12 +29,16 @@ final class AccountViewModel {
   var showCountryPicker: Bool = false
   var showLanguagePicker: Bool = false
   
+  //Alert
+  var showAlert: Bool = false
+  var message: String = ""
+  
   init(client: FeatureSelectionProvider = FeatureSelectionClient()) {
     self.client = client
   }
   
   func fetchAppCountries() async {
-    validateUserLogged()
+    await validateUserLogged()
     let appCountries = await client.fetchCountries()
     self.appCountries = appCountries
     
@@ -58,7 +63,7 @@ final class AccountViewModel {
   
   func didTapLogout() {
     isUserLoggedIn = false
-    try? FileDataManager.delete(fileName: accountKey)
+    keyStore.deleteAccess()
   }
   
   private func verifyCountry(from appCountries: [AppCountry]) {
@@ -78,11 +83,23 @@ final class AccountViewModel {
     }
   }
   
-  private func validateUserLogged() {
+  private func validateUserLogged() async {
+    guard keyStore.isUserLogged() else { return }
+    
     if let user = try? FileDataManager.load(AccountUser.self, from: accountKey) {
       isUserLoggedIn = true
       accountUser = user
       showLoginRegister = false
+    }
+    
+    do {
+      let accountData = try await client.accountData()
+      debugPrint("userIsLoged As \(accountData)")
+    } catch {
+      let error = error as? ErrorHandler
+      let errorMessage = error?.message ?? "Unknown Error"
+      showAlert = true
+      message = errorMessage
     }
   }
 }

@@ -10,17 +10,10 @@ import XCTest
 
 final class MoviesViewModelTest: XCTestCase {
   
-  var viewModel: MoviesViewModel!
-  
-  override func setUpWithError() throws {
-    viewModel = MoviesViewModel(client: MockMoviesClient())
-  }
-  
-  override func tearDownWithError() throws {
-    viewModel = nil
-  }
-  
+  @MainActor
   func testFetchMovieOnSuccess() async {
+    let viewModel = MoviesViewModel(client: MockMoviesClient())
+
     XCTAssertNotNil(viewModel)
     
     await viewModel.didFetchData()

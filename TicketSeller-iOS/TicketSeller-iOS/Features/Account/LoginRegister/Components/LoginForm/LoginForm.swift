@@ -21,7 +21,14 @@ struct LoginForm: View {
         .textInputAutocapitalization(.never)
         .disabled(viewModel.isLoading)
       
-      if viewModel.sendedAccount {
+      SecureField("Password", text: $viewModel.password)
+        .loginTextFieldStyle(enabled: viewModel.accountNameValid)
+        .autocorrectionDisabled()
+        .textInputAutocapitalization(.never)
+        .disabled(viewModel.isLoading)
+      
+      
+      if viewModel.sendedAccount { // For Next Feature is pending
         TextField("OTP", text: $viewModel.otpCode)
           .loginTextFieldStyle(enabled: viewModel.otpCodeFilled)
           .keyboardType(.numberPad)
@@ -30,10 +37,18 @@ struct LoginForm: View {
       }
       
       Button(viewModel.sendedAccount ? "Continue" : "Login") {
-         viewModel.didtapLogin()
+        Task {
+          await viewModel.didTapLoginButton()
+        }
       }
-      .modifier(ButtonModifier(isEnabled: viewModel.accountNameValid))
+      .modifier(ButtonModifier(isEnabled: viewModel.showRegisterButton))
       .disabled(viewModel.isLoading)
+      
+//      Button(viewModel.sendedAccount ? "Continue" : "Login") {
+//         viewModel.didtapLogin()
+//      }
+//      .modifier(ButtonModifier(isEnabled: viewModel.accountNameValid))
+//      .disabled(viewModel.isLoading)
     }
     .padding(.horizontal, 26)
   }

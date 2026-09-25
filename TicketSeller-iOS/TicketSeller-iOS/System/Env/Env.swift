@@ -52,10 +52,7 @@ final class Env {
   }
   
   enum EnvironmentValue: String {
-    case baseUrl
-    case bearerToken
-    case ticketmasterUrl
-    case ticketmasterKey
+    case hostUrl
   }
   
   enum EnvironmentType: String {

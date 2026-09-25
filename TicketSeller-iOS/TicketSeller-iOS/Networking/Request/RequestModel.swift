@@ -10,15 +10,17 @@ import Foundation
 struct RequestModel: EndPoint {
   var path: String
   var method: Method
-  var parameters: Encodable?
+  var requestBody: Encodable?
   var queryItems: [URLQueryItem]?
   var provider: APIProvider
-
-  init(path: String, method: Method = .get, parameters: Encodable? = nil, queryItems: [URLQueryItem]? = nil, provider: APIProvider = .movieDB) {
+  var isAuthorized: Bool
+  
+  init(path: String, method: Method = .get, requestBody: Encodable? = nil, queryItems: [URLQueryItem]? = nil, provider: APIProvider, isAuthorized: Bool = true) {
     self.path = path
     self.method = method
-    self.parameters = parameters
+    self.requestBody = requestBody
     self.queryItems = queryItems
     self.provider = provider
+    self.isAuthorized = isAuthorized
   }
 }

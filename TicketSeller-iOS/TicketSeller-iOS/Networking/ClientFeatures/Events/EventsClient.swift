@@ -14,15 +14,15 @@ protocol EventsProvider {
 }
 
 actor EventsClient: Request, EventsProvider, ErrorCompletion {
+  
+  let provider = APIProvider.host
     
-  @MainActor
   func fetchEvents(countryCode: String, size: Int) async throws -> [Event] {
     let result = try await fetchEvetnsDTO(countryCode: countryCode, size: size)
     
     return result.embedded.events
   }
   
-  @MainActor
   func fetchClassification() async throws -> [Classification]? {
     let result = try await fetchClassificationDTO()
 
@@ -31,27 +31,21 @@ actor EventsClient: Request, EventsProvider, ErrorCompletion {
   
   //MARK: - Methods PublisherData Result
   
-  @MainActor
   private func fetchEvetnsDTO(countryCode: String, size: Int) async throws -> EventsResponseDTO {
-    let env = Env()
     let path = Paths.eventsByCountry
-    let queryItems = [URLQueryItem(name: "countryCode", value: countryCode),
-                      URLQueryItem(name: "size", value: "10"),
-                      URLQueryItem(name: "apikey", value: env.get(.ticketmasterKey))]
-    let requestModel = RequestModel(path: path.rawValue, method: .get, queryItems: queryItems, provider: .ticketmaster)
+    let queryItems = [
+      URLQueryItem(name: "countryCode", value: countryCode),
+      URLQueryItem(name: "size", value: String(size))
+    ]
+    let requestModel = await RequestModel(path: path.rawValue, method: .get, queryItems: queryItems, provider: provider)
     
     return try await request(with: requestModel)
   }
   
-  @MainActor
   private func fetchClassificationDTO() async throws -> EventClassificationResponseDTO {
-    let env = Env()
     let path = Paths.eventClassification
-    let queryItems = [URLQueryItem(name: "size", value: "10"),
-                      URLQueryItem(name: "apikey", value: env.get(.ticketmasterKey))]
-    let requestModel = RequestModel(path: path.rawValue, method: .get, queryItems: queryItems, provider: .ticketmaster)
+    let requestModel = await RequestModel(path: path.rawValue, method: .get, provider: provider)
     
     return try await request(with: requestModel)
   }
 }
-

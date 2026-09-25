@@ -6,46 +6,44 @@
 //
 
 import Foundation
+import Security
 
 enum APIProvider {
-  case movieDB
-  case ticketmaster
+  case host
   
-  private var env: Env {
-    return Env()
-  }
-
   var baseURL: String {
     switch self {
-    case .movieDB:
-      return env.get(.baseUrl)
-    case .ticketmaster:
-      return env.get(.ticketmasterUrl)
+    case .host:
+      return NetworkEnvironment.shared.environment.get(.hostUrl)
     }
   }
 
-  var headers: [String: String] {
+  func headers(isAuthorized: Bool) -> [String: String] {
     switch self {
-    case .movieDB:
-      return [
-        "accept": "application/json",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer \(Env().get(.bearerToken))"
-      ]
-    case .ticketmaster:
-      return [
-        "accept": "application/json"
-      ]
+    case .host:
+      let keyChainStore = KeychainStore()
+      var headers = ["accept": "application/json",
+                     "Content-Type": "application/json"]
+      let isExpired = Date.isAccessOrSessionExpired(using: FileDataManager.accessExpired)
+      
+      if let token = try? keyChainStore.value(for: .access),
+       !isExpired && isAuthorized {
+        headers["Authorization"] = "Bearer \(token)"
+        return headers
+      }
+      return headers
     }
   }
+  
 }
 
 protocol EndPoint {
   var path: String { get }
   var method: Method { get }
-  var parameters: Encodable? { get }
+  var requestBody: Encodable? { get }
   var queryItems: [URLQueryItem]? { get }
   var provider: APIProvider { get }
+  var isAuthorized: Bool { get }
 }
 
 enum Method: String {
@@ -57,16 +55,22 @@ extension EndPoint {
   
   private var baseUrl: URL {
     var components = URLComponents(string: "\(provider.baseURL)\(path)")
-    components?.queryItems = queryItems
+    if let queryItems, !queryItems.isEmpty {
+      components?.queryItems = queryItems
+    }
     return components!.url!
   }
   
   private var headers: [String: String] {
-    return provider.headers
+    return provider.headers(isAuthorized: isAuthorized)
   }
   
   private var data: Data? {
-    return nil // TODO
+    if let requestBody {
+      let data = try? JSONEncoder().encode(requestBody)
+      return data
+    }
+    return nil
   }
   
   var request: URLRequest {
@@ -77,5 +81,15 @@ extension EndPoint {
     request.timeoutInterval = 300
     debugPrint("Request: \(baseUrl)")
     return request
+  }
+}
+
+final class NetworkEnvironment {
+  static let shared = NetworkEnvironment()
+  
+  let environment: Env
+  
+  private init() {
+    self.environment = Env()
   }
 }

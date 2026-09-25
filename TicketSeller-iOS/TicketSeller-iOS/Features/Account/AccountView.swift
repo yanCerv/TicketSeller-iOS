@@ -141,6 +141,13 @@ struct AccountView: View {
       .task {
         await viewModel.fetchAppCountries()
       }
+      .alert("", isPresented: $viewModel.showAlert) {
+        Button("Ok") {
+          //No-Op
+        }
+      } message: {
+        Text(viewModel.message)
+      }
     }
   }
 }
