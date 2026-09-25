@@ -7,11 +7,11 @@
 
 enum Paths: String, CaseIterable {
   // Movies
-  case nowPlaying = "/3/movie/now_playing"
-  case popular = "/3/movie/popular"
-  case topRated = "/3/movie/top_rated"
-  case upcoming = "/3/movie/upcoming"
-  case movieDetail = "/3/movie"
+  case nowPlaying = "/api/v1/movies/now-playing"
+  case popular = "/api/v1/movies/popular"
+  case topRated = "/api/v1/movies/top-rated"
+  case upcoming = "/api/v1/movies/upcoming"
+  case movieDetail = "/api/v1/movies"
   
   // Events
   case eventsByCountry = "/discovery/v2/events"

@@ -9,14 +9,11 @@ import Foundation
 import Security
 
 enum APIProvider {
-  case movieDB
   case ticketmaster
   case host
   
   var baseURL: String {
     switch self {
-    case .movieDB:
-      return NetworkEnvironment.shared.environment.get(.baseUrl)
     case .ticketmaster:
       return NetworkEnvironment.shared.environment.get(.ticketmasterUrl)
     case .host:
@@ -26,12 +23,6 @@ enum APIProvider {
 
   func headers(isAuthorized: Bool) -> [String: String] {
     switch self {
-    case .movieDB:
-      return [
-        "accept": "application/json",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer \(NetworkEnvironment.shared.environment.get(.bearerToken))"
-      ]
     case .ticketmaster:
       return [
         "accept": "application/json"
@@ -53,8 +44,6 @@ enum APIProvider {
   
   func queriItems(countryCode: String = "") -> [URLQueryItem] {
     switch self {
-    case .movieDB:
-      return [URLQueryItem(name: "language", value: "es-MX"), URLQueryItem(name: "page", value: "1")]
     case .ticketmaster:
       return [URLQueryItem(name: "countryCode", value: "MX"),
               URLQueryItem(name: "size", value: "10"),
