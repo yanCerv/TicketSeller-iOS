@@ -52,8 +52,6 @@ final class Env {
   }
   
   enum EnvironmentValue: String {
-    case ticketmasterUrl
-    case ticketmasterKey
     case hostUrl
   }
   

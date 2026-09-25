@@ -9,13 +9,10 @@ import Foundation
 import Security
 
 enum APIProvider {
-  case ticketmaster
   case host
   
   var baseURL: String {
     switch self {
-    case .ticketmaster:
-      return NetworkEnvironment.shared.environment.get(.ticketmasterUrl)
     case .host:
       return NetworkEnvironment.shared.environment.get(.hostUrl)
     }
@@ -23,10 +20,6 @@ enum APIProvider {
 
   func headers(isAuthorized: Bool) -> [String: String] {
     switch self {
-    case .ticketmaster:
-      return [
-        "accept": "application/json"
-      ]
     case .host:
       let keyChainStore = KeychainStore()
       var headers = ["accept": "application/json",
@@ -42,16 +35,6 @@ enum APIProvider {
     }
   }
   
-  func queriItems(countryCode: String = "") -> [URLQueryItem] {
-    switch self {
-    case .ticketmaster:
-      return [URLQueryItem(name: "countryCode", value: "MX"),
-              URLQueryItem(name: "size", value: "10"),
-              URLQueryItem(name: "apikey", value: NetworkEnvironment.shared.environment.get(.ticketmasterKey))]
-    case .host:
-      return []
-    }
-  }
 }
 
 protocol EndPoint {
@@ -72,8 +55,8 @@ extension EndPoint {
   
   private var baseUrl: URL {
     var components = URLComponents(string: "\(provider.baseURL)\(path)")
-    if !provider.queriItems().isEmpty {
-      components?.queryItems = provider.queriItems()
+    if let queryItems, !queryItems.isEmpty {
+      components?.queryItems = queryItems
     }
     return components!.url!
   }

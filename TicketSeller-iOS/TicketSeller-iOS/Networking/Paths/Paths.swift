@@ -14,9 +14,8 @@ enum Paths: String, CaseIterable {
   case movieDetail = "/api/v1/movies"
   
   // Events
-  case eventsByCountry = "/discovery/v2/events"
-  case eventClassification = "/discovery/v2/classifications.json"
-  case eventClassificationDetail = "/discovery/v2/classifications/"
+  case eventsByCountry = "/api/v1/events"
+  case eventClassification = "/api/v1/events/classifications"
   
   //Account
   case register = "/api/v1/auth/register"

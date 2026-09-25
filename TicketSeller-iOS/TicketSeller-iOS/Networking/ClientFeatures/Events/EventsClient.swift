@@ -15,7 +15,7 @@ protocol EventsProvider {
 
 actor EventsClient: Request, EventsProvider, ErrorCompletion {
   
-  let provider = APIProvider.ticketmaster
+  let provider = APIProvider.host
     
   func fetchEvents(countryCode: String, size: Int) async throws -> [Event] {
     let result = try await fetchEvetnsDTO(countryCode: countryCode, size: size)
@@ -33,7 +33,11 @@ actor EventsClient: Request, EventsProvider, ErrorCompletion {
   
   private func fetchEvetnsDTO(countryCode: String, size: Int) async throws -> EventsResponseDTO {
     let path = Paths.eventsByCountry
-    let requestModel = await RequestModel(path: path.rawValue, method: .get, provider: provider)
+    let queryItems = [
+      URLQueryItem(name: "countryCode", value: countryCode),
+      URLQueryItem(name: "size", value: String(size))
+    ]
+    let requestModel = await RequestModel(path: path.rawValue, method: .get, queryItems: queryItems, provider: provider)
     
     return try await request(with: requestModel)
   }
@@ -45,4 +49,3 @@ actor EventsClient: Request, EventsProvider, ErrorCompletion {
     return try await request(with: requestModel)
   }
 }
-
