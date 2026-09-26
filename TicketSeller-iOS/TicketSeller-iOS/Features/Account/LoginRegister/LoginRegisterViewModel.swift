@@ -10,6 +10,7 @@ import SwiftUI
 @Observable
 final class LoginRegisterViewModel {
   
+  private let keyStore: KeychainStore = KeychainStore()
   private let client: AccountProvider
   weak var input: LoginActionInput!
   
@@ -23,10 +24,14 @@ final class LoginRegisterViewModel {
   var accountName: String = ""
   var password: String = ""
   var otpCode: String = ""
+  var loadingMessage: String = ""
   var sendedAccount: Bool = false
   var isLoading: Bool = false
   var isUserCreated: Bool = false
   var accountUser: AccountUser?
+  
+  var showAlet: Bool = false
+  var errorMessage: String = ""
   
   var accountNameValid: Bool {
     return accountName.count >= 4
@@ -60,11 +65,14 @@ final class LoginRegisterViewModel {
       debugPrint("Register Success and isActive = \(register.isActive).  Please login ")
       //SHOW ALERT!
     } catch {
-      debugPrint(error)
+      if let error = error as? ErrorHandler {
+        showAlet = true
+        errorMessage = error.message
+      }
     }
   }
   
-  func didTapLoginButton() async {
+  func didTapLoginButton() async { // Old login with password
     isLoading = true
     
     do {
@@ -78,13 +86,38 @@ final class LoginRegisterViewModel {
     }
   }
   
-  //For The next Feature Pending
-  func didtapLogin() {
+  //login passwordless
+
+  func didSendMailOTP() {
     sendedAccount = true
-    
+    isLoading = true
     Task {
-      if otpCodeFilled {
-        await didVerifiedOTP()
+      do {
+        let loginCode = try await client.requestLoginCode(email: accountName)
+        isLoading = false
+        loadingMessage = loginCode.message
+      } catch {
+        if let error = error as? ErrorHandler {
+          showAlet = true
+          errorMessage = error.message
+        }
+      }
+    }
+  }
+  
+  func didtapLogin() {
+    isLoading = true
+    sendedAccount = false
+    Task {
+      do {
+        let otp = try await client.verifyLoginCode(email: accountName, otp: otpCode)
+        try keyStore.save(access: otp)
+        isLoading = false
+      } catch {
+        if let error = error as? ErrorHandler {
+          showAlet = true
+          errorMessage = error.message
+        }
       }
     }
   }

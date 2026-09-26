@@ -39,3 +39,19 @@ struct ButtonModifier: ViewModifier {
       .disabled(!isEnabled)
   }
 }
+
+struct ButtonCircleWithImage: ViewModifier {
+  
+  var isEnabled: Bool
+  
+  private var buttonColor: Color {
+    return isEnabled ? .mainColor : .grayOpacity
+  }
+  
+  func body(content: Content) -> some View {
+    content
+      .clipShape(RoundedRectangle(cornerSize: .zero, style: .circular))
+      .foregroundStyle(buttonColor)
+      .disabled(!isEnabled)
+  }
+}

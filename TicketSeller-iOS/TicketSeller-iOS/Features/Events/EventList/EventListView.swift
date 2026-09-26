@@ -71,6 +71,13 @@ struct EventListView: View {
             ClassificationList()
           }
         }
+        .alert("", isPresented: $viewModel.showError) {
+          Button("Ok") {
+            dismiss()
+          }
+        } message: {
+          Text(viewModel.errorMessage)
+        }
       }
     }
   }

@@ -24,13 +24,15 @@ final class EventListViewModel {
   
   func fetchEvents() async {
     guard !isLoaded else { return }
+    
     do {
       let events = try await client.fetchEvents(countryCode: "MX", size: 10)
       self.events = events
       isLoaded = true      
     } catch {
       if let error = error as? ErrorHandler {
-        self.errorMessage = error.message
+        errorMessage = error.message
+        showError = true
       }
     }
   }

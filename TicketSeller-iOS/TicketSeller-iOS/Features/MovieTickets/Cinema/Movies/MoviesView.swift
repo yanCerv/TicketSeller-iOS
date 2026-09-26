@@ -28,6 +28,13 @@ struct MoviesView: View {
           .task {
             await viewModel.didFetchData()
           }
+          .alert("", isPresented: $viewModel.showAlert) {
+            Button("Ok") {
+              dismiss()
+            }
+          } message: {
+            Text(viewModel.errorMessage)
+          }
         }
         .refreshable {
           await viewModel.didReloadData()
