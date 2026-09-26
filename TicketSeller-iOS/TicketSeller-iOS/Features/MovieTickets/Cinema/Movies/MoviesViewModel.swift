@@ -17,7 +17,9 @@ final class MoviesViewModel {
   var popularMovies: [Movie] = []
   var topRatedMovies: [Movie] = []
   var upcomingMovies: [Movie] = []
+  
   var errorMessage: String = ""
+  var showAlert: Bool = false
   
   init(client: MoviesProvider = MoviesClient()) {
     self.client = client
@@ -48,9 +50,9 @@ final class MoviesViewModel {
       self.upcomingMovies = upcomingResult
       isLoaded = true
     } catch {
-      isLoaded = true
       if let error = error as? ErrorHandler {
         errorMessage = error.message
+        showAlert = true
       }
     }
   }

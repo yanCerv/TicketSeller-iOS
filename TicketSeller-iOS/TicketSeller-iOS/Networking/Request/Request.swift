@@ -21,9 +21,7 @@ extension Request {
   
   func request<T: Decodable>(with model: RequestModel) async throws -> T {
     let keyStore = KeychainStore()
-    
-    if model.provider == .host,
-       isRequiredValidateAccess(with: model) {
+    if isRequiredValidateAccess(with: model) {
       try validateSessionExpired(keyStore: keyStore)
       try await validateAccessExpired(keyStore: keyStore, model: model)
       
@@ -34,14 +32,24 @@ extension Request {
   }
   
   private func isRequiredValidateAccess(with model: RequestModel) -> Bool {
-    return model.path != Paths.login.rawValue && model.path != Paths.register.rawValue
+    let publicPaths: Set<String> = [
+      Paths.register.rawValue,
+      Paths.login.rawValue,
+      Paths.requestLoginCode.rawValue,
+      Paths.verifyLoginCode.rawValue,
+      Paths.forgotPassword.rawValue,
+      Paths.resetPassword.rawValue,
+      Paths.refresh.rawValue,
+      Paths.logout.rawValue
+    ]
+    return !publicPaths.contains(model.path)
   }
   
   private func validateSessionExpired(keyStore: KeychainStore) throws {
     let isSessionExpired = Date.isAccessOrSessionExpired(using: FileDataManager.sessionExpired)
     if isSessionExpired {
       keyStore.deleteAccess()
-      throw ErrorHandler.error(message: "Tu sesión ha expirado, inicia sesión nuevamente.", statusCode: 601)
+      throw ErrorHandler.sessionExpired
     }
   }
   

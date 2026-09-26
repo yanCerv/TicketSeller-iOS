@@ -12,6 +12,7 @@ enum ErrorHandler: Error {
   case error(message: String, statusCode: Int)
   case jsonConversionFail(message: String)
   case connection
+  case sessionExpired
   
   var statusCode: Int {
     switch self {
@@ -23,6 +24,8 @@ enum ErrorHandler: Error {
       return -1001
     case .connection:
       return 550
+    case .sessionExpired:
+      return 601
     }
   }
   
@@ -36,6 +39,8 @@ enum ErrorHandler: Error {
       return "\(message)"
     case .connection:
       return "No internet connection."
+    case .sessionExpired:
+      return "Your session is revoked. Please login to continue."
     }
   }
 }

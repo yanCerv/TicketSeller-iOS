@@ -13,23 +13,30 @@ struct LoginForm: View {
   
   var body: some View {
     VStack {
-      TextField("Email account", text: $viewModel.accountName)
-        .loginTextFieldStyle(enabled: viewModel.accountNameValid)
-        .keyboardType(.emailAddress)
-        .textContentType(.emailAddress)
-        .autocorrectionDisabled()
-        .textInputAutocapitalization(.never)
-        .disabled(viewModel.isLoading)
-      
-      SecureField("Password", text: $viewModel.password)
-        .loginTextFieldStyle(enabled: viewModel.accountNameValid)
-        .autocorrectionDisabled()
-        .textInputAutocapitalization(.never)
-        .disabled(viewModel.isLoading)
-      
+      HStack {
+        TextField("Email account", text: $viewModel.accountName)
+          .loginTextFieldStyle(enabled: viewModel.accountNameValid)
+          .keyboardType(.emailAddress)
+          .textContentType(.emailAddress)
+          .autocorrectionDisabled()
+          .textInputAutocapitalization(.never)
+          .disabled(viewModel.isLoading)
+        
+//        Button("Send OTP") {
+//           
+//        }
+//        .modifier(ButtonModifier(isEnabled: viewModel.accountNameValid))
+//        .disabled(viewModel.isLoading)
+        
+        Button("", systemImage: "paperplane.fill") {
+          viewModel.didSendMailOTP()
+        }
+        .modifier(ButtonCircleWithImage(isEnabled: viewModel.accountNameValid))
+        .padding(.bottom, 16)
+      }
       
       if viewModel.sendedAccount { // For Next Feature is pending
-        TextField("OTP", text: $viewModel.otpCode)
+        TextField("Received email code", text: $viewModel.otpCode)
           .loginTextFieldStyle(enabled: viewModel.otpCodeFilled)
           .keyboardType(.numberPad)
           .autocorrectionDisabled()
@@ -37,18 +44,10 @@ struct LoginForm: View {
       }
       
       Button(viewModel.sendedAccount ? "Continue" : "Login") {
-        Task {
-          await viewModel.didTapLoginButton()
-        }
+         viewModel.didtapLogin()
       }
-      .modifier(ButtonModifier(isEnabled: viewModel.showRegisterButton))
+      .modifier(ButtonModifier(isEnabled: viewModel.otpCodeFilled))
       .disabled(viewModel.isLoading)
-      
-//      Button(viewModel.sendedAccount ? "Continue" : "Login") {
-//         viewModel.didtapLogin()
-//      }
-//      .modifier(ButtonModifier(isEnabled: viewModel.accountNameValid))
-//      .disabled(viewModel.isLoading)
     }
     .padding(.horizontal, 26)
   }
