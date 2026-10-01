@@ -109,6 +109,7 @@ struct AccountView: View {
                     .foregroundStyle(Color.primary)
                 }
               }
+              .disabled(viewModel.isLoggingOut)
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding(.horizontal)
             }
@@ -136,6 +137,10 @@ struct AccountView: View {
             .padding()
           }
           .background(Color.clear)
+        }
+
+        if viewModel.isLoggingOut {
+          ProgressLoadingView(typeLoading: .events, text: "Cerrando sesión")
         }
       }
       .navigationTitle("Cuenta")

@@ -28,6 +28,7 @@ final class AccountViewModel {
   var showLoginRegister: Bool = false
   var showCountryPicker: Bool = false
   var showLanguagePicker: Bool = false
+  var isLoggingOut: Bool = false
   
   //Alert
   var showAlert: Bool = false
@@ -63,6 +64,10 @@ final class AccountViewModel {
   
   @MainActor
   func didTapLogout() async {
+    guard !isLoggingOut else { return }
+    isLoggingOut = true
+    defer { isLoggingOut = false }
+
     do {
       let isLoggedOut = try await client.logout()
       if isLoggedOut.success {
