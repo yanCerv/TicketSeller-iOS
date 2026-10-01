@@ -6,5 +6,5 @@
 //
 
 struct AccountUserResponseDTO: Decodable {
-  let result: UserProfile
+  let result: UserProfileResponse
 }

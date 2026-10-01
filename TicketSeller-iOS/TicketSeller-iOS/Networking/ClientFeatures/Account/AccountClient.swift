@@ -5,10 +5,10 @@
 //  Created by Yan Cervantes on 31/10/25.
 //
 
-
+import Foundation
 
 protocol AccountProvider {
-  func fetchAccountUser() async -> UserProfile
+  func fetchUserProfile() async throws -> AccessUserResponse
   func register(email: String, password: String) async throws -> AccessUserResponse
   func authenticate(with credential: SocialCredential) async throws -> AccessLoginResponse
   func login(email: String, password: String) async throws -> AccessLoginResponse
@@ -20,7 +20,7 @@ protocol AccountProvider {
 
 //Non Required methods external
 extension AccountProvider {
-  func fetchAccountUser() async -> UserProfile { .emptyValues() }
+  func fetchUserProfile() async throws -> AccessUserResponse { .emptyValues() }
   func register(email: String, password: String) async throws -> AccessUserResponse { .emptyValues() }
   func authenticate(with credential: SocialCredential) async throws -> AccessLoginResponse { .emptyValues() }
   func login(email: String, password: String) async throws -> AccessLoginResponse { .emptyValues() }
@@ -32,12 +32,11 @@ extension AccountProvider {
 
 actor AccountClient: Request, AccountProvider {
 
-  @MainActor
-  func fetchAccountUser() async -> UserProfile {
-    let response = ResourceJSON.from(fileName: "AccountUser", type: AccountUserResponseDTO.self)
-    let dataUser = response.result
+  func fetchUserProfile() async throws -> AccessUserResponse {
+    let path = Paths.account
+    let requestModel = await RequestModel(path: path.rawValue,provider: .host, cachePolicy: .reloadIgnoringLocalCacheData)
     
-    return dataUser
+    return try await request(with: requestModel)
   }
 
   

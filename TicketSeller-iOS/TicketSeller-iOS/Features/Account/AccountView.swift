@@ -20,7 +20,7 @@ struct AccountView: View {
               SectionHeader(title: "Datos de Usuario")
               Group {
                 Text(viewModel.accountUser.email)
-                Text("\(viewModel.accountUser.firstName) \(viewModel.accountUser.lastName)")
+                Text("\(viewModel.accountUser.name) \(viewModel.accountUser.lastName)")
               }
               .font(.system(size: 16, weight: .semibold))
               .frame(maxWidth: .infinity, alignment: .leading)

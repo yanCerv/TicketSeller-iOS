@@ -16,7 +16,7 @@ struct RequestModel: EndPoint {
   var isAuthorized: Bool
   var cachePolicy: URLRequest.CachePolicy
   
-  init(path: String, method: Method = .get, requestBody: Encodable? = nil, queryItems: [URLQueryItem]? = nil, provider: APIProvider, isAuthorized: Bool = true, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) {
+  init(path: String, method: Method = .get, requestBody: Encodable? = nil, queryItems: [URLQueryItem]? = nil, provider: APIProvider = .host, isAuthorized: Bool = true, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) {
     self.path = path
     self.method = method
     self.requestBody = requestBody

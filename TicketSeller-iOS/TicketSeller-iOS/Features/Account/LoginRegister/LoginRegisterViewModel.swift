@@ -29,7 +29,6 @@ final class LoginRegisterViewModel {
   var sendedAccount: Bool = false
   var isLoading: Bool = false
   var isUserCreated: Bool = false
-  var accountUser: UserProfile?
   
   var showAlet: Bool = false
   var errorMessage: String = ""
@@ -99,7 +98,7 @@ final class LoginRegisterViewModel {
     do {
       let loginAccount = try await client.authenticate(with: credential)
       try keyStore.save(access: loginAccount)
-      isLoading = false
+      await getProfile()
     } catch {
       isLoading = false
       if let error = error as? ErrorHandler {
@@ -147,9 +146,10 @@ final class LoginRegisterViewModel {
       do {
         let otp = try await client.verifyLoginCode(email: accountName, otp: otpCode)
         try keyStore.save(access: otp)
-        isLoading = false
+        await getProfile()
       } catch {
         if let error = error as? ErrorHandler {
+          isLoading = false
           showAlet = true
           errorMessage = error.message
         }
@@ -159,17 +159,21 @@ final class LoginRegisterViewModel {
   
   //MARK: - Private Methods
   
-  private func didVerifiedOTP() async {
-    isLoading = true
-    
-    try? await Task.sleep(nanoseconds: 3_000_000_000)
-    
-    let dataUser = await client.fetchAccountUser()
-    accountUser = dataUser
-    
-    if let accountUser {
-      isLoading = false
-      await input?.didGet(user: accountUser)
+  private func getProfile() async {
+    do {
+      let accountResponse = try await client.fetchUserProfile()
+      if let userProfile = accountResponse.dataProfile() {
+        await input?.didGet(user: userProfile)
+      } else {
+        showAlet = true
+        errorMessage = "User Credentials not founded please try again."
+      }
+    } catch {
+      if let error = error as? ErrorHandler {
+        showAlet = true
+        errorMessage = error.message
+      }
     }
+    isLoading = false
   }
 }

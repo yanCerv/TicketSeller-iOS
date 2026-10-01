@@ -34,7 +34,6 @@ enum APIProvider {
       return headers
     }
   }
-  
 }
 
 protocol EndPoint {
