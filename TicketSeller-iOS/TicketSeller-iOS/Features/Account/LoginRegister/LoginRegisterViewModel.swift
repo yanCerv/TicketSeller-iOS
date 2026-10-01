@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
 @Observable
 final class LoginRegisterViewModel {
-  
+
   private let keyStore: KeychainStore = KeychainStore()
   private let client: AccountProvider
   weak var input: LoginActionInput!
@@ -28,7 +29,7 @@ final class LoginRegisterViewModel {
   var sendedAccount: Bool = false
   var isLoading: Bool = false
   var isUserCreated: Bool = false
-  var accountUser: AccountUser?
+  var accountUser: UserProfile?
   
   var showAlet: Bool = false
   var errorMessage: String = ""
@@ -54,9 +55,8 @@ final class LoginRegisterViewModel {
   
   //MARK: - Methods
   
-  func didTapRegister() async {
+  func didTapRegisterNative() async {
     isLoading = true
-    
     do {
       let register = try await client.register(email: accountName, password: password)
       isUserCreated = register.isActive
@@ -72,9 +72,44 @@ final class LoginRegisterViewModel {
     }
   }
   
+  func didTapLoginRegisterWith(with type: RegistrationType) async {
+    isLoading = true
+    do {
+      switch type {
+      case .google:
+        let credential = try await GoogleSignInClient.credential()
+        await auth(with: credential)
+      case .apple:
+        let credential = try await GoogleSignInClient.credential()
+        await auth(with: credential)
+      case .native:
+        await didTapLoginButton()
+      }
+    } catch {
+      showAlet = true
+      if let error = error as? ErrorHandler {
+        errorMessage = error.message
+      } else {
+        errorMessage = "No fue posible iniciar sesión con Google."
+      }
+    }
+  }
+  
+  func auth(with credential: SocialCredential) async {
+    do {
+      let loginAccount = try await client.authenticate(with: credential)
+      try keyStore.save(access: loginAccount)
+      isLoading = false
+    } catch {
+      isLoading = false
+      if let error = error as? ErrorHandler {
+        errorMessage = error.message
+      }
+    }
+  }
+  
   func didTapLoginButton() async { // Old login with password
     isLoading = true
-    
     do {
       let loginAccount = try await client.login(email: accountName, password: password)
       let keyChain = KeychainStore()

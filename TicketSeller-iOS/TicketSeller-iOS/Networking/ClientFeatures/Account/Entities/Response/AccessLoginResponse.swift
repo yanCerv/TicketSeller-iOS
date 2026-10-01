@@ -5,7 +5,6 @@
 //  Created by Yan Cervantes  on 23/09/26.
 //
 
-import Foundation
 
 struct AccessLoginResponse: Decodable {
   let accessToken: String

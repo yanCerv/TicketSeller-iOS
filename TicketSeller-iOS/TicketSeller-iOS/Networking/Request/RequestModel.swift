@@ -14,13 +14,15 @@ struct RequestModel: EndPoint {
   var queryItems: [URLQueryItem]?
   var provider: APIProvider
   var isAuthorized: Bool
+  var cachePolicy: URLRequest.CachePolicy
   
-  init(path: String, method: Method = .get, requestBody: Encodable? = nil, queryItems: [URLQueryItem]? = nil, provider: APIProvider, isAuthorized: Bool = true) {
+  init(path: String, method: Method = .get, requestBody: Encodable? = nil, queryItems: [URLQueryItem]? = nil, provider: APIProvider, isAuthorized: Bool = true, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) {
     self.path = path
     self.method = method
     self.requestBody = requestBody
     self.queryItems = queryItems
     self.provider = provider
     self.isAuthorized = isAuthorized
+    self.cachePolicy = cachePolicy
   }
 }

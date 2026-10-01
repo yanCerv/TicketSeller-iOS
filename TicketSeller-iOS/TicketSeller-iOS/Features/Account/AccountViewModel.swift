@@ -15,7 +15,7 @@ final class AccountViewModel {
   
   var appCountries: [AppCountry] = []
   var isUserLoggedIn: Bool = false
-  var accountUser: AccountUser!
+  var accountUser: UserProfile!
   
   var countryFlag: String = ""
   var language: String = ""
@@ -86,7 +86,7 @@ final class AccountViewModel {
   private func validateUserLogged() async {
     guard keyStore.isUserLogged() else { return }
     
-    if let user = try? FileDataManager.load(AccountUser.self, from: accountKey) {
+    if let user = try? FileDataManager.load(UserProfile.self, from: accountKey) {
       isUserLoggedIn = true
       accountUser = user
       showLoginRegister = false
@@ -106,7 +106,7 @@ final class AccountViewModel {
 
 extension AccountViewModel: LoginActionInput {
   
-  func didGet(user: AccountUser) async {
+  func didGet(user: UserProfile) async {
   
     if FileDataManager.exists(fileName: accountKey) {
       try? FileDataManager.update(user, as: accountKey)

@@ -18,3 +18,10 @@ enum AuthMode: CaseIterable, Hashable {
     }
   }
 }
+
+enum RegistrationType: String {
+  case google = "Google"
+  case apple = "Apple"
+  case native = ""
+}
+

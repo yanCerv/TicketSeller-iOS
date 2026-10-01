@@ -30,7 +30,7 @@ struct RegisterForm: View {
       if viewModel.showRegisterButton {
         Button(viewModel.sendedAccount ? "Continue" : "Login") {
           Task {
-            await viewModel.didTapRegister()
+            await viewModel.didTapRegisterNative()
           }
         }
         .modifier(ButtonModifier(isEnabled: viewModel.accountNameValid))

@@ -6,9 +6,11 @@
 //
 
 
+
 protocol AccountProvider {
-  func fetchAccountUser() async -> AccountUser
+  func fetchAccountUser() async -> UserProfile
   func register(email: String, password: String) async throws -> AccessUserResponse
+  func authenticate(with credential: SocialCredential) async throws -> AccessLoginResponse
   func login(email: String, password: String) async throws -> AccessLoginResponse
   func requestLoginCode(email: String) async throws -> LoginOTPRequestResponse
   func verifyLoginCode(email: String, otp: String) async throws -> AccessLoginResponse
@@ -18,19 +20,20 @@ protocol AccountProvider {
 
 //Non Required methods external
 extension AccountProvider {
-  func fetchAccountUser() async -> AccountUser { .emptyValues() }
+  func fetchAccountUser() async -> UserProfile { .emptyValues() }
   func register(email: String, password: String) async throws -> AccessUserResponse { .emptyValues() }
+  func authenticate(with credential: SocialCredential) async throws -> AccessLoginResponse { .emptyValues() }
   func login(email: String, password: String) async throws -> AccessLoginResponse { .emptyValues() }
   func requestLoginCode(email: String) async throws -> LoginOTPRequestResponse { LoginOTPRequestResponse(message: "") }
   func verifyLoginCode(email: String, otp: String) async throws -> AccessLoginResponse { .emptyValues() }
-  func logout() -> LogoutResponse { LogoutResponse(success: false) }
+  func logout() async throws -> LogoutResponse { LogoutResponse(success: false) }
   func accountData() async throws -> AccessUserResponse { .emptyValues() }
 }
 
 actor AccountClient: Request, AccountProvider {
-  
+
   @MainActor
-  func fetchAccountUser() async -> AccountUser {
+  func fetchAccountUser() async -> UserProfile {
     let response = ResourceJSON.from(fileName: "AccountUser", type: AccountUserResponseDTO.self)
     let dataUser = response.result
     
@@ -46,6 +49,17 @@ actor AccountClient: Request, AccountProvider {
     return try await request(with: requestModel)
   }
   
+  func authenticate(with credential: SocialCredential) async throws -> AccessLoginResponse {
+    let requestModel = await RequestModel(
+      path: Paths.google.rawValue,
+      method: .post,
+      requestBody: credential,
+      provider: .host,
+      isAuthorized: false
+    )
+    return try await request(with: requestModel)
+  }
+
   func login(email: String, password: String) async throws -> AccessLoginResponse {
     let path = Paths.login
     let body = UserAccountRequest(email: email, password: password)
