@@ -61,9 +61,24 @@ final class AccountViewModel {
     showLoginRegister = true
   }
   
-  func didTapLogout() {
-    isUserLoggedIn = false
-    keyStore.deleteAccess()
+  @MainActor
+  func didTapLogout() async {
+    do {
+      let isLoggedOut = try await client.logout()
+      if isLoggedOut.success {
+        isUserLoggedIn = false
+        accountUser = nil
+        keyStore.deleteAccess()
+      } else {
+        message = "error logout, please try again"
+        showAlert = true
+      }
+    } catch {
+      if let error = error as? ErrorHandler {
+        message = error.message
+        showAlert = true
+      }
+    }
   }
   
   private func verifyCountry(from appCountries: [AppCountry]) {

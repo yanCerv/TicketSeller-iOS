@@ -95,7 +95,9 @@ struct AccountView: View {
                 .padding()
               
               Button {
-                viewModel.didTapLogout()
+                Task {
+                  await viewModel.didTapLogout()
+                }
               } label: {
                 HStack {
                   Image(systemName: "power")

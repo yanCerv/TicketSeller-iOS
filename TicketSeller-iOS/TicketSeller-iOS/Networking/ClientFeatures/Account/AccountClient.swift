@@ -92,4 +92,14 @@ actor AccountClient: Request, AccountProvider {
 
     return try await request(with: requestModel)
   }
+  
+  func logout() async throws -> LogoutResponse {
+    let path = Paths.logout
+    let keyStore = KeychainStore()
+    let refreshToken = await keyStore.getRefreshToken()
+    let body = RefreshAccessRequest(refreshToken: refreshToken)
+    let requestModel = await RequestModel(path: path.rawValue, requestBody: body)
+    
+    return try await request(with: requestModel)
+  }
 }
