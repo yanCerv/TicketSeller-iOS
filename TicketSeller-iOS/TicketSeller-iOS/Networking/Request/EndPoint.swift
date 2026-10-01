@@ -34,7 +34,6 @@ enum APIProvider {
       return headers
     }
   }
-  
 }
 
 protocol EndPoint {
@@ -44,6 +43,7 @@ protocol EndPoint {
   var queryItems: [URLQueryItem]? { get }
   var provider: APIProvider { get }
   var isAuthorized: Bool { get }
+  var cachePolicy: URLRequest.CachePolicy { get }
 }
 
 enum Method: String {
@@ -74,7 +74,7 @@ extension EndPoint {
   }
   
   var request: URLRequest {
-    var request = URLRequest(url: baseUrl)
+    var request = URLRequest(url: baseUrl, cachePolicy: cachePolicy)
     request.allHTTPHeaderFields = headers
     request.httpMethod = method.rawValue
     request.httpBody = method.rawValue == "GET" ? nil : data

@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7C8B5BC9306B228D003B619C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7C8B5BC8306B228D003B619C /* GoogleSignIn */; };
+		7C8B5BCB306B228D003B619C /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C8B5BCA306B228D003B619C /* GoogleSignInSwift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7C6EFDF32E9EC3FC00793E11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C8B5BC9306B228D003B619C /* GoogleSignIn in Frameworks */,
+				7C8B5BCB306B228D003B619C /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +110,8 @@
 			);
 			name = "TicketSeller-iOS";
 			packageProductDependencies = (
+				7C8B5BC8306B228D003B619C /* GoogleSignIn */,
+				7C8B5BCA306B228D003B619C /* GoogleSignInSwift */,
 			);
 			productName = "TicketSeller-iOS";
 			productReference = 7C6EFDE32E9EC3FB00793E11 /* TicketSeller-iOS.app */;
@@ -160,6 +169,9 @@
 			);
 			mainGroup = 7C6EFDDA2E9EC3FB00793E11;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7C6EFDE42E9EC3FB00793E11 /* Products */;
 			projectDirPath = "";
@@ -484,6 +496,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C8B5BC8306B228D003B619C /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		7C8B5BCA306B228D003B619C /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C6EFDDB2E9EC3FB00793E11 /* Project object */;
 }

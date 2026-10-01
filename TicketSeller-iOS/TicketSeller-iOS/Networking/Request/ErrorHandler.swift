@@ -13,6 +13,8 @@ enum ErrorHandler: Error {
   case jsonConversionFail(message: String)
   case connection
   case sessionExpired
+  case googleViewPresentationMissing
+  case googleMissingIDToken
   
   var statusCode: Int {
     switch self {
@@ -26,6 +28,10 @@ enum ErrorHandler: Error {
       return 550
     case .sessionExpired:
       return 601
+    case .googleViewPresentationMissing:
+      return 10665
+    case .googleMissingIDToken:
+      return 10666
     }
   }
   
@@ -41,6 +47,10 @@ enum ErrorHandler: Error {
       return "No internet connection."
     case .sessionExpired:
       return "Your session is revoked. Please login to continue."
+    case .googleViewPresentationMissing:
+      return "No fue posible mostrar el inicio de sesión de Google."
+    case .googleMissingIDToken:
+      return "Google no devolvió una credencial válida."
     }
   }
 }

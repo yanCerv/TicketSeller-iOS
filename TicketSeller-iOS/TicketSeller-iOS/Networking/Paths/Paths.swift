@@ -20,6 +20,7 @@ enum Paths: String, CaseIterable {
   //Account
   case register = "/api/v1/auth/register"
   case login = "/api/v1/auth/login"
+  case google = "/api/v1/auth/google"
   case requestLoginCode = "/api/v1/auth/request-login-code"
   case verifyLoginCode = "/api/v1/auth/verify-login-code"
   case forgotPassword = "/api/v1/auth/forgot-password"

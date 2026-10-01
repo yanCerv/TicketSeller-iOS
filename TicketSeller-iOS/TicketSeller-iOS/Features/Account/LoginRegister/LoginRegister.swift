@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
 struct LoginRegister: View {
   @State var viewModel: LoginRegisterViewModel
@@ -24,14 +25,22 @@ struct LoginRegister: View {
       .padding(.horizontal, 56)
       .padding(.vertical, 26)
       .disabled(viewModel.isLoading)
-      
+
       if viewModel.selectedMode == .login {
         LoginForm(viewModel: viewModel)
       } else {
         RegisterForm(viewModel: viewModel)
       }
-      
-      Spacer()
+
+      Text("Or you can login/register with:")
+        .padding()
+
+      GoogleSignInButton(scheme: .light, style: .standard) {
+        Task {
+          await viewModel.didTapLoginRegisterWith(with: .google)
+        }
+      }
+      .frame(width: 44, height: 44, alignment: .center)
     }
     .overlay {
       if viewModel.isLoading {

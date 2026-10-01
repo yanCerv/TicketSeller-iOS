@@ -20,7 +20,7 @@ struct AccountView: View {
               SectionHeader(title: "Datos de Usuario")
               Group {
                 Text(viewModel.accountUser.email)
-                Text("\(viewModel.accountUser.firstName) \(viewModel.accountUser.lastName)")
+                Text("\(viewModel.accountUser.name) \(viewModel.accountUser.lastName)")
               }
               .font(.system(size: 16, weight: .semibold))
               .frame(maxWidth: .infinity, alignment: .leading)
@@ -95,7 +95,9 @@ struct AccountView: View {
                 .padding()
               
               Button {
-                viewModel.didTapLogout()
+                Task {
+                  await viewModel.didTapLogout()
+                }
               } label: {
                 HStack {
                   Image(systemName: "power")
@@ -107,6 +109,7 @@ struct AccountView: View {
                     .foregroundStyle(Color.primary)
                 }
               }
+              .disabled(viewModel.isLoggingOut)
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding(.horizontal)
             }
@@ -134,6 +137,10 @@ struct AccountView: View {
             .padding()
           }
           .background(Color.clear)
+        }
+
+        if viewModel.isLoggingOut {
+          ProgressLoadingView(typeLoading: .events, text: "Cerrando sesión")
         }
       }
       .navigationTitle("Cuenta")

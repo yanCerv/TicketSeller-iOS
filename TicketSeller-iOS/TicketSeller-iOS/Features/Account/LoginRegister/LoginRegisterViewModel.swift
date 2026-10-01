@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
 @Observable
 final class LoginRegisterViewModel {
-  
+
   private let keyStore: KeychainStore = KeychainStore()
   private let client: AccountProvider
   weak var input: LoginActionInput!
@@ -28,7 +29,6 @@ final class LoginRegisterViewModel {
   var sendedAccount: Bool = false
   var isLoading: Bool = false
   var isUserCreated: Bool = false
-  var accountUser: AccountUser?
   
   var showAlet: Bool = false
   var errorMessage: String = ""
@@ -54,9 +54,8 @@ final class LoginRegisterViewModel {
   
   //MARK: - Methods
   
-  func didTapRegister() async {
+  func didTapRegisterNative() async {
     isLoading = true
-    
     do {
       let register = try await client.register(email: accountName, password: password)
       isUserCreated = register.isActive
@@ -72,9 +71,44 @@ final class LoginRegisterViewModel {
     }
   }
   
+  func didTapLoginRegisterWith(with type: RegistrationType) async {
+    isLoading = true
+    do {
+      switch type {
+      case .google:
+        let credential = try await GoogleSignInClient.credential()
+        await auth(with: credential)
+      case .apple:
+        let credential = try await GoogleSignInClient.credential()
+        await auth(with: credential)
+      case .native:
+        await didTapLoginButton()
+      }
+    } catch {
+      showAlet = true
+      if let error = error as? ErrorHandler {
+        errorMessage = error.message
+      } else {
+        errorMessage = "No fue posible iniciar sesión con Google."
+      }
+    }
+  }
+  
+  func auth(with credential: SocialCredential) async {
+    do {
+      let loginAccount = try await client.authenticate(with: credential)
+      try keyStore.save(access: loginAccount)
+      await getProfile()
+    } catch {
+      isLoading = false
+      if let error = error as? ErrorHandler {
+        errorMessage = error.message
+      }
+    }
+  }
+  
   func didTapLoginButton() async { // Old login with password
     isLoading = true
-    
     do {
       let loginAccount = try await client.login(email: accountName, password: password)
       let keyChain = KeychainStore()
@@ -112,9 +146,10 @@ final class LoginRegisterViewModel {
       do {
         let otp = try await client.verifyLoginCode(email: accountName, otp: otpCode)
         try keyStore.save(access: otp)
-        isLoading = false
+        await getProfile()
       } catch {
         if let error = error as? ErrorHandler {
+          isLoading = false
           showAlet = true
           errorMessage = error.message
         }
@@ -124,17 +159,21 @@ final class LoginRegisterViewModel {
   
   //MARK: - Private Methods
   
-  private func didVerifiedOTP() async {
-    isLoading = true
-    
-    try? await Task.sleep(nanoseconds: 3_000_000_000)
-    
-    let dataUser = await client.fetchAccountUser()
-    accountUser = dataUser
-    
-    if let accountUser {
-      isLoading = false
-      await input?.didGet(user: accountUser)
+  private func getProfile() async {
+    do {
+      let accountResponse = try await client.fetchUserProfile()
+      if let userProfile = accountResponse.dataProfile() {
+        await input?.didGet(user: userProfile)
+      } else {
+        showAlet = true
+        errorMessage = "User Credentials not founded please try again."
+      }
+    } catch {
+      if let error = error as? ErrorHandler {
+        showAlet = true
+        errorMessage = error.message
+      }
     }
+    isLoading = false
   }
 }

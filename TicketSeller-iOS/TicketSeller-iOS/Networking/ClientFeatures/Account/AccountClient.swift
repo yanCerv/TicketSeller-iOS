@@ -5,10 +5,12 @@
 //  Created by Yan Cervantes on 31/10/25.
 //
 
+import Foundation
 
 protocol AccountProvider {
-  func fetchAccountUser() async -> AccountUser
+  func fetchUserProfile() async throws -> AccessUserResponse
   func register(email: String, password: String) async throws -> AccessUserResponse
+  func authenticate(with credential: SocialCredential) async throws -> AccessLoginResponse
   func login(email: String, password: String) async throws -> AccessLoginResponse
   func requestLoginCode(email: String) async throws -> LoginOTPRequestResponse
   func verifyLoginCode(email: String, otp: String) async throws -> AccessLoginResponse
@@ -18,23 +20,23 @@ protocol AccountProvider {
 
 //Non Required methods external
 extension AccountProvider {
-  func fetchAccountUser() async -> AccountUser { .emptyValues() }
+  func fetchUserProfile() async throws -> AccessUserResponse { .emptyValues() }
   func register(email: String, password: String) async throws -> AccessUserResponse { .emptyValues() }
+  func authenticate(with credential: SocialCredential) async throws -> AccessLoginResponse { .emptyValues() }
   func login(email: String, password: String) async throws -> AccessLoginResponse { .emptyValues() }
   func requestLoginCode(email: String) async throws -> LoginOTPRequestResponse { LoginOTPRequestResponse(message: "") }
   func verifyLoginCode(email: String, otp: String) async throws -> AccessLoginResponse { .emptyValues() }
-  func logout() -> LogoutResponse { LogoutResponse(success: false) }
+  func logout() async throws -> LogoutResponse { LogoutResponse(success: false) }
   func accountData() async throws -> AccessUserResponse { .emptyValues() }
 }
 
 actor AccountClient: Request, AccountProvider {
-  
-  @MainActor
-  func fetchAccountUser() async -> AccountUser {
-    let response = ResourceJSON.from(fileName: "AccountUser", type: AccountUserResponseDTO.self)
-    let dataUser = response.result
+
+  func fetchUserProfile() async throws -> AccessUserResponse {
+    let path = Paths.account
+    let requestModel = await RequestModel(path: path.rawValue,provider: .host, cachePolicy: .reloadIgnoringLocalCacheData)
     
-    return dataUser
+    return try await request(with: requestModel)
   }
 
   
@@ -46,6 +48,17 @@ actor AccountClient: Request, AccountProvider {
     return try await request(with: requestModel)
   }
   
+  func authenticate(with credential: SocialCredential) async throws -> AccessLoginResponse {
+    let requestModel = await RequestModel(
+      path: Paths.google.rawValue,
+      method: .post,
+      requestBody: credential,
+      provider: .host,
+      isAuthorized: false
+    )
+    return try await request(with: requestModel)
+  }
+
   func login(email: String, password: String) async throws -> AccessLoginResponse {
     let path = Paths.login
     let body = UserAccountRequest(email: email, password: password)
@@ -77,6 +90,16 @@ actor AccountClient: Request, AccountProvider {
       isAuthorized: false
     )
 
+    return try await request(with: requestModel)
+  }
+  
+  func logout() async throws -> LogoutResponse {
+    let path = Paths.logout
+    let keyStore = KeychainStore()
+    let refreshToken = await keyStore.getRefreshToken()
+    let body = RefreshAccessRequest(refreshToken: refreshToken)
+    let requestModel = await RequestModel(path: path.rawValue, requestBody: body)
+    
     return try await request(with: requestModel)
   }
 }

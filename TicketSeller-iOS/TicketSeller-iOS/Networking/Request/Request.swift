@@ -35,6 +35,7 @@ extension Request {
     let publicPaths: Set<String> = [
       Paths.register.rawValue,
       Paths.login.rawValue,
+      Paths.google.rawValue,
       Paths.requestLoginCode.rawValue,
       Paths.verifyLoginCode.rawValue,
       Paths.forgotPassword.rawValue,

@@ -15,7 +15,7 @@ final class AccountViewModel {
   
   var appCountries: [AppCountry] = []
   var isUserLoggedIn: Bool = false
-  var accountUser: AccountUser!
+  var accountUser: UserProfile!
   
   var countryFlag: String = ""
   var language: String = ""
@@ -28,6 +28,7 @@ final class AccountViewModel {
   var showLoginRegister: Bool = false
   var showCountryPicker: Bool = false
   var showLanguagePicker: Bool = false
+  var isLoggingOut: Bool = false
   
   //Alert
   var showAlert: Bool = false
@@ -61,9 +62,28 @@ final class AccountViewModel {
     showLoginRegister = true
   }
   
-  func didTapLogout() {
-    isUserLoggedIn = false
-    keyStore.deleteAccess()
+  @MainActor
+  func didTapLogout() async {
+    guard !isLoggingOut else { return }
+    isLoggingOut = true
+    defer { isLoggingOut = false }
+
+    do {
+      let isLoggedOut = try await client.logout()
+      if isLoggedOut.success {
+        isUserLoggedIn = false
+        accountUser = nil
+        keyStore.deleteAccess()
+      } else {
+        message = "error logout, please try again"
+        showAlert = true
+      }
+    } catch {
+      if let error = error as? ErrorHandler {
+        message = error.message
+        showAlert = true
+      }
+    }
   }
   
   private func verifyCountry(from appCountries: [AppCountry]) {
@@ -85,16 +105,16 @@ final class AccountViewModel {
   
   private func validateUserLogged() async {
     guard keyStore.isUserLogged() else { return }
-    
-    if let user = try? FileDataManager.load(AccountUser.self, from: accountKey) {
-      isUserLoggedIn = true
-      accountUser = user
-      showLoginRegister = false
-    }
-    
     do {
       let accountData = try await client.accountData()
-      debugPrint("userIsLoged As \(accountData)")
+      if let profile = accountData.dataProfile() {
+        accountUser = profile
+        isUserLoggedIn = true
+      } else {
+        showAlert = true
+        message = "No data user credentials founded, try again."
+      }
+      
     } catch {
       let error = error as? ErrorHandler
       let errorMessage = error?.message ?? "Unknown Error"
@@ -106,14 +126,7 @@ final class AccountViewModel {
 
 extension AccountViewModel: LoginActionInput {
   
-  func didGet(user: AccountUser) async {
-  
-    if FileDataManager.exists(fileName: accountKey) {
-      try? FileDataManager.update(user, as: accountKey)
-    } else {
-      try? FileDataManager.save(user, as: accountKey)
-    }
-    
+  func didGet(user: UserProfile) async {
     showLoginRegister = false
     isUserLoggedIn = true
     accountUser = user

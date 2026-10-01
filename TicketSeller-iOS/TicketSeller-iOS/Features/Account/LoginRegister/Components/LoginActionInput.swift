@@ -6,5 +6,5 @@
 //
 
 protocol LoginActionInput: AnyObject {
-  func didGet(user: AccountUser) async
+  func didGet(user: UserProfile) async
 }

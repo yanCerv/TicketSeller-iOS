@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import GoogleSignIn
 
 @main
 struct TicketSeller_iOSApp: App {
@@ -27,6 +28,9 @@ struct TicketSeller_iOSApp: App {
         WindowGroup {
           MainTabView()
             .preferredColorScheme(.dark)
+            .onOpenURL { url in
+              GIDSignIn.sharedInstance.handle(url)
+            }
         }
         .modelContainer(sharedModelContainer)
     }

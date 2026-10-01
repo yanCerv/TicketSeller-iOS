@@ -32,7 +32,7 @@ actor FeatureSelectionClient: Request, FeatureSelectionProvider {
   
   func accountData() async throws -> AccessUserResponse {
     let path = Paths.account
-    let requestModel = await RequestModel(path: path.rawValue, provider: .host)
+    let requestModel = await RequestModel(path: path.rawValue, cachePolicy: .reloadIgnoringLocalCacheData)
     
     return try await request(with: requestModel)
   }
