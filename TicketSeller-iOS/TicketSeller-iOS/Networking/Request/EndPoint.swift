@@ -49,6 +49,7 @@ protocol EndPoint {
 enum Method: String {
   case get = "GET"
   case post = "POST"
+  case delete = "DELETE"
 }
 
 extension EndPoint {

@@ -15,7 +15,7 @@ struct MovieShowtimeView: View {
     ScrollView {
       VStack(alignment: .leading, spacing: 16) {
         
-        MovieHeaderView(movie: viewModel.movieDetailWrapped)
+        MovieHeaderView(movie: viewModel.movieDetailWrapped, output: viewModel, isFavorite: viewModel.isMovieFavoriteAlready)
         
         Text("Horarios disponibles")
           .font(.title2)
@@ -38,6 +38,13 @@ struct MovieShowtimeView: View {
           .presentationDetents([.fraction(0.35)])
       }
     }
+    .alert("", isPresented: $viewModel.showAlert, actions: {
+      Button("Accept") {
+        //No-Op
+      }
+    }, message: {
+      Text(viewModel.alertMessage)
+    })
     .task {
       await viewModel.didFetchData()
       
@@ -50,7 +57,19 @@ struct MovieShowtimeView: View {
 
 struct MovieHeaderView: View {
   let movie: MovieDetail
-
+  weak var output: any MovieHeaderOutput?
+  let isFavorite: Bool
+  
+  //MARK: Init
+  
+  init(movie: MovieDetail, output: MovieHeaderOutput? = nil, isFavorite: Bool = false) {
+    self.movie = movie
+    self.output = output
+    self.isFavorite = isFavorite
+  }
+  
+  //MARK: Body
+  
   var body: some View {
     HStack(alignment: .top, spacing: 12) {
       CachedAsyncImage(url: MovieDetail.posterURL(from: movie))
@@ -63,6 +82,15 @@ struct MovieHeaderView: View {
         Text("Duración: \(movie.runtimeWrapp) min")
         Text("Año: \(movie.releaseDateWrapp.prefix(4))")
         Text("Géneros: \(movie.genres.compactMap { $0.name }.joined(separator: ", "))")
+        
+        if !isFavorite {
+          Button("Add Favorite") {
+            Task {
+              await output?.didSelectFavorite()
+            }
+          }
+          .modifier(ButtonModifier(maxWidth: .infinity, font: .headline))
+        }
       }
       .font(.subheadline)
     }

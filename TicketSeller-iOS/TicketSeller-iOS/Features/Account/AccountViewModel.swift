@@ -106,7 +106,7 @@ final class AccountViewModel {
   private func validateUserLogged() async {
     guard keyStore.isUserLogged() else { return }
     do {
-      let accountData = try await client.accountData()
+      let accountData = try await client.fetchUserProfile()
       if let profile = accountData.dataProfile() {
         accountUser = profile
         isUserLoggedIn = true

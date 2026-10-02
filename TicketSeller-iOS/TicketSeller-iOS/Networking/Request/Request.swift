@@ -21,7 +21,7 @@ extension Request {
   
   func request<T: Decodable>(with model: RequestModel) async throws -> T {
     let keyStore = KeychainStore()
-    if isRequiredValidateAccess(with: model) {
+    if Paths.isRequiredValidateAccess(with: model.path) {
       try validateSessionExpired(keyStore: keyStore)
       try await validateAccessExpired(keyStore: keyStore, model: model)
       
@@ -31,26 +31,15 @@ extension Request {
     return try await requestData(with: model)
   }
   
-  private func isRequiredValidateAccess(with model: RequestModel) -> Bool {
-    let publicPaths: Set<String> = [
-      Paths.register.rawValue,
-      Paths.login.rawValue,
-      Paths.google.rawValue,
-      Paths.requestLoginCode.rawValue,
-      Paths.verifyLoginCode.rawValue,
-      Paths.forgotPassword.rawValue,
-      Paths.resetPassword.rawValue,
-      Paths.refresh.rawValue,
-      Paths.logout.rawValue
-    ]
-    return !publicPaths.contains(model.path)
-  }
-  
   private func validateSessionExpired(keyStore: KeychainStore) throws {
-    let isSessionExpired = Date.isAccessOrSessionExpired(using: FileDataManager.sessionExpired)
-    if isSessionExpired {
-      keyStore.deleteAccess()
-      throw ErrorHandler.sessionExpired
+    if keyStore.isUserLogged() {
+      let isSessionExpired = Date.isAccessOrSessionExpired(using: FileDataManager.sessionExpired)
+      if isSessionExpired {
+        keyStore.deleteAccess()
+        throw ErrorHandler.sessionExpired
+      }
+    } else {
+      throw ErrorHandler.error(message: "You are not logged in, please login to continue in account option", statusCode: 1)
     }
   }
   
