@@ -13,6 +13,8 @@ struct MainTabView: View {
   let accountViewModel: AccountViewModel = AccountViewModel()
   let myPurchasesViewModel: MyPurchasesViewModel = MyPurchasesViewModel()
   
+  let navigationPreferences: NavigationPreferences = NavigationPreferences()
+  
   var body: some View {
     TabView {
       Tab("Inicio", systemImage: "house") {
@@ -22,6 +24,10 @@ struct MainTabView: View {
       Tab("Compras", systemImage: "purchased") {
         MyPurchasesView(viewMode: myPurchasesViewModel)
           .environmentObject(MyPurchasesNagivation())
+      }
+      
+      Tab("Mis Favoritos", systemImage: "heart") {
+        PreferencesView(navigation: navigationPreferences)
       }
       
       Tab("Cuenta", systemImage: "person.circle") {

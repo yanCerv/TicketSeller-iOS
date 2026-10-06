@@ -20,7 +20,7 @@ protocol AccountProvider: Request {
   func fetchUserProfile() async throws -> AccessUserResponse
   func addFavorite(movieId: Int) async throws -> AddFavoriteMovieResponse
   func fetchFavoriteMovies() async throws -> [AddFavoriteMovieResponse]
-  func deleteFavorite(movieId: Int) async throws -> [AddFavoriteMovieResponse]
+  func deleteFavorite(movieId: Int) async throws -> DeleteFavoritesResponse
 }
 
 //Non Required methods external
@@ -63,8 +63,8 @@ extension AccountProvider {
     return try await request(with: requestModel)
   }
   
-  func deleteFavorite(movieId: Int) async throws -> [AddFavoriteMovieResponse] {
-    let path = "\(Paths.addFavorite)\(movieId)"
+  func deleteFavorite(movieId: Int) async throws -> DeleteFavoritesResponse {
+    let path = "\(Paths.addFavorite.rawValue)\(movieId)"
     let requestModel = RequestModel(path: path, method: .delete)
     
     return try await request(with: requestModel)

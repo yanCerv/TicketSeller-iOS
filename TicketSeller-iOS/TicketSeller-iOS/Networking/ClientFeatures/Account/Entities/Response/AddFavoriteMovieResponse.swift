@@ -5,7 +5,7 @@
 //  Created by Yan Cervantes  on 02/10/26.
 //
 
-struct AddFavoriteMovieResponse: Decodable {
+struct AddFavoriteMovieResponse: Decodable, Hashable {
   let id: String
   let userId: String
   let tmdbMovieId: Int
