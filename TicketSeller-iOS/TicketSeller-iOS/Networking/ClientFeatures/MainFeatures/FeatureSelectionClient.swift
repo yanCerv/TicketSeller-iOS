@@ -30,7 +30,7 @@ actor FeatureSelectionClient: Request, FeatureSelectionProvider {
     return countries
   }
   
-  func accountData() async throws -> AccessUserResponse {
+  func fetchUserProfile() async throws -> AccessUserResponse {
     let path = Paths.account
     let requestModel = await RequestModel(path: path.rawValue, cachePolicy: .reloadIgnoringLocalCacheData)
     

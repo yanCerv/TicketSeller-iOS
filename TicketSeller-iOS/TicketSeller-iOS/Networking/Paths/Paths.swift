@@ -12,6 +12,8 @@ enum Paths: String, CaseIterable {
   case topRated = "/api/v1/movies/top-rated"
   case upcoming = "/api/v1/movies/upcoming"
   case movieDetail = "/api/v1/movies"
+  case addFavorite = "/api/v1/favorites/movies/"
+  case modifyFavorite = "/api/v1/favorites/movies"
   
   // Events
   case eventsByCountry = "/api/v1/events"
@@ -28,4 +30,19 @@ enum Paths: String, CaseIterable {
   case logout = "/api/v1/auth/logout"
   case account = "/api/v1/users/me"
   case refresh = "/api/v1/auth/refresh"
+  
+  static func isRequiredValidateAccess(with modelPath: String) -> Bool {
+    let publicPaths: Set<String> = [
+      Paths.register.rawValue,
+      Paths.login.rawValue,
+      Paths.google.rawValue,
+      Paths.requestLoginCode.rawValue,
+      Paths.verifyLoginCode.rawValue,
+      Paths.forgotPassword.rawValue,
+      Paths.resetPassword.rawValue,
+      Paths.refresh.rawValue,
+      Paths.logout.rawValue
+    ]
+    return !publicPaths.contains(modelPath)
+  }
 }

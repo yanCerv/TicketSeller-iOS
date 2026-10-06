@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MoviesProvider: Sendable {
+protocol MoviesProvider: Sendable, AccountProvider {
   func fetchNowPlaying() async throws -> [Movie]
   func fetchPopular() async throws -> [Movie]
   func fetchTopRated() async throws -> [Movie]
@@ -17,7 +17,7 @@ protocol MoviesProvider: Sendable {
   func fetchSeats() async -> [SeatRow]
 }
 
-actor MoviesClient: Request, MoviesProvider, ErrorCompletion {
+actor MoviesClient: Request, MoviesProvider {
   
   //MARK: - Now Playing
 

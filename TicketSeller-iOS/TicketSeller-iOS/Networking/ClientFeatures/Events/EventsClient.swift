@@ -13,7 +13,7 @@ protocol EventsProvider {
   func fetchClassification() async throws -> [Classification]?
 }
 
-actor EventsClient: Request, EventsProvider, ErrorCompletion {
+actor EventsClient: Request, EventsProvider {
   
   let provider = APIProvider.host
     
