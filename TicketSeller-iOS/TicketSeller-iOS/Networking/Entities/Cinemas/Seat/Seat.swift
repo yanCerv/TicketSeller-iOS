@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct SeatRow: Decodable, Hashable {
+struct SeatRow: Decodable, Hashable, Identifiable {
+  let id: String
   let rowName: String
   var seats: [Seat]
 }
 
 // MARK: - Seat
-struct Seat: Decodable, Hashable {
+struct Seat: Decodable, Hashable, Identifiable {
+  let id: String
   let seatNumber: String
   let type: SeatType
-  let status: String
+  let status: SeatStatus
   let price: Double
-  let isAvailable: Bool?
   let position: Position
   
   var isSelected: Bool = false
@@ -38,11 +39,11 @@ struct Seat: Decodable, Hashable {
   }
   
   private enum CodingKeys: String, CodingKey {
+    case id
     case seatNumber
     case type
     case status
     case price
-    case isAvailable
     case position
   }
 }
@@ -55,11 +56,15 @@ struct Position: Codable, Hashable {
 }
 
 // MARK: - SeatType
-enum SeatType: String, Decodable {
+enum SeatType: String, Decodable, Hashable {
   case motion = "MOTION"
   case confort = "CONFORT"
   case premium = "PREMIUM"
   case sofa = "SOFA"
   case relax = "RELAX"
-  case space = "SPACE"
+}
+
+enum SeatStatus: String, Decodable, Hashable {
+  case available = "AVAILABLE"
+  case sold = "SOLD"
 }

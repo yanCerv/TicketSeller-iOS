@@ -49,5 +49,10 @@ struct SeatSelectionView: View {
     .task {
       await viewModel.fetchSeats()
     }
+    .alert("", isPresented: $viewModel.showAlert) {
+      Button("Aceptar") {}
+    } message: {
+      Text(viewModel.alertMessage)
+    }
   }
 }

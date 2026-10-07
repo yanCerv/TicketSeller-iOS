@@ -24,6 +24,8 @@ final class SeatSelectionViewModel {
   var selectedSeats: [Seat] = []
   var isActiveButton: Bool = false
   var isLoaded: Bool = false
+  var alertMessage: String = ""
+  var showAlert: Bool = false
   
   //MARK: Init
   
@@ -39,28 +41,35 @@ final class SeatSelectionViewModel {
   
   func fetchSeats() async {
     guard !isLoaded else { return }
-    let rows = await client.fetchSeats()
-    let sorted = order(rows: rows)
-    
-    self.rows = sorted
-    isLoaded = true
+    do {
+      let response = try await client.fetchSeats(showtimeId: showtime.id)
+      guard response.showtimeId == showtime.id else { throw ErrorHandler.requestFail }
+      rows = order(rows: response.rows)
+      isLoaded = true
+    } catch {
+      alertMessage = (error as? ErrorHandler)?.message ?? "No fue posible cargar los asientos."
+      showAlert = true
+    }
   }
   
-  func didSelect(rowName: String, seat: Seat, isSelected: Bool) {
-    guard let rowIndex = rows.firstIndex(where: { $0.rowName == rowName }),
-          let seatIndex = rows[rowIndex].seats.firstIndex(where: { $0 == seat }) else {
+  func didSelect(rowId: String, seatId: String) {
+    guard let rowIndex = rows.firstIndex(where: { $0.id == rowId }),
+          let seatIndex = rows[rowIndex].seats.firstIndex(where: { $0.id == seatId }) else {
       return
     }
+
+    let seat = rows[rowIndex].seats[seatIndex]
+    guard seat.status == .available else { return }
     
     if seat.isSelected,
-      let selectedIndex = selectedSeats.firstIndex(where: { $0 == seat }) {
-        selectedSeats.remove(at: selectedIndex)
-        rows[rowIndex].seats[seatIndex].isSelected = false
-        rows[rowIndex].seats[seatIndex].rowSeat = ""
+      let selectedIndex = selectedSeats.firstIndex(where: { $0.id == seat.id }) {
+      selectedSeats.remove(at: selectedIndex)
+      rows[rowIndex].seats[seatIndex].isSelected = false
+      rows[rowIndex].seats[seatIndex].rowSeat = ""
     } else {
       if selectedSeats.count == dataPurchase.seatQuantitySelected { return }
-      rows[rowIndex].seats[seatIndex].isSelected = isSelected
-      rows[rowIndex].seats[seatIndex].rowSeat = rowName
+      rows[rowIndex].seats[seatIndex].isSelected = true
+      rows[rowIndex].seats[seatIndex].rowSeat = rows[rowIndex].rowName
       selectedSeats.append(rows[rowIndex].seats[seatIndex])
     }
     
@@ -71,10 +80,19 @@ final class SeatSelectionViewModel {
   //MARK: Private Methods
   
   private func order(rows: [SeatRow]) -> [SeatRow] {
-    let sorted = rows.map { row in
+    let sorted = rows
+      .filter { !$0.seats.isEmpty }
+      .map { row in
       let orderedSeats = row.seats.sorted { $0.position.columnIndex < $1.position.columnIndex }
-      return SeatRow(rowName: row.rowName, seats: orderedSeats)
-    }.sorted { $0.seats.first?.position.rowIndex ?? 0 < $1.seats.first?.position.rowIndex ?? 0 }
+      return SeatRow(id: row.id, rowName: row.rowName, seats: orderedSeats)
+    }
+      .sorted { left, right in
+        guard let leftRowIndex = left.seats.first?.position.rowIndex,
+              let rightRowIndex = right.seats.first?.position.rowIndex else {
+          return false
+        }
+        return leftRowIndex < rightRowIndex
+      }
     
     return sorted
   }

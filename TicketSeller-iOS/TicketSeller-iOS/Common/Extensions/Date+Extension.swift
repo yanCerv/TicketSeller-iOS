@@ -21,4 +21,14 @@ extension Date {
     
     return accessExpiresAt <= .now.addingTimeInterval(30)
   }
+  
+  static func todayYearMonthDay() -> String {
+    let formatter = DateFormatter()
+    formatter.calendar = Calendar(identifier: .gregorian)
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.timeZone = TimeZone(identifier: "America/Mexico_City")
+    formatter.dateFormat = "yyyy-MM-dd"
+
+    return formatter.string(from: .now)
+  }
 }

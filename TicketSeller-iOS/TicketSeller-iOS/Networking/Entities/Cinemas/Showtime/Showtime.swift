@@ -7,10 +7,14 @@
 
 struct MovieShowtime: Codable, Hashable {
   let movieId: Int
-  let showtimes: [Showtime]
+   let date: String
+   let timeZone: String
+   let showtimes: [Showtime]
   
-  init(movieId: Int = 0, showtimes: [Showtime] = []) {
+  init(movieId: Int = 0, date: String = "", timeZone: String = "", showtimes: [Showtime] = []) {
     self.movieId = movieId
+    self.date = date
+    self.timeZone = timeZone
     self.showtimes = showtimes
   }
   
@@ -20,24 +24,25 @@ struct MovieShowtime: Codable, Hashable {
 }
 
 struct Showtime: Codable, Hashable {
+  let id: String
+  let movieId: Int
+  let startsAt: String
   let time: String
   let cinema: String
+  let auditorium: String
   let screenType: String
   let price: Double
+  let currency: String
   
-  static func generateMock(count: Int = 3) -> [Showtime] {
-    let times = ["12:35", "14:45", "17:00", "19:30", "21:45", "23:00"]
-    let cinemas = ["Cine", "Cine VIP", "Cine Premium"]
-    let formats = ["2D", "3D", "IMAX", "4K", "4K Dolby Atmos"]
-    let prices = [35.0, 40.0, 45.0, 50.0]
-    
-    return (0..<count).map { _ in
-      Showtime(
-        time: times.randomElement()!,
-        cinema: cinemas.randomElement()!,
-        screenType: formats.randomElement()!,
-        price: prices.randomElement()!
-      )
-    }
+  init(id: String, movieId: Int, startsAt: String, time: String, cinema: String, auditorium: String, screenType: String, price: Double, currency: String) {
+    self.id = id
+    self.movieId = movieId
+    self.startsAt = startsAt
+    self.time = time
+    self.cinema = cinema
+    self.auditorium = auditorium
+    self.screenType = screenType
+    self.price = price
+    self.currency = currency
   }
 }

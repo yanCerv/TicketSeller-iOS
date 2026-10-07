@@ -12,6 +12,8 @@ enum Paths: String, CaseIterable {
   case topRated = "/api/v1/movies/top-rated"
   case upcoming = "/api/v1/movies/upcoming"
   case movieDetail = "/api/v1/movies"
+  case showtimes = "/api/v1/movies/"
+  case showtimeSeats = "/api/v1/showtimes"
   case addFavorite = "/api/v1/favorites/movies/"
   case modifyFavorite = "/api/v1/favorites/movies"
   
@@ -30,6 +32,14 @@ enum Paths: String, CaseIterable {
   case logout = "/api/v1/auth/logout"
   case account = "/api/v1/users/me"
   case refresh = "/api/v1/auth/refresh"
+  
+  func showtime(with movieId: Int, date: String) -> String {
+    return "/api/v1/movies/\(movieId)/showtimes?date=\(date)"
+  }
+
+  func seats(with showtimeId: String) -> String {
+    return "\(rawValue)/\(showtimeId)/seats"
+  }
   
   static func isRequiredValidateAccess(with modelPath: String) -> Bool {
     let publicPaths: Set<String> = [
