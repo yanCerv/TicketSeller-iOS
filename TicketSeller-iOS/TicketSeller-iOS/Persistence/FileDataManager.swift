@@ -60,9 +60,5 @@ struct FileDataManager {
 extension FileDataManager {
   static let accountKey: String = "AccountUser"
   static let accessExpired: String = "accessExpired"
-  static let sessionExpired: String = "sessionExpired"
-
-  static func showtimes(id: String) -> String {
-    return "showtime_\(id).json"
-  }  
+  static let sessionExpired: String = "sessionExpired" 
 }

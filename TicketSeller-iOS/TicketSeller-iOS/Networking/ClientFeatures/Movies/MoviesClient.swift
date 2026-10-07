@@ -43,6 +43,7 @@ actor MoviesClient: Request, MoviesProvider {
   func fetchNowPopularDTO() async throws -> MovieResponseDTO {
     let path = Paths.popular
     let requestModel = await RequestModel(path: path.rawValue, provider: .host)
+    
     return try await request(with: requestModel)
   }
   
@@ -56,6 +57,7 @@ actor MoviesClient: Request, MoviesProvider {
   func fetchTopRatedDTO() async throws -> MovieResponseDTO {
     let path = Paths.topRated
     let requestModel = await RequestModel(path: path.rawValue, provider: .host)
+    
     return try await request(with: requestModel)
   }
   
@@ -69,6 +71,7 @@ actor MoviesClient: Request, MoviesProvider {
   func fetchUpcomingDTO() async throws -> MovieResponseDTO {
     let path = Paths.upcoming
     let requestModel = await RequestModel(path: path.rawValue, provider: .host)
+    
     return try await request(with: requestModel)
   }
   
@@ -76,14 +79,17 @@ actor MoviesClient: Request, MoviesProvider {
   func fetchMovieDetail(id: Int) async throws -> MovieDetail {
     let path = "\(Paths.movieDetail.rawValue)/\(id)"
     let requestModel = await RequestModel(path: path, provider: .host)
+    
     return try await request(with: requestModel)
   }
   
   //MARK: - Mocks
   func fetchMovieShowtime(id: Int) async throws -> MovieShowtime {
-    _ = await ShowtimeRepository(movieId: id)
-    let movieShowtime = await ShowtimeRepository.getMovieShowtimes(from: id)
-    return movieShowtime
+    let date = await Date.todayYearMonthDay()
+    let path = await Paths.showtimes.showtime(with: id, date: date)
+    let requestModel = await RequestModel(path: path)
+    
+    return try await request(with: requestModel)
   }
   
   func fetchSeats() async -> [SeatRow] {
