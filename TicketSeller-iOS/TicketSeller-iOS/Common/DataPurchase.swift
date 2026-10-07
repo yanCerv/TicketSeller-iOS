@@ -13,7 +13,7 @@ struct DataPurchase: Hashable {
   let seatQuantitySelected: Int
   
   let sessionData: SessionData?
-  var purchase: Purchase?
+  var purchase: PurchaseResponseModel?
   
   var selectedSeats: [Seat] = []
   

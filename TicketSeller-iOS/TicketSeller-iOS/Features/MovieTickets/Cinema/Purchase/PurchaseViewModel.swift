@@ -11,7 +11,7 @@ import SwiftUI
 final class PurchaseViewModel {
   let dataPurchase: DataPurchase
   weak var checkoutInput: CheckoutInput!
-  var purchase: Purchase!
+  var purchase: PurchaseResponseModel!
   var showtime: Showtime!
   var movieDetail: MovieDetail!
   var seats: [Seat] = []

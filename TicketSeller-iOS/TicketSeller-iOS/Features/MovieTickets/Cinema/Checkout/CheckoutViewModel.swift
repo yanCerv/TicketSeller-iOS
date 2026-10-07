@@ -11,6 +11,7 @@ import SwiftUI
 final class CheckoutViewModel {
   
   private let client: CheckoutProvider
+  private let purchasesClient: PurchasesProvider
   private(set) var dataPurchase: DataPurchase
   
   var movieDetail: MovieDetail!
@@ -58,9 +59,10 @@ final class CheckoutViewModel {
   
   //MARK: Init
   
-  init(dataPurchase: DataPurchase, client: CheckoutProvider = CheckoutClient()) {
+  init(dataPurchase: DataPurchase, client: CheckoutProvider = CheckoutClient(), purchasesClient: PurchasesProvider = PurchasesClient()) {
     self.dataPurchase = dataPurchase
     self.client = client
+    self.purchasesClient = purchasesClient
     movieDetail = dataPurchase.movieDetail
     selectedSeats = dataPurchase.selectedSeats
     showtime = dataPurchase.showtime
@@ -100,7 +102,7 @@ final class CheckoutViewModel {
       }
     case .cvc:
       let cleaned = text.filter(\.isNumber)
-      let limited = String(cleaned.prefix(3))
+      let limited = String(cleaned.prefix(4))
       if cardCvc != limited {
         cardCvc = limited
       }
@@ -108,15 +110,27 @@ final class CheckoutViewModel {
   }
   
   func didTapPurchase() {
+    guard isPaymentFormValid else { return }
+
     isLoading = true
     viewType = nil
     
+    let buyer = Buyer(firstName: firstName, lastName: lastName, email: email)
+    let payment = Payment(cardNumber: cardNumber, expiry: cardDate, cvc: cardCvc)
+    let seatsId = dataPurchase.selectedSeats.map(\.id)
+    let showtimeId = dataPurchase.showtime.id
+    
     Task {
-      try? await Task.sleep(nanoseconds: 3_000_000_000)
-      let purchase = await client.fetchPurchase()
-      dataPurchase.purchase = purchase
-      isLoading = false
-      viewType = .purchase
+      do {
+        let request = PurchaseRequestModel(showtimeId: showtimeId, seatIds: seatsId, buyer: buyer, payment: payment)
+        let purchase = try await purchasesClient.purchase(model: request)
+        dataPurchase.purchase = purchase
+        isLoading = false
+        viewType = .purchase
+      } catch {
+        isLoading = false
+        debugPrint(error.localizedDescription)
+      }
     }
   }
   
@@ -130,6 +144,10 @@ final class CheckoutViewModel {
       let limited = String(cleaned.prefix(16))
       return limited.cardStringFormat()
     }
+  }
+
+  private var isPaymentFormValid: Bool {
+    isCardFilled && cardName.count > 3 && cardDate.count == 5 && cardCvc.count >= 3
   }
 }
 
