@@ -14,7 +14,7 @@ protocol MoviesProvider: Sendable, AccountProvider {
   func fetchUpcoming() async throws -> [Movie]
   func fetchMovieDetail(id: Int) async throws -> MovieDetail
   func fetchMovieShowtime(id: Int) async throws -> MovieShowtime
-  func fetchSeats() async -> [SeatRow]
+  func fetchSeats(showtimeId: String) async throws -> SeatResponseDTO
 }
 
 actor MoviesClient: Request, MoviesProvider {
@@ -83,7 +83,7 @@ actor MoviesClient: Request, MoviesProvider {
     return try await request(with: requestModel)
   }
   
-  //MARK: - Mocks
+  //MARK: - Showtimes
   func fetchMovieShowtime(id: Int) async throws -> MovieShowtime {
     let date = await Date.todayYearMonthDay()
     let path = await Paths.showtimes.showtime(with: id, date: date)
@@ -92,9 +92,9 @@ actor MoviesClient: Request, MoviesProvider {
     return try await request(with: requestModel)
   }
   
-  func fetchSeats() async -> [SeatRow] {
-    let response = ResourceJSON.from(fileName: "SeatMap", type: SeatResponseDTO.self)
-    let rows = response.rows
-    return rows
+  func fetchSeats(showtimeId: String) async throws -> SeatResponseDTO {
+    let path = await Paths.showtimeSeats.seats(with: showtimeId)
+    let requestModel = await RequestModel(path: path)
+    return try await request(with: requestModel)
   }
 }

@@ -6,5 +6,6 @@
 //
 
 nonisolated struct SeatResponseDTO: Decodable {
+  let showtimeId: String
   let rows: [SeatRow]
 }

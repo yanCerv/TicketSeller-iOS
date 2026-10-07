@@ -17,12 +17,12 @@ struct SeatContent: View {
     ScrollView([.horizontal, .vertical]) {
       ZoomResizableView(isZooming: $isZooming, scale: $scale) {
         VStack(alignment: .leading) {
-          ForEach(viewModel.rows, id: \.self) { row in
+          ForEach(viewModel.rows) { row in
             LazyVGrid(columns: viewModel.columns, spacing: 8) {
               ForEach((0..<viewModel.numberOfColumns), id: \.self) { columnIndex in
                 if let seat = row.seats.first(where: { $0.position.columnIndex == columnIndex }) {
-                  SeatButton(seat: seat) { (seatSelected, isSelected) in
-                    viewModel.didSelect(rowName: row.rowName, seat: seatSelected, isSelected: isSelected)
+                  SeatButton(seat: seat) {
+                    viewModel.didSelect(rowId: row.id, seatId: seat.id)
                   }
                   .frame(width: seat.seatWidth, height: seat.seatHeight)
                 } else {

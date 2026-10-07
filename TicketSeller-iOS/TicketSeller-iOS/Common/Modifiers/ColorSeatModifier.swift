@@ -10,11 +10,7 @@ import SwiftUI
 struct ColorSeatSchemeModifier: ViewModifier {
   @Environment(\.colorScheme) var colorScheme
   var isSelected: Bool
-  var seatStatus: String
-  
-  var status: String {
-    return seatStatus.lowercased()
-  }
+  var seatStatus: SeatStatus
   
   func body(content: Content) -> some View {
     content
@@ -28,21 +24,20 @@ struct ColorSeatSchemeModifier: ViewModifier {
   }
   
   var backColor: Color {
-    guard status.lowercased() != "space" else { return .clear }
-    guard status.lowercased() != "sold" else { return backSoldSeat }
+    guard seatStatus != .sold else { return backSoldSeat }
     let defaultOpacity: Double = colorScheme == .dark ? 0.0 : 0.5
     return isSelected ? .brown.opacity(0.7) : Color.clear.opacity(defaultOpacity)
   }
   
   var borderColor: Color {
-    if status.lowercased() != "space" && status.lowercased() != "sold" {
+    if seatStatus != .sold {
       return colorScheme == .dark ? .brown.opacity(0.7) : isSelected ? .white.opacity(0.7) : .brown.opacity(0.7)
     }
     return .clear
   }
   
   var foreGroundColor: Color {
-    guard status.lowercased() != "sold" else { return foregroundSoldSeat }
+    guard seatStatus != .sold else { return foregroundSoldSeat }
     return colorScheme == .dark ? .white : isSelected ? .white : .black
   }
   

@@ -53,9 +53,8 @@ final class MoviesViewModelTest: XCTestCase {
       MovieShowtime.emptyObject()
     }
     
-    func fetchSeats() async -> [SeatRow] {
-      
-      return []
+    func fetchSeats(showtimeId: String) async throws -> SeatResponseDTO {
+      SeatResponseDTO(showtimeId: showtimeId, rows: [])
     }
     
     
