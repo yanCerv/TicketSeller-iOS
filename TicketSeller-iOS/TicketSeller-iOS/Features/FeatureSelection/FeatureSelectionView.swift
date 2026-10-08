@@ -8,7 +8,15 @@
 import SwiftUI
 
 struct FeatureSelectionView: View {
+  @Environment(\.horizontalSizeClass) private var horizontalSizeClass
   @State var viewModel: FeatureSelectionViewModel
+
+  private var columns: [GridItem] {
+    Array(
+      repeating: GridItem(.flexible(), spacing: 20, alignment: .top),
+      count: horizontalSizeClass == .regular ? 3 : 2
+    )
+  }
   
   var body: some View {
     NavigationStack {
@@ -18,12 +26,13 @@ struct FeatureSelectionView: View {
         
         VStack {
           ScrollView {
-            LazyVGrid(columns: viewModel.columns, spacing: 16) {
-              ForEach(viewModel.features, id: \.self) { feature in
+            LazyVGrid(columns: columns, spacing: 20) {
+              ForEach(viewModel.features, id: \.id) { feature in
                 FeatureCard(viewModel: viewModel, feature: feature)
               }
             }
             .padding(.horizontal)
+            .frame(maxWidth: .infinity, alignment: .leading)
           }
           .fullScreenCover(item: $viewModel.featureType, content: { type in
             if type == .movies {
