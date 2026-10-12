@@ -23,9 +23,7 @@ extension Request {
     let keyStore = KeychainStore()
     if Paths.isRequiredValidateAccess(with: model.path) {
       try validateSessionExpired(keyStore: keyStore)
-      try await validateAccessExpired(keyStore: keyStore, model: model)
-      
-      return try await requestData(with: model)
+      return try await validateAccessExpired(keyStore: keyStore, model: model)
     }
     
     return try await requestData(with: model)
@@ -43,7 +41,7 @@ extension Request {
     }
   }
   
-  private func validateAccessExpired(keyStore: KeychainStore, model: RequestModel) async throws {
+  private func validateAccessExpired<T: Decodable>(keyStore: KeychainStore, model: RequestModel) async throws -> T {
     let refresh = try? keyStore.value(for: .refresh)
     let isAccessExpired = Date.isAccessOrSessionExpired(using: FileDataManager.accessExpired)
     
@@ -52,13 +50,18 @@ extension Request {
       let body = RefreshAccessRequest(refreshToken: refresh)
       let newModel = RequestModel(path: Paths.refresh.rawValue, method: .post, requestBody: body, provider: .host)
       do {
-        let refreshToken: AccessLoginResponse = try await requestData(with: newModel)
-        try keyStore.save(access: refreshToken)
+        let response: AccessLoginResponse = try await requestData(with: newModel)
+        try keyStore.save(access: response)
+        return try await requestData(with: model)
       } catch {
-        keyStore.deleteAccess()
+        if let error = error as? ErrorHandler {
+          throw ErrorHandler.error(message: error.message, statusCode: error.statusCode)
+        }
         throw ErrorHandler.requestFail
       }
     }
+    
+    return try await requestData(with: model)
   }
   
   //New

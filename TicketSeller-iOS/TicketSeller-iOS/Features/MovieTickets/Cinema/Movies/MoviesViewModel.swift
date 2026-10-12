@@ -37,23 +37,34 @@ final class MoviesViewModel {
     let client = client
     
     do {
-      async let nowPlaying = client.fetchNowPlaying()
-      async let popular = client.fetchPopular()
-      async let topRated = client.fetchTopRated()
-      async let upcoming = client.fetchUpcoming()
-      
-      let (nowPlayingResult, popularResult, topRatedResult, upcomingResult) = try await (nowPlaying, popular, topRated, upcoming)
-      
-      self.nowPlaying = nowPlayingResult
+      let nowPlaying = try await client.fetchNowPlaying()
+      self.nowPlaying = nowPlaying
+      await didFetchAllCategories()
+    } catch {
+      handler(error)
+    }
+  }
+  
+  func didFetchAllCategories() async {
+    async let popular = client.fetchPopular()
+    async let topRated = client.fetchTopRated()
+    async let upcoming = client.fetchUpcoming()
+    
+    do {
+      let (popularResult, topRatedResult, upcomingResult) = try await (popular, topRated, upcoming)
       self.popularMovies = popularResult
       self.topRatedMovies = topRatedResult
       self.upcomingMovies = upcomingResult
       isLoaded = true
     } catch {
-      if let error = error as? ErrorHandler {
-        errorMessage = error.message
-        showAlert = true
-      }
+      handler(error)
+    }
+  }
+  
+  private func handler(_ error: Error) {
+    if let error = error as? ErrorHandler {
+      errorMessage = error.message
+      showAlert = true
     }
   }
 }

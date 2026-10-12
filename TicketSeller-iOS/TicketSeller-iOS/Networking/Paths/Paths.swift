@@ -33,6 +33,9 @@ enum Paths: String, CaseIterable {
   case account = "/api/v1/users/me"
   case refresh = "/api/v1/auth/refresh"
   
+  //Purchases
+  case purchases = "/api/v1/purchases"
+  
   func showtime(with movieId: Int, date: String) -> String {
     return "/api/v1/movies/\(movieId)/showtimes?date=\(date)"
   }

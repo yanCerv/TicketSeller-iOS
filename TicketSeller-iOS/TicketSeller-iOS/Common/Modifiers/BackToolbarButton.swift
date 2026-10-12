@@ -20,3 +20,17 @@ struct BackToolbarButton: ToolbarContent {
     }
   }
 }
+
+struct BackChevronToolbarButton: ToolbarContent {
+  let onTap: () -> Void
+  
+  var body: some ToolbarContent {
+    ToolbarItem(placement: .topBarLeading) {
+      Button(action: onTap) {
+        Image(systemName: "chevron.left")
+          .renderingMode(.template)
+          .foregroundStyle(.white.opacity(0.8))
+      }
+    }
+  }
+}

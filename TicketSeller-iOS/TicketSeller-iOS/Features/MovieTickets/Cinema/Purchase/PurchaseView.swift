@@ -19,9 +19,9 @@ struct PurchaseView: View {
           .font(.largeTitle)
           .bold()
         
-        QRCodeImageView(bookingId: viewModel.purchase.bookingId)
+        QRCodeImageView(bookingId: viewModel.purchase.bookingCode)
         
-        Text("\(viewModel.purchase.bookingId)")
+        Text("\(viewModel.purchase.bookingCode)")
           .font(.headline)
         
         VStack(alignment: .leading, spacing: 8) {

@@ -21,7 +21,7 @@ struct FeatureCard: View {
     Button {
       viewModel.didSelect(feature)
     } label: {
-      VStack(spacing: 8) {
+      VStack(spacing: 0) {
         AsyncImage(url: URL(string: feature.imageUrl)) { image in
           image
             .resizable()
@@ -29,6 +29,7 @@ struct FeatureCard: View {
         } placeholder: {
           Color.gray.opacity(0.2)
         }
+        .frame(height: 112)
         .clipped()
 
         Text(feature.title)
@@ -36,8 +37,9 @@ struct FeatureCard: View {
           .foregroundStyle(.primary)
           .multilineTextAlignment(.center)
           .padding(.horizontal, 8)
+          .frame(maxWidth: .infinity, minHeight: 44)
       }
-      .frame(width: 160, height: 140)
+      .frame(maxWidth: .infinity)
     }
     .buttonStyle(FeatureCardButtonStyle(isActive: feature.isActive))
     .disabled(!feature.isActive)
