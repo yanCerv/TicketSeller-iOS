@@ -44,7 +44,7 @@ struct MoviesView: View {
         .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .toolbar {
-          BackToolbarButton {
+          BackChevronToolbarButton {
             dismiss()
           }
         }
