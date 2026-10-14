@@ -85,12 +85,17 @@ struct CheckoutView: View {
       .task {
         await viewModel.fetchPayMethodList()
       }
+      .alert(viewModel.message, isPresented: $viewModel.showError, actions: {
+        Button("Accept") {
+          viewModel.didTapAlert()
+        }
+      })
       .sheet(item: $viewModel.viewType) { _ in
         if let viewType = viewModel.viewType {
           switch viewType {
           case .card:
             CardFormView(viewModel: $viewModel)
-              .presentationDetents([.fraction(0.45)])
+              .presentationDetents([.fraction(0.50)])
           case .purchase:
             PurchaseView(viewModel: PurchaseViewModel(dataPurchase: viewModel.dataPurchase,
                                                       checkoutInput: viewModel))

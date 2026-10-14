@@ -22,7 +22,7 @@ struct MainTabView: View {
       }
       
       Tab("Compras", systemImage: "purchased") {
-        MyPurchasesView(viewMode: myPurchasesViewModel)
+        MyPurchasesView(viewModel: myPurchasesViewModel)
           .environmentObject(MyPurchasesNagivation())
       }
       

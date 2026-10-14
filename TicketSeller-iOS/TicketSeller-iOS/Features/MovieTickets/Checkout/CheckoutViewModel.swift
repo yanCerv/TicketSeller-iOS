@@ -35,6 +35,9 @@ final class CheckoutViewModel {
   
   var isLoaded: Bool = false
   var isLoading: Bool = false
+  var showError: Bool = false
+  var message: String = ""
+  var statusCode: Int = 0
   var viewType: ViewType? = nil
   
   var isFirstNameValid: Bool {
@@ -129,8 +132,28 @@ final class CheckoutViewModel {
         viewType = .purchase
       } catch {
         isLoading = false
-        debugPrint(error.localizedDescription)
+        if let error = error as? ErrorHandler {
+          showError = true
+          message = error.message
+          statusCode = error.statusCode
+        }
       }
+    }
+  }
+  
+  func didTapAlert() {
+    switch statusCode {
+    case 400:
+      showError = false
+      viewType = .card
+    case 402:
+      showError = false
+      viewType = .card
+    case 409:
+      // error seat already sold
+      showError = false // navigate to home
+    default:
+      break
     }
   }
   

@@ -6,6 +6,9 @@
 //
 
 enum Paths: String, CaseIterable {
+  // Application
+  case appFeatures = "/api/v1/app/features"
+
   // Movies
   case nowPlaying = "/api/v1/movies/now-playing"
   case popular = "/api/v1/movies/popular"
@@ -54,7 +57,8 @@ enum Paths: String, CaseIterable {
       Paths.forgotPassword.rawValue,
       Paths.resetPassword.rawValue,
       Paths.refresh.rawValue,
-      Paths.logout.rawValue
+      Paths.logout.rawValue,
+      Paths.appFeatures.rawValue
     ]
     return !publicPaths.contains(modelPath)
   }

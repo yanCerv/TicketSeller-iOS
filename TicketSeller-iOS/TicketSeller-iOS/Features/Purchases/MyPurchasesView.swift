@@ -9,9 +9,25 @@ import SwiftUI
 
 struct MyPurchasesView: View {
   @EnvironmentObject var navigation: MyPurchasesNagivation
-  @State var viewMode: MyPurchasesViewModel = MyPurchasesViewModel()
+  @State var viewModel: MyPurchasesViewModel = MyPurchasesViewModel()
   
   var body: some View {
-    Text("Hello, World!")
+    NavigationStack {
+      VStack {
+        List(viewModel.purchases, id: \.self) { purchase in
+          HStack {
+            Text(purchase.movie.title)
+            Spacer()
+            Image(systemName: "chevron.right")
+          }
+        }
+        .backgroundStyle(.clear)
+      }
+      .navigationTitle("Mis Compras")
+      .navigationBarTitleDisplayMode(.inline)
+      .task {
+        await viewModel.getPurchases()
+      }
+    }
   }
 }

@@ -34,6 +34,11 @@ struct FeatureSelectionView: View {
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .leading)
           }
+          .overlay {
+            if viewModel.isLoading {
+              ProgressLoadingView(typeLoading: .movies, text: "Loading")
+            }
+          }
           .fullScreenCover(item: $viewModel.featureType, content: { type in
             if type == .movies {
               MoviesView()
@@ -44,7 +49,6 @@ struct FeatureSelectionView: View {
               EventListView()
                 .environmentObject(EventNavigation())
             }
-            
           })
         }
         .navigationTitle("Ticket Seller")

@@ -8,18 +8,17 @@
 import Foundation
 
 protocol FeatureSelectionProvider: AccountProvider {
-  func fetchMainFeatures() async -> [MainFeature]
+  func fetchMainFeatures() async throws -> MainFeatureResponseDTO
   func fetchCountries() async -> [AppCountry]
 }
 
 actor FeatureSelectionClient: Request, FeatureSelectionProvider {
   
-  @MainActor
-  func fetchMainFeatures() async -> [MainFeature] {
-    let resultData = ResourceJSON.from(fileName: "Features", type: MainFeatureResponseDTO.self)
-    let mainFeatures = resultData.result
-    
-    return mainFeatures
+  func fetchMainFeatures() async throws -> MainFeatureResponseDTO {
+    let path = Paths.appFeatures.rawValue
+    let requestModel = await RequestModel(path: path, isAuthorized: false)
+
+    return try await request(with: requestModel)
   }
   
   @MainActor

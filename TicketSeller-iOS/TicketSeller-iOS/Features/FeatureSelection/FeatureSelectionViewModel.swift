@@ -16,9 +16,11 @@ final class FeatureSelectionViewModel {
   private(set) var isUserLoggedIn: Bool = false
   
   private var isLoaded: Bool = false
-  private var isLoading: Bool = false
   
   var featureType: FeatureType? = nil
+  var isLoading: Bool = false
+  var showAlert: Bool = false
+  var message: String = ""
 
   init(client: FeatureSelectionProvider = FeatureSelectionClient()) {
     self.client = client
@@ -26,10 +28,20 @@ final class FeatureSelectionViewModel {
   
   func fetchFeatures() async {
     guard !isLoaded else { return }
+    isLoading = true
     
-    let features = await client.fetchMainFeatures()
-    
-    self.features = features
+    do {
+      let response = try await client.fetchMainFeatures()
+      self.features = response.result
+      isLoading = false
+      isLoaded = true
+    } catch {
+      if let error = error as? ErrorHandler {
+        showAlert = true
+        isLoading = false
+        message = error.message
+      }
+    }
   }
   
   func didSelect(_ feature: MainFeature) {
