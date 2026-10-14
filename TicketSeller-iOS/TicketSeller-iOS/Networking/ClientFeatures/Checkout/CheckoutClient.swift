@@ -5,26 +5,16 @@
 //  Created by Yan Cervantes on 23/10/25.
 //
 
-protocol CheckoutProvider {
-  func fetchPayMethods() async -> [PayMethod]
-  func fetchPurchase() async -> Purchase
+protocol CheckoutProvider: Request {
+  func fetchPayMethods() async throws -> PayMethodsResponseDTO
 }
 
 actor CheckoutClient: CheckoutProvider {
   
-  @MainActor
-  func fetchPayMethods() async -> [PayMethod] {
-    let response = ResourceJSON.from(fileName: "PayMethods", type: PayMethodsResponseDTO.self)
-    let payMethods = response.result
+  func fetchPayMethods() async throws -> PayMethodsResponseDTO {
+    let path = Paths.paymentMethods.rawValue
+    let requestModel = await RequestModel(path: path, isAuthorized: false)
     
-    return payMethods
-  }
-  
-  @MainActor
-  func fetchPurchase() async -> Purchase {
-    let response = ResourceJSON.from(fileName: "Purchase", type: PurchaseResponseDTO.self)
-    let purchase = response.result.bookingInfo
-    
-    return purchase
+    return try await request(with: requestModel)
   }
 }

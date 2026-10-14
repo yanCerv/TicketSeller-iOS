@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PayPalPayments
 
 @Observable
 final class CheckoutViewModel {
@@ -75,18 +76,29 @@ final class CheckoutViewModel {
   
   func fetchPayMethodList() async {
     guard !isLoaded else { return }
-    let payMethodList = await client.fetchPayMethods()
     
-    self.payMethodList = payMethodList
-    
-    price = dataPurchase.totalPrice.formattedPrice()
-    
-    isLoaded = true
+    do {
+      let payMethodList = try await client.fetchPayMethods()
+      self.payMethodList = payMethodList.result
+      isLoaded = true
+      price = dataPurchase.totalPrice.formattedPrice()
+    } catch {
+      if let error = error as? ErrorHandler {
+        message = error.message
+        showError = true
+      }
+      isLoaded = true
+    }
   }
   
   func didSelect(payMethod: PayMethod) {
     selectedPayMethod = payMethod
-    viewType = .card
+    
+    if payMethod.id == "paypal" {
+      // iniciar flujo PayPal
+    } else {
+      viewType = .card
+    }
   }
   
   func didSet(text: String, from: TextType) {

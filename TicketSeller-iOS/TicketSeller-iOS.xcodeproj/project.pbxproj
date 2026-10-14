@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7C8B5BC9306B228D003B619C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7C8B5BC8306B228D003B619C /* GoogleSignIn */; };
 		7C8B5BCB306B228D003B619C /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C8B5BCA306B228D003B619C /* GoogleSignInSwift */; };
+		7CF450B7307FAE0A00C621AE /* CorePayments in Frameworks */ = {isa = PBXBuildFile; productRef = 7CF450B6307FAE0A00C621AE /* CorePayments */; };
+		7CF450B9307FAE0A00C621AE /* FraudProtection in Frameworks */ = {isa = PBXBuildFile; productRef = 7CF450B8307FAE0A00C621AE /* FraudProtection */; };
+		7CF450BB307FAE0A00C621AE /* PayPalPayments in Frameworks */ = {isa = PBXBuildFile; productRef = 7CF450BA307FAE0A00C621AE /* PayPalPayments */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF450B9307FAE0A00C621AE /* FraudProtection in Frameworks */,
 				7C8B5BC9306B228D003B619C /* GoogleSignIn in Frameworks */,
+				7CF450BB307FAE0A00C621AE /* PayPalPayments in Frameworks */,
 				7C8B5BCB306B228D003B619C /* GoogleSignInSwift in Frameworks */,
+				7CF450B7307FAE0A00C621AE /* CorePayments in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,9 @@
 			packageProductDependencies = (
 				7C8B5BC8306B228D003B619C /* GoogleSignIn */,
 				7C8B5BCA306B228D003B619C /* GoogleSignInSwift */,
+				7CF450B6307FAE0A00C621AE /* CorePayments */,
+				7CF450B8307FAE0A00C621AE /* FraudProtection */,
+				7CF450BA307FAE0A00C621AE /* PayPalPayments */,
 			);
 			productName = "TicketSeller-iOS";
 			productReference = 7C6EFDE32E9EC3FB00793E11 /* TicketSeller-iOS.app */;
@@ -171,6 +180,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				7CF450B5307FAE0A00C621AE /* XCRemoteSwiftPackageReference "paypal-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7C6EFDE42E9EC3FB00793E11 /* Products */;
@@ -506,6 +516,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		7CF450B5307FAE0A00C621AE /* XCRemoteSwiftPackageReference "paypal-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paypal/paypal-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -518,6 +536,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		7CF450B6307FAE0A00C621AE /* CorePayments */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CF450B5307FAE0A00C621AE /* XCRemoteSwiftPackageReference "paypal-ios" */;
+			productName = CorePayments;
+		};
+		7CF450B8307FAE0A00C621AE /* FraudProtection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CF450B5307FAE0A00C621AE /* XCRemoteSwiftPackageReference "paypal-ios" */;
+			productName = FraudProtection;
+		};
+		7CF450BA307FAE0A00C621AE /* PayPalPayments */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CF450B5307FAE0A00C621AE /* XCRemoteSwiftPackageReference "paypal-ios" */;
+			productName = PayPalPayments;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
