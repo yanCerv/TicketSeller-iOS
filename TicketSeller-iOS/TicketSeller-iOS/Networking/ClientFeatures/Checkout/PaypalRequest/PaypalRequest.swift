@@ -17,6 +17,7 @@ actor PaypalRequest {
   // config + urlConfig from Install and set up
   
   func purchase() {
-    let checkoutClient = PayPalClient(config: config)
+    // TODO Fueature pending
+  //  let checkoutClient = PayPalClient(config: config)
   }
 }
