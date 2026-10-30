@@ -1,5 +1,5 @@
 {
-  "originHash" : "c6ba07d1b132b5dd1c2e390ed8fd0522c614c60a3c4fc3cc4bd0fbf0ad9424d1",
+  "originHash" : "724c0d7630b94c3ad2be3286ff7c3b5f89b0a055e5191ebd7e38a0bb3efbf0a8",
   "pins" : [
     {
       "identity" : "app-check",
@@ -89,6 +89,15 @@
       "state" : {
         "revision" : "f4a19a3c313dc2616c70bb49d29a799fb16be837",
         "version" : "2.4.1"
+      }
+    },
+    {
+      "identity" : "pulsekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yanCerv/PulseKit.git",
+      "state" : {
+        "revision" : "8480edc454f4981db6413ac69acf199236cb94af",
+        "version" : "0.1.0"
       }
     }
   ],

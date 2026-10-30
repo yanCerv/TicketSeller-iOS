@@ -8,30 +8,35 @@
 import SwiftUI
 import SwiftData
 import GoogleSignIn
+import PulseKit
 
 @main
 struct TicketSeller_iOSApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
-    var body: some Scene {
-        WindowGroup {
-          MainTabView()
-            .preferredColorScheme(.dark)
-            .onOpenURL { url in
-              GIDSignIn.sharedInstance.handle(url)
-            }
-        }
-        .modelContainer(sharedModelContainer)
+  var sharedModelContainer: ModelContainer = {
+    let schema = Schema([
+      Item.self,
+    ])
+    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+    
+    do {
+      return try ModelContainer(for: schema, configurations: [modelConfiguration])
+    } catch {
+      fatalError("Could not create ModelContainer: \(error)")
     }
+  }()
+  
+  init() {
+    PulseKit.configure(PulseConfiguration(environment: .production, sampleRate: 1.0))
+  }
+  
+  var body: some Scene {
+    WindowGroup {
+      MainTabView()
+        .preferredColorScheme(.dark)
+        .onOpenURL { url in
+          GIDSignIn.sharedInstance.handle(url)
+        }
+    }
+    .modelContainer(sharedModelContainer)
+  }
 }

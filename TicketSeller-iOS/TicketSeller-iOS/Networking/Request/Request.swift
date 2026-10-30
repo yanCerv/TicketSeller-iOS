@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PulseKit
 
 protocol Request {
   func request<T: Decodable>(with model: RequestModel) async throws -> T
@@ -34,9 +35,11 @@ extension Request {
       let isSessionExpired = Date.isAccessOrSessionExpired(using: FileDataManager.sessionExpired)
       if isSessionExpired {
         keyStore.deleteAccess()
+        PulseKit.track("User session is Expired")
         throw ErrorHandler.sessionExpired
       }
     } else {
+      PulseKit.track("user is Logged Out! try to open feature flow")
       throw ErrorHandler.error(message: "You are not logged in, please login to continue in account option", statusCode: 1)
     }
   }
@@ -54,6 +57,7 @@ extension Request {
         try keyStore.save(access: response)
         return try await requestData(with: model)
       } catch {
+        PulseKit.track(model.provider.baseURL, service: model.path)
         if let error = error as? ErrorHandler {
           throw ErrorHandler.error(message: error.message, statusCode: error.statusCode)
         }
@@ -79,6 +83,7 @@ extension Request {
       return decode
     default:
       let error = try JSONDecoder().decode(ErrorResponse.self, from: data)
+      PulseKit.track(model.provider.baseURL, service: model.path)
       throw ErrorHandler.error(message: "\(error.message) (\(error.statusCode))", statusCode: error.statusCode)
     }
   }

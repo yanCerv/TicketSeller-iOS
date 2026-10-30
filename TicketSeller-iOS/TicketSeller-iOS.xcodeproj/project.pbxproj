@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C4DFF9330952D470096552A /* PulseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C4DFF9230952D470096552A /* PulseKit */; };
 		7C8B5BC9306B228D003B619C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7C8B5BC8306B228D003B619C /* GoogleSignIn */; };
 		7C8B5BCB306B228D003B619C /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C8B5BCA306B228D003B619C /* GoogleSignInSwift */; };
 		7CF450B7307FAE0A00C621AE /* CorePayments in Frameworks */ = {isa = PBXBuildFile; productRef = 7CF450B6307FAE0A00C621AE /* CorePayments */; };
@@ -65,6 +66,7 @@
 				7CF450BB307FAE0A00C621AE /* PayPalPayments in Frameworks */,
 				7C8B5BCB306B228D003B619C /* GoogleSignInSwift in Frameworks */,
 				7CF450B7307FAE0A00C621AE /* CorePayments in Frameworks */,
+				7C4DFF9330952D470096552A /* PulseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +123,7 @@
 				7CF450B6307FAE0A00C621AE /* CorePayments */,
 				7CF450B8307FAE0A00C621AE /* FraudProtection */,
 				7CF450BA307FAE0A00C621AE /* PayPalPayments */,
+				7C4DFF9230952D470096552A /* PulseKit */,
 			);
 			productName = "TicketSeller-iOS";
 			productReference = 7C6EFDE32E9EC3FB00793E11 /* TicketSeller-iOS.app */;
@@ -181,6 +184,7 @@
 			packageReferences = (
 				7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				7CF450B5307FAE0A00C621AE /* XCRemoteSwiftPackageReference "paypal-ios" */,
+				7C4DFF9130952D470096552A /* XCRemoteSwiftPackageReference "PulseKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7C6EFDE42E9EC3FB00793E11 /* Products */;
@@ -508,6 +512,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7C4DFF9130952D470096552A /* XCRemoteSwiftPackageReference "PulseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yanCerv/PulseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 		7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -527,6 +539,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7C4DFF9230952D470096552A /* PulseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C4DFF9130952D470096552A /* XCRemoteSwiftPackageReference "PulseKit" */;
+			productName = PulseKit;
+		};
 		7C8B5BC8306B228D003B619C /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7C8B5BC7306B228D003B619C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
